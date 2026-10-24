@@ -6,7 +6,7 @@ English text for the Inside the Game project page, ready to paste once the team 
 
 ## Elevator pitch
 
-Live Substitution Intelligence turns a stream of football match events into a bench decision that a coach, analyst or broadcaster can check. At any five-minute checkpoint it works out what the team needs now, searches substitutions, repositioning and formation changes across the whole XI, and explains the plan for a broadcaster, an analyst or a coach in ten languages. A deterministic engine makes the call; Microsoft Foundry picks which verified facts to tell and translates fixed sentence templates, so the explanation never invents a number or a name.
+Live Substitution Intelligence turns a stream of football match events into a bench decision that a coach, analyst or broadcaster can check. At any five-minute checkpoint it works out what the team needs now, searches substitutions, repositioning and formation changes across the whole XI, and explains the plan for a broadcaster, an analyst or a coach in ten languages. A deterministic engine makes the call; Microsoft Foundry picks which verified facts to tell and translates fixed sentence templates, while the server preserves the plan identities and numeric values.
 
 ## Project description
 
@@ -18,7 +18,7 @@ Live Substitution Intelligence turns a stream of football match events into a be
 2. Combines the score, the minute and the coach's intent (more attacking, balanced or more defensive; seek a win or avoid defeat) into the team's current needs.
 3. Searches every available one-for-one substitution across six supported formations and position assignments, and compares each with the best plan that uses no substitution. Unsupported positions are blocked.
 4. Recommends a change only when it beats that no-substitution plan by a set threshold. Fresh legs justify a change only when the tactical loss stays small, so a key player is not removed just because a fresher, weaker player is on the bench.
-5. Explains the inspected plan for three audiences: a broadcaster gets two short qualitative sentences, an analyst gets the match statistics so far and the benefit against the threshold, and a coach gets the game state, urgency, estimated fatigue, role changes and the downside. Match statistics in explanations are computed on the server from the same events and rules as the page.
+5. Explains the inspected plan for three audiences: a broadcaster gets a qualitative football explanation with key player movements, an analyst gets relevant game-state statistics and the plan's benefit and cost, and a coach gets the game state, intent, role changes and trade-offs, with estimated fatigue when relevant. Threshold scores are available for analysts without repeating eligibility boilerplate. Match statistics in explanations are computed on the server from the same events and rules as the page.
 6. Offers the explanation in ten languages (English, Hebrew, Arabic, Spanish, French, German, Italian, Portuguese, Japanese, Simplified Chinese), separately from the page language.
 
 **Why the explanation can be trusted.** The explanation layer cannot change the decision. Microsoft Foundry receives verified facts about the plan and returns only the IDs of the facts worth telling; the app validates them and writes the sentences itself. For languages other than English and Hebrew, Foundry translates only the fixed English sentence templates; names and numbers are inserted afterwards by the server, and a translation is used only if every placeholder, digit and negation survives. If the model is unavailable or its answer fails validation, the app shows a clearly labelled template or English explanation instead.
@@ -29,11 +29,11 @@ Live Substitution Intelligence turns a stream of football match events into a be
 
 ![The engine decides the plan; Foundry only picks which facts to tell](architecture.png)
 
-The engine in App Service makes every decision. Foundry sees only verified facts and returns their IDs, and a labelled template takes over whenever the model is unavailable or its answer is rejected.
+The engine in App Service makes every decision. Foundry selects optional verified fact IDs and translates protected sentence templates into eight additional languages. Mandatory facts stay server-controlled. Validation and labelled template/English fallback handle unavailable or rejected model outputs. Structural and status checks reduce errors, but do not guarantee complete translation semantics.
 
 ## Microsoft and Azure technologies
 
-Three Microsoft services carry the running app: Foundry selects verified facts for the explanation, App Service hosts it, and GitHub Actions tests and deploys every change.
+The running app uses Microsoft Foundry and Azure App Service, with GitHub Actions for CI/CD: Foundry selects verified facts for the explanation, App Service hosts it, and GitHub Actions tests and deploys every change.
 
 | Technology | What it does in the running app |
 | --- | --- |
@@ -49,10 +49,15 @@ Every match action in the demo is synthetic; only the player priors and line-ups
 - **Match events:** original synthetic events from our own scripted-possession generator, in the same event format the engine reads live. They are not a real fixture, a prediction or licensed Premier League data.
 - **Player profiles:** historical priors. Each card starts from FIFA 16 ratings and is adjusted, by at most 6 points, using [StatsBomb Open Data](https://github.com/statsbomb/open-data) evidence from before the match date. Starting line-ups and shirt numbers use historical metadata.
 - **Estimates:** physical load and position suitability are heuristics, shown as estimates on screen.
+- **Data extension:** 72 derived player profiles connect historical evidence with synthetic physical estimates referenced to SkillCorner's A-League positional aggregates. Our reproducible lively scenario contains 1,593 statistical events and 505 visible feed events in the audited generator version. This is original schema/generation/analysis work, not measured Premier League tracking. See [calculation walkthrough](../research/CALCULATIONS_SANITY_HE_20261024.md).
 - **Research mode:** a separate mode replays four team views across three Premier League 2015/16 fixtures from StatsBomb Open Data to benchmark the engine. It is not the submission demo.
 - **Original work:** the code was written for this hackathon; the first commit is dated 15 October 2026. Open-source libraries: NumPy, pandas, pydantic and the OpenAI Python SDK.
 
 ## Testing instructions for judges
+
+![Hudl Statsbomb](../../web/coach-room/statsbomb-logo.png)
+
+Historical research uses StatsBomb Open Data. Physical references use [SkillCorner Open Data](https://github.com/SkillCorner/opendata), with its MIT notice retained. See [DATA_SOURCES.md](DATA_SOURCES.md) for separate publication-rights questions.
 
 The app is live with no login at [live-sub-intel on Azure](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/) and stays up through the end of judging (11 November 2026 in Israel; maintain a safety buffer). The first load can take up to 30 seconds while the server starts.
 
@@ -95,7 +100,8 @@ This is a candidate description, not proof of submission.
   - Model translation for all eight other languages, for recommended and rejected plans.
   - The recommendation status correct in every checked language.
   - The first run found a reversed status in Arabic, German and Portuguese. It was fixed and re-checked the same day.
-- **Not verified:** native-speaker fluency, and coach and broadcaster wording in the eight model-translated languages.
+- **Additional independent verification:** all 16 coach/broadcaster combinations in the eight translated locales returned model-assisted output after two connection failures were retried. The original failures remain recorded; see [independent release review](RELEASE_REVIEW_20261024.md).
+- **Not verified:** native-speaker fluency and professional football validation. Successful schema/status checks do not certify complete translation semantics.
 - **Remaining release gates:**
   - Finish the data-license and attribution review (see DATA_SOURCES.md).
   - Record and upload the English video, under two minutes.
