@@ -60,6 +60,9 @@ Benefits and thresholds are **model scores, not probabilities and not xG**.
      - Player names, numbers, plan identity and statuses are never sent for translation. The server inserts them afterwards through placeholders.
      - A translation is used only if every placeholder survives exactly once, no digit is added or lost, the IDs match, and a negated English sentence (for example "does not meet", "not a probability") is still negated.
      - Recommendation sentences must retain the target language's recommendation wording and polarity. Known opposites such as violating or contradicting are rejected. Legacy criteria sentences retain their ordinary "meets"-verb check. These checks exist because a live run reversed recommendation status; translation runs at temperature 0. Contextual templates have their own cache version and require a fresh live acceptance after deployment.
+     - Each vocabulary item is sent with a fixed note saying where it is inserted (for example, "weaker {dim}" needs a noun), so it is translated in a form that fits its sentences. The notes carry no names or numbers.
+     - Each template is validated separately. If some are rejected, the valid ones are kept and the rejected ones are retried once, within the request's time budget. A second rejection falls back to English.
+     - The server adds the list punctuation for player movements (the locale's own semicolon) and fixes French elision and Italian "ad" only where a template word meets translated vocabulary, never before a name.
      - Validated translations are cached per language and template version, so later explanations reuse them without a call.
    - **Fallback:** if a translation is unavailable or fails validation, the explanation is shown in verified English, labelled as such, with a safe error code.
    - **Text direction:** in Hebrew and Arabic, names and numbers are wrapped in direction isolates, so a score such as 0–1 is never shown reversed.

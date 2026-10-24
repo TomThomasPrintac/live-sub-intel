@@ -123,12 +123,14 @@ def main():
             row.update(source=r['source'], note=r.get('note'), model=r.get('model'), cached=r.get('cached'), output_lang=r.get('output_lang'),
                        translation=translation.get('status'), translation_note=translation.get('note'),
                        translation_rule=(translation.get('diagnostic') or {}).get('rule'),
+                       translation_item=(translation.get('diagnostic') or {}).get('item'), translation_retried=translation.get('retried'),
                        diagnostic=(r.get('diagnostic') or {}).get('code'), fact_ids=r['fact_ids'], text=r['text'],
                        plan_identity_ok=r['plan_id'] == plan_id and (plan is None or (plan['in_player']['name'] in r['text'] and plan['out_player']['name'] in r['text'])),
                        broadcaster_has_digits=bool(re.search(r'\d', r['text'])) if audience == 'broadcaster' else None)
         rows.append(row)
         print(f"{team} {minute:>2} {kind:<9} {audience:<11} {lang:<7} http={status} {row.get('source')}/{row.get('translation')} "
-              f"cached={row.get('cached')} {seconds}s {row.get('note') or ''} {row.get('translation_note') or ''}", flush=True)
+              f"cached={row.get('cached')} {seconds}s {row.get('note') or ''} {row.get('translation_note') or ''} "
+              f"{row.get('translation_item') or ''}{' retried' if row.get('translation_retried') else ''}", flush=True)
         time.sleep(args.spacing)
     _, after, _ = call(args.base, '/healthz')
     report = dict(kind='LIVE_AZURE_ACCEPTANCE', at=datetime.now(timezone.utc).isoformat(), base=args.base,

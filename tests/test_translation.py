@@ -120,13 +120,86 @@ def test_negative_scores_are_inserted_verbatim():
 
 
 def test_rejected_translation_falls_back_to_labelled_english():
-    stub, _ = client('fr', mutate=lambda out: {k: v.replace('{on}', '') for k, v in out.items()})
+    stub, calls = client('fr', mutate=lambda out: {k: v.replace('{on}', '') for k, v in out.items()})
     catalog = TranslationCatalog()
     r = explain_plan(sample(), 'swap:off:on', 'analyst', 'fr', client=stub, deployment='d', catalog=catalog)
     assert r['output_lang'] == 'en' and r['text'].startswith('The recommendation is Player On for Player Off')
     assert r['translation']['status'] == 'fallback' and r['translation']['note'] == 'TRANSLATION_REJECTED'
-    assert r['translation']['diagnostic']['code'] == 'TRANSLATION_REJECTED' and r['translation']['diagnostic']['rule'] == 'placeholders'
-    assert r['source'] == 'llm' and catalog.counts() == {}
+    diagnostic = r['translation']['diagnostic']
+    assert diagnostic['code'] == 'TRANSLATION_REJECTED' and diagnostic['rule'] == 'placeholders' and diagnostic['item'] == 'tpl:decision.swap.recommended'
+    # Selection, the first translation and one retry; the broken template is never cached, the valid ones are.
+    assert r['source'] == 'llm' and len(calls) == 3
+    assert catalog.missing('fr', ['tpl:decision.swap.recommended', 'tpl:score']) == ['tpl:decision.swap.recommended']
+
+
+def test_one_retry_translates_only_the_rejected_template():
+    answers = []
+    def mutate(out):
+        answers.append(dict(out))
+        return {k: v.replace('{on}', '') for k, v in out.items()} if len(answers) == 1 else out
+    stub, calls = client('fr', mutate=mutate)
+    catalog = TranslationCatalog()
+    r = explain_plan(sample(), 'swap:off:on', 'analyst', 'fr', client=stub, deployment='d', catalog=catalog)
+    assert r['output_lang'] == 'fr' and r['translation'] == dict(status='model', model='d', cached=False, retried=True)
+    retry = calls[2]
+    assert list(json.loads(retry['messages'][1]['content'])['items'].values()) == [source_text('tpl:decision.swap.recommended')]
+    assert translation.RETRY_HINT['placeholders'] in retry['messages'][0]['content']
+    assert translation.RETRY_HINT['placeholders'] not in calls[1]['messages'][0]['content']
+
+
+def test_no_retry_when_the_first_translation_used_the_time_budget(monkeypatch):
+    from subintel import plan_narrative
+    monkeypatch.setattr(plan_narrative, 'RETRY_WITHIN_SECONDS', -1)
+    stub, calls = client('fr', mutate=lambda out: {k: v.replace('{on}', '') for k, v in out.items()})
+    r = explain_plan(sample(), 'swap:off:on', 'analyst', 'fr', client=stub, deployment='d', catalog=TranslationCatalog())
+    assert r['translation']['status'] == 'fallback' and len(calls) == 2
+
+
+def test_vocabulary_is_sent_with_usage_notes_and_never_with_values():
+    stub, calls = client('es')
+    explain_plan(sample(), 'swap:off:on', 'analyst', 'es', client=stub, deployment='d', catalog=TranslationCatalog())
+    payload = json.loads(calls[1]['messages'][1]['content'])
+    noted = {payload['items'][a]: text for a, text in payload['notes'].items()}
+    assert 'never as a verb or participle' in noted['defending']
+    assert all(alias in payload['items'] for alias in payload['notes'])
+    assert '{on} is the substitute coming on' in calls[1]['messages'][0]['content']
+    for value in ('Player On', 'Player Off', '0.200', '0.150'):
+        assert value not in calls[1]['messages'][1]['content']
+
+
+@pytest.mark.parametrize('lang,item,expected', [
+    # Verbatim shapes from the live run of 24 October: the model ended each item with a full stop.
+    ('de', '{player} wechselt von {before} zu {after}.', 'A wechselt von L zu R; B wechselt von R zu L.'),
+    ('ja', '{player}は{before}から{after}に移動します。', 'Aは左から右に移動します；Bは右から左に移動します。'),
+    ('ar', 'ينتقل {player} من {before} إلى {after}', 'ينتقل ⁦A⁩ من L إلى R؛ ينتقل ⁦B⁩ من R إلى L.'),
+])
+def test_translated_moves_use_the_locale_list_punctuation(lang, item, expected):
+    from subintel.plan_narrative import Moves, localized
+    left, right = ('左', '右') if lang == 'ja' else ('L', 'R')
+    fmap = {'moves': ('moves', {'moves': Moves((('A', 'position.Left Wing', 'position.Right Wing'), ('B', 'position.Right Wing', 'position.Left Wing')))})}
+    catalog = TranslationCatalog()
+    catalog.add(lang, {'tpl:moves': '{moves}。' if lang == 'ja' else '{moves}.', 'tpl:move.item': item,
+                       'term:position.Left Wing': left, 'term:position.Right Wing': right})
+    assert localized(fmap, ['moves'], lang, catalog, 'analyst') == expected
+
+
+def test_french_elision_and_italian_ad_apply_to_vocabulary_but_never_to_names():
+    from subintel.plan_narrative import Term, render
+    terms = {'aim.threat': 'ajouter une menace offensive', 'intent.extend': 'augmenter l’avance'}
+    templates = {'gain': "L'objectif est de {aim}.", 'state.lead': '{team} mène {score} ; la priorité est de {objective}.',
+                 'name': 'Le remplacement de {off}.'}
+    assert render('gain', {'aim': Term('aim.threat')}, 'fr', templates, terms) == "L'objectif est d'ajouter une menace offensive."
+    assert render('state.lead', {'team': 'Arsenal', 'score': '1–0', 'objective': Term('intent.extend')}, 'fr', templates, terms).endswith("est d'augmenter l’avance.")
+    assert render('name', {'off': 'Aaron Ramsey'}, 'fr', templates, terms) == 'Le remplacement de Aaron Ramsey.'
+    assert render('gain', {'aim': Term('aim.threat')}, 'it', {'gain': 'Il piano mira a {aim}.'}, {'aim.threat': 'aumentare la minaccia'}) == 'Il piano mira ad aumentare la minaccia.'
+    assert render('gain', {'aim': Term('aim.threat')}, 'it', {'gain': 'Il piano mira a {aim}.'}, {'aim.threat': 'creare più occasioni'}) == 'Il piano mira a creare più occasioni.'
+
+
+def test_chinese_and_japanese_drop_spaces_between_their_own_characters_only():
+    from subintel.plan_narrative import Term, render
+    templates = {'stats': '{team} 在 {score} 时处于 {situation} 状态。'}
+    text = render('stats', {'team': 'Arsenal', 'score': '1–0', 'situation': Term('situation.lead')}, 'zh-Hans', templates, {'situation.lead': '领先'})
+    assert text == 'Arsenal 在 1–0 时处于领先状态。'
 
 
 @pytest.mark.parametrize('error,code', [(TimeoutError('slow'), 'NETWORK_TIMEOUT'), (ValueError('not json'), 'UNEXPECTED_CLIENT_ERROR')])
