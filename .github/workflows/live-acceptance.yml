@@ -22,8 +22,19 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Wake the app
-        run: curl -sS --retry 5 --retry-delay 10 --max-time 60 "${{ inputs.base_url }}/healthz"
+      # Right after a deploy, the previous instance can still answer for a while; wait until this commit
+      # answers three times in a row so the results cover a single build (the report records it either way).
+      - name: Wake the app and wait for this commit
+        run: |
+          streak=0
+          for attempt in $(seq 1 40); do
+            sha=$(curl -sS --max-time 60 "${{ inputs.base_url }}/healthz" | python -c "import json,sys; print(json.load(sys.stdin).get('build_sha') or '')" || true)
+            if [ "$sha" = "${{ github.sha }}" ]; then streak=$((streak+1)); else streak=0; fi
+            echo "healthz build_sha=${sha:-unknown} (${streak}/3)"
+            [ "$streak" -ge 3 ] && exit 0
+            sleep 10
+          done
+          echo "::warning::${{ inputs.base_url }} did not consistently report ${{ github.sha }}; the report records the builds it served."
 
       - name: Run bounded acceptance requests
         run: python scripts/live_acceptance.py "${{ inputs.base_url }}" --out live_acceptance.json --require-model --extended-audiences

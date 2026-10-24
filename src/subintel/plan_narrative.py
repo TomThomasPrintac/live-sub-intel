@@ -12,6 +12,8 @@ from __future__ import annotations
 from collections import namedtuple
 import json
 import logging
+import re
+import time
 import uuid
 from datetime import datetime, timezone
 from typing import Literal
@@ -30,6 +32,8 @@ LANGUAGES = ('en', 'he', 'ar', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'zh-Hans')
 RTL = ('he', 'ar')
 TEMPLATE_VERSION = 'plan-templates-v4-context'
 LOG = logging.getLogger(__name__)
+# Selection (12 s) + a first translation answered within this + a 10 s retry stays under the 35 s single-flight wait.
+RETRY_WITHIN_SECONDS = 8
 # Canonical reading order; the model chooses which optional facts appear, not their order.
 FACT_IDS = ('decision','reason','quality','state','urgency','stats','freshness','gain','shape','moves','tradeoff','discipline','score','components')
 MAX_FACTS = dict(broadcaster=4, analyst=5, coach=5)
@@ -427,6 +431,28 @@ def isolate(text, lang):
     return f'⁦{text}⁩' if lang in RTL else str(text)
 
 
+LOWER_AFTER_SEMICOLON=('en','es','fr','it','pt')  # German capitalises nouns; the other scripts have no case
+SEMICOLON={'ar':'؛ ','ja':'；','zh-Hans':'；'}
+FULL_STOP={'ja':'。','zh-Hans':'。'}
+# French elision and Italian "ad" where a template word meets translated vocabulary: "de ajouter" -> "d'ajouter".
+EUPHONY={'fr':(re.compile(r"\b([Dd]e|[Qq]ue) \{(\w+)\}"),re.compile(r'[aeiouyàâéèêëîïôûü]',re.IGNORECASE),lambda word:word[:-1]+"'"),
+         'it':(re.compile(r'\b([Aa]) \{(\w+)\}'),re.compile(r'[aà]',re.IGNORECASE),lambda word:word+'d ')}
+CJK_SPACE=re.compile(r'(?<=[\u3000-\u30ff\u3400-\u9fff\uff00-\uffef]) +(?=[\u3000-\u30ff\u3400-\u9fff\uff00-\uffef])')  # Latin names keep their spaces
+
+
+def euphony(template, params, values, lang):
+    """Only before a Term, never before a name or a number."""
+    if lang not in EUPHONY:
+        return template
+    pattern,vowel,fix=EUPHONY[lang]
+    def apply(match):
+        key=match.group(2)
+        if isinstance(params.get(key),Term) and vowel.match(values[key]):
+            return fix(match.group(1))+'{'+key+'}'
+        return match.group(0)
+    return pattern.sub(apply,template)
+
+
 def render(template_key, params, lang, templates=None, terms=None):
     templates = TEMPLATES[lang] if templates is None else templates
     terms = TERMS[lang] if terms is None else terms
@@ -434,9 +460,13 @@ def render(template_key, params, lang, templates=None, terms=None):
         if isinstance(v, Term):
             return terms[v.key]
         if isinstance(v, Moves):
-            return '; '.join(templates['move.item'].format(player=isolate(name,lang),before=terms[before],after=terms[after]) for name,before,after in v.items)
+            # A translated item may carry its own full stop; the list and its sentence add the punctuation.
+            return SEMICOLON.get(lang,'; ').join(templates['move.item'].format(player=isolate(name,lang),before=terms[before],after=terms[after]).rstrip('.。．;；؛ ')
+                                                 for name,before,after in v.items)
         return isolate(v, lang)
-    return templates[template_key].format(**{k: value(v) for k, v in params.items()})
+    values = {k: value(v) for k, v in params.items()}
+    text = euphony(templates[template_key], params, values, lang).format(**values)
+    return CJK_SPACE.sub('', text) if lang in ('ja', 'zh-Hans') else text
 
 
 def sentences(bundle, audience, lang):
@@ -465,11 +495,6 @@ def source_keys(fmap, ids):
                 keys.add('tpl:move.item')
                 keys.update('term:'+k for _,before,after in v.items for k in (before,after))
     return keys
-
-
-LOWER_AFTER_SEMICOLON=('en','es','fr','it','pt')  # German capitalises nouns; the other scripts have no case
-SEMICOLON={'ar':'؛ ','ja':'；','zh-Hans':'；'}
-FULL_STOP={'ja':'。','zh-Hans':'。'}
 
 
 def narrative_join(items,lang,audience):
@@ -519,6 +544,7 @@ def _diagnostic(error, stage):
     diagnostic = dict(classify_failure(error, stage), reference=uuid.uuid4().hex[:12], at=datetime.now(timezone.utc).isoformat())
     if isinstance(error, TranslationRejected):
         diagnostic['rule'] = error.rule
+        diagnostic['item'] = error.item  # a server-defined catalog key such as 'tpl:moves', never model text
     LOG.warning('Explanation failed: reference=%s code=%s stage=%s status=%s provider_code=%s param=%s type=%s causes=%s validation=%s',
         diagnostic['reference'],diagnostic['code'],stage,diagnostic['status'],diagnostic['provider_code'],diagnostic['provider_param'],diagnostic['exception_type'],diagnostic['cause_types'],diagnostic['validation_errors'])
     return diagnostic
@@ -575,15 +601,25 @@ def explain_plan(snapshot, plan_id, audience=DEFAULT_AUDIENCE, lang='en', client
             # Not configured, or the provider just failed: no second slow call.
             tnote='TRANSLATION_NOT_CONFIGURED' if client is None else 'TRANSLATION_UNAVAILABLE'
         elif missing:
-            try:
-                timed=client.with_options(timeout=15,max_retries=0) if hasattr(client,'with_options') else client
-                catalog.add(lang,translate(timed,deployment,lang,{k:source_text(k) for k in missing}))
-            except Exception as error:
-                rejected=isinstance(error,TranslationRejected)
-                tdiag=_diagnostic(error,'translation_validation' if rejected else 'translation')
-                tnote='TRANSLATION_REJECTED' if rejected else 'TRANSLATION_UNAVAILABLE'
+            started=time.monotonic();pending=missing;retry=None;retried=False
+            while pending:
+                try:
+                    timed=client.with_options(timeout=10 if retry else 15,max_retries=0) if hasattr(client,'with_options') else client
+                    catalog.add(lang,translate(timed,deployment,lang,{k:source_text(k) for k in pending},retry=retry))
+                    tnote=tdiag=None
+                    break
+                except TranslationRejected as error:
+                    catalog.add(lang,error.accepted)  # each passed every check on its own
+                    tdiag=_diagnostic(error,'translation_validation');tnote='TRANSLATION_REJECTED'
+                    # One retry, for the rejected pieces only, while it still fits the request's time budget.
+                    if retried or time.monotonic()-started>RETRY_WITHIN_SECONDS:
+                        break
+                    pending=catalog.missing(lang,source_keys(fmap,ids));retry=error.rule;retried=True
+                except Exception as error:
+                    tdiag=_diagnostic(error,'translation');tnote='TRANSLATION_UNAVAILABLE'
+                    break
         text=localized(fmap,ids,lang,catalog,audience)
-        translation=(dict(status='model',model=deployment,cached=not missing) if text is not None else
+        translation=(dict(status='model',model=deployment,cached=not missing,**({'retried':True} if missing and retried else {})) if text is not None else
                      dict(status='fallback',note=tnote,diagnostic=tdiag))
     else:
         text=localized(fmap,ids,lang,catalog,audience)

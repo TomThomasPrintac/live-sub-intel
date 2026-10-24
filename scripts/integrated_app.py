@@ -68,7 +68,7 @@ class ExplanationCache:
             else:
                 future=Future();self.pending[key]=future;owner=True
         if not owner:
-            return dict(future.result(timeout=35),cached=True)  # selection (12 s) + translation (15 s)
+            return dict(future.result(timeout=35),cached=True)  # selection (12 s) + translation (15 s, or 8 s and a 10 s retry)
         try:
             with self.lock:
                 now=self.clock()
