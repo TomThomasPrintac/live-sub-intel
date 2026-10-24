@@ -167,6 +167,17 @@ def test_vocabulary_is_sent_with_usage_notes_and_never_with_values():
         assert value not in calls[1]['messages'][1]['content']
 
 
+def test_notes_name_the_infinitive_form_and_club_agreement_where_the_live_run_went_wrong():
+    from subintel.translation import note
+    aim = 'term:aim.threat'
+    assert '"zu"' in note(aim, source_text(aim), 'de') and 'こと' in note(aim, source_text(aim), 'ja')
+    assert '"zu"' not in note(aim, source_text(aim), 'fr')
+    stats = 'tpl:stats.attack.context'
+    assert 'usually singular' in note(stats, source_text(stats), 'it')
+    assert 'case ending' in note('tpl:move.item', source_text('tpl:move.item'), 'de')
+    assert note('tpl:score', source_text('tpl:score'), 'de') is None
+
+
 @pytest.mark.parametrize('lang,item,expected', [
     # Verbatim shapes from the live run of 24 October: the model ended each item with a full stop.
     ('de', '{player} wechselt von {before} zu {after}.', 'A wechselt von L zu R; B wechselt von R zu L.'),

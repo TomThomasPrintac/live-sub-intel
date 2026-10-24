@@ -12,7 +12,7 @@ import re
 import threading
 from collections import Counter
 
-TRANSLATION_PROMPT_VERSION = 'template-translation-v4-notes'
+TRANSLATION_PROMPT_VERSION = 'template-translation-v5-forms'
 TRUSTED = ('en', 'he')  # hand-written templates in plan_narrative
 LANGUAGE_NAMES = {'ar': 'Arabic', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian',
                   'pt': 'Portuguese', 'ja': 'Japanese', 'zh-Hans': 'Simplified Chinese'}
@@ -63,16 +63,29 @@ SENTENCE_JOIN = {'ja': '', 'zh-Hans': ''}  # these scripts do not put spaces bet
 NOTES = {
     'term:dim.': 'A noun phrase naming a team quality. It fills {dim} in "at the cost of weaker {dim}" and "The weaker {dim} would '
                  'outweigh the fresh legs". Translate it as a noun (for example "defending" means the team\'s defence), never as a verb or participle.',
-    'term:aim.': 'An infinitive verb phrase. It fills {aim} in "The aim is to {aim}" and "The plan aims to {aim}, at the cost of weaker {dim}".',
-    'term:intent.': 'An infinitive verb phrase. It fills {objective} in "the priority is to {objective}".',
+    'term:aim.': 'An infinitive verb phrase. It fills {aim} in "The aim is to {aim}" and "The plan aims to {aim}, at the cost of weaker {dim}". '
+                 'Write the whole phrase that follows "is to" in your language, including any infinitive particle, so no other verb is needed around it.',
+    'term:intent.': 'An infinitive verb phrase. It fills {objective} in "the priority is to {objective}". '
+                    'Write the whole phrase that follows "is to" in your language, including any infinitive particle.',
     'term:situation.': 'The score situation. It fills {situation} in "{team} are {situation} at {score}" and "With {team} {situation}, the '
                        'recommendation is ...". Choose one form that reads naturally in both, and keep {situation} in those sentences.',
-    'term:position.': 'A football position. It fills {before}, {after} and {position} in "{player} moves from {before} to {after}" and "taking the {position} role".',
+    'term:position.': 'A football position in its basic form, as on a team sheet. It fills {before}, {after} and {position} in '
+                      '"{player} moves from {before} to {after}" and "taking the {position} role".',
     'term:stance.': "The coach's brief: how attacking the team should be.",
     'term:objective.': "The coach's objective for the result.",
     'term:role.': 'A broad football role.',
-    'tpl:move.item': 'One item of a list that the app joins with semicolons; no final punctuation.',
+    'tpl:move.item': 'One item of a list that the app joins with semicolons; no final punctuation. Position names are inserted in their basic '
+                     'form, so phrase it so they need no case ending (for example "from the {before} position to the {after} position").',
 }
+# Notes for templates, by the placeholders they contain.
+PLACEHOLDER_NOTES = {
+    'team': '{team} is a club name: use the verb agreement your language normally uses for a club (usually singular), although British English says "are".',
+    'aim': '{aim} is replaced by a complete infinitive phrase that already has any particle it needs; do not wrap it in another verb.',
+    'objective': '{objective} is replaced by a complete infinitive phrase that already has any particle it needs; do not wrap it in another verb.',
+}
+# Where the infinitive form of a language is easy to get wrong (24 October live run: "den Angriff verstärken zu erreichen", "増すであり").
+INFINITIVE_FORM = {'de': ' In German, include "zu" (for example "den Angriff zu verstärken").',
+                   'ja': ' In Japanese, end it with "こと" so it reads as a noun (for example "攻撃の脅威を増すこと").'}
 RETRY_HINT = {
     'placeholders': 'A previous answer dropped, repeated or renamed a {placeholder}; copy every {placeholder} exactly once.',
     'braces': 'A previous answer added braces; use braces only for the {placeholder} names given.',
@@ -132,8 +145,14 @@ def validate(lang, sources, translations):
         raise TranslationRejected(first.rule, first.item, accepted)
 
 
-def note(key):
-    return next((text for prefix, text in NOTES.items() if key.startswith(prefix)), None)
+def note(key, source, lang):
+    """Fixed usage notes for one item; they describe where it goes, never a value."""
+    parts = [text for prefix, text in NOTES.items() if key.startswith(prefix)]
+    if key.startswith(('term:aim.', 'term:intent.')):
+        parts = [parts[0] + INFINITIVE_FORM.get(lang, '')]
+    if key.startswith('tpl:'):
+        parts += [PLACEHOLDER_NOTES[name] for name in sorted(set(PLACEHOLDER.findall(source))) if name in PLACEHOLDER_NOTES]
+    return ' '.join(parts) or None
 
 
 class TranslationCatalog:
@@ -170,7 +189,7 @@ def translate(client, deployment, lang, sources, retry=None):
     keys = sorted(sources)
     alias = {f't{i}': k for i, k in enumerate(keys)}
     items = {a: sources[k] for a, k in alias.items()}
-    notes = {a: note(k) for a, k in alias.items() if note(k)}
+    notes = {a: text for a, k in alias.items() if (text := note(k, sources[k], lang))}
     schema = dict(type='object', additionalProperties=False, required=['translations'], properties=dict(
         translations=dict(type='object', additionalProperties=False, required=list(items), properties={a: dict(type='string') for a in items})))
     response_format = ({'type': 'json_schema', 'json_schema': dict(name='template_translations', strict=True, schema=schema)}
