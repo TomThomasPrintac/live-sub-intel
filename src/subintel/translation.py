@@ -12,7 +12,7 @@ import re
 import threading
 from collections import Counter
 
-TRANSLATION_PROMPT_VERSION = 'template-translation-v5-forms'
+TRANSLATION_PROMPT_VERSION = 'template-translation-v6-forms'
 TRUSTED = ('en', 'he')  # hand-written templates in plan_narrative
 LANGUAGE_NAMES = {'ar': 'Arabic', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian',
                   'pt': 'Portuguese', 'ja': 'Japanese', 'zh-Hans': 'Simplified Chinese'}
@@ -86,6 +86,8 @@ PLACEHOLDER_NOTES = {
 # Where the infinitive form of a language is easy to get wrong (24 October live run: "den Angriff verstärken zu erreichen", "増すであり").
 INFINITIVE_FORM = {'de': ' In German, include "zu" (for example "den Angriff zu verstärken").',
                    'ja': ' In Japanese, end it with "こと" so it reads as a noun (for example "攻撃の脅威を増すこと").'}
+# German positions came out undeclined after "vom"/"zum"; naming the position as a label keeps its basic form.
+MOVE_FORM = {'de': ' In German, write "{player} wechselt von der Position {before} auf die Position {after}".'}
 RETRY_HINT = {
     'placeholders': 'A previous answer dropped, repeated or renamed a {placeholder}; copy every {placeholder} exactly once.',
     'braces': 'A previous answer added braces; use braces only for the {placeholder} names given.',
@@ -150,6 +152,8 @@ def note(key, source, lang):
     parts = [text for prefix, text in NOTES.items() if key.startswith(prefix)]
     if key.startswith(('term:aim.', 'term:intent.')):
         parts = [parts[0] + INFINITIVE_FORM.get(lang, '')]
+    if key == 'tpl:move.item':
+        parts = [parts[0] + MOVE_FORM.get(lang, '')]
     if key.startswith('tpl:'):
         parts += [PLACEHOLDER_NOTES[name] for name in sorted(set(PLACEHOLDER.findall(source))) if name in PLACEHOLDER_NOTES]
     return ' '.join(parts) or None

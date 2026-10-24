@@ -466,7 +466,10 @@ def render(template_key, params, lang, templates=None, terms=None):
         return isolate(v, lang)
     values = {k: value(v) for k, v in params.items()}
     text = euphony(templates[template_key], params, values, lang).format(**values)
-    return CJK_SPACE.sub('', text) if lang in ('ja', 'zh-Hans') else text
+    if lang in ('ja', 'zh-Hans'):
+        # A Japanese aim already ends in こと, and a template may add its own (live run: "増すことことを目指して").
+        text = CJK_SPACE.sub('', text).replace('ことこと', 'こと')
+    return text
 
 
 def sentences(bundle, audience, lang):

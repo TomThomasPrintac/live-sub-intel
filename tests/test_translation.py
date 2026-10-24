@@ -175,7 +175,18 @@ def test_notes_name_the_infinitive_form_and_club_agreement_where_the_live_run_we
     stats = 'tpl:stats.attack.context'
     assert 'usually singular' in note(stats, source_text(stats), 'it')
     assert 'case ending' in note('tpl:move.item', source_text('tpl:move.item'), 'de')
+    assert 'von der Position {before} auf die Position {after}' in note('tpl:move.item', source_text('tpl:move.item'), 'de')
+    assert 'von der Position' not in note('tpl:move.item', source_text('tpl:move.item'), 'fr')
     assert note('tpl:score', source_text('tpl:score'), 'de') is None
+
+
+def test_japanese_does_not_repeat_the_nominaliser():
+    from subintel.plan_narrative import Term, render
+    # Verbatim shape from the third live run: the aim ends in こと and the template adds another.
+    text = render('tradeoff.gain', {'aim': Term('aim.threat'), 'dim': Term('dim.defense')}, 'ja',
+                  {'tradeoff.gain': 'このプランは{dim}の弱体化を代償にして{aim}ことを目指しています。'},
+                  {'aim.threat': '攻撃の脅威を増すこと', 'dim.defense': '守備力'})
+    assert text == 'このプランは守備力の弱体化を代償にして攻撃の脅威を増すことを目指しています。'
 
 
 @pytest.mark.parametrize('lang,item,expected', [
