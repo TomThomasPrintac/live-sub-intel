@@ -467,20 +467,35 @@ def source_keys(fmap, ids):
     return keys
 
 
-def narrative_join(parts,lang,audience):
-    if audience=='broadcaster' and len(parts)>2:
-        return parts[0]+' '+'; '.join(p.rstrip('.!?。 ') for p in parts[1:])+'.'
-    return SENTENCE_JOIN.get(lang,' ').join(parts)
+LOWER_AFTER_SEMICOLON=('en','es','fr','it','pt')  # German capitalises nouns; the other scripts have no case
+SEMICOLON={'ar':'؛ ','ja':'；','zh-Hans':'；'}
+FULL_STOP={'ja':'。','zh-Hans':'。'}
+
+
+def narrative_join(items,lang,audience):
+    """items: (fact id, rendered text, its template). Broadcasters get two sentences: the decision, then purpose and movements."""
+    texts=[text for _,text,_ in items]
+    if audience!='broadcaster' or len(items)<=2:
+        return SENTENCE_JOIN.get(lang,' ').join(texts)
+    head,*rest=items
+    rest=sorted(rest,key=lambda item:item[0]=='moves')  # the purpose and cost before the list of movements
+    clauses=[]
+    for n,(_,text,template) in enumerate(rest):
+        text=text.rstrip('.!?。 ')
+        if n and lang in LOWER_AFTER_SEMICOLON and template[:1].isalpha():
+            text=text[:1].lower()+text[1:]  # only template words, never a name placeholder
+        clauses.append(text)
+    return head[1]+SENTENCE_JOIN.get(lang,' ')+SEMICOLON.get(lang,'; ').join(clauses)+FULL_STOP.get(lang,'.')
 
 
 def localized(fmap, ids, lang, catalog, audience):
     """The chosen facts in lang from trusted or validated templates, or None if any piece is missing."""
     if lang in TRUSTED:
-        return narrative_join([render(*fmap[k],lang) for k in ids],lang,audience)
+        return narrative_join([(k,render(*fmap[k],lang),TEMPLATES[lang][fmap[k][0]]) for k in ids],lang,audience)
     if catalog.missing(lang, source_keys(fmap, ids)):
         return None
     templates, terms = catalog.lookup(lang, 'tpl:'), catalog.lookup(lang, 'term:')
-    return narrative_join([render(*fmap[k],lang,templates,terms) for k in ids],lang,audience)
+    return narrative_join([(k,render(*fmap[k],lang,templates,terms),templates[fmap[k][0]]) for k in ids],lang,audience)
 
 
 def required_ids(bank, audience):
@@ -573,7 +588,7 @@ def explain_plan(snapshot, plan_id, audience=DEFAULT_AUDIENCE, lang='en', client
     else:
         text=localized(fmap,ids,lang,catalog,audience)
     if text is None:
-        text=narrative_join([bank[k] for k in ids],'en',audience)  # verified English, labelled as a fallback
+        text=narrative_join([(k,bank[k],TEMPLATES['en'][fmap[k][0]]) for k in ids],'en',audience)  # verified English, labelled as a fallback
     return dict(text=text, source=source,note=note,audience=audience,lang=lang,
                 output_lang='en' if translation['status']=='fallback' else lang,translation=translation,
                 plan_id=plan_id,facts=bundle,fact_ids=ids,template_version=TEMPLATE_VERSION,

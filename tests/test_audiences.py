@@ -242,3 +242,13 @@ def test_model_cannot_drop_required_facts(app):
     r = explain_plan(snap, plan, 'analyst', 'en', client=stub, deployment='test')
     assert r['source'] == 'llm' and {'decision', 'stats', 'moves'} <= set(r['fact_ids'])
     assert json.dumps(r['facts']['match']['cutoff']) == json.dumps(dict(minute=65, elapsed=65, rule='events strictly before the checkpoint'))
+
+
+def test_broadcaster_second_sentence_puts_purpose_before_movements(app):
+    plan = next(p['plan_id'] for p in snapshot(app, '24', 85, stance='balanced')['alternatives']
+                if p['out_player']['name'] == 'Jordon Ibe' and 'Lucas' in p['in_player']['name'])
+    text = ask(app, '24', 85, plan, 'broadcaster', stance='balanced')['text']
+    assert not re.search(r'; [A-Z][a-z]', text.replace('; João', '').replace('; Emre', '').replace('; James', ''))
+    assert text.index('aims to') < text.index('moves from') and text.count('. ') == 1 and text.endswith('.')
+    he = ask(app, '24', 85, plan, 'broadcaster', 'he', stance='balanced')['text']
+    assert he.index('מכוונת') < he.index('עובר מעמדת')
