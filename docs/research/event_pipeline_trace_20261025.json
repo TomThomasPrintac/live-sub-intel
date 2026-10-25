@@ -1,0 +1,2096 @@
+{
+  "kind": "REPRODUCIBLE_EVENT_PIPELINE_TRACE_NOT_FOOTBALL_VALIDATION",
+  "seed": 20261021,
+  "generator": {
+    "version": "seeded-possessions-v4-turnovers-scripted-subs-v1",
+    "seed": 20261021,
+    "scenario": "lively",
+    "scenario_purpose": "authored-goal-phases-not-outcome-validation"
+  },
+  "scenario": "lively",
+  "event_counts": {
+    "period_start": 2,
+    "pass": 925,
+    "pressure": 238,
+    "tackle": 72,
+    "recovery": 161,
+    "carry": 153,
+    "miscontrol": 11,
+    "shot": 22,
+    "card": 5,
+    "substitution": 4
+  },
+  "full_match_component_totals": {
+    "24": {
+      "ball_actions": 462.0,
+      "prog_passes": 105.0,
+      "prog_carries": 33.0,
+      "def_actions": 94.0,
+      "pressures": 124.0,
+      "ball_losses": 73.0,
+      "box_passes": 8.0,
+      "box_presence": 9.0,
+      "npxg": 1.805,
+      "xa": 1.805
+    },
+    "1": {
+      "pressures": 114.0,
+      "def_actions": 111.0,
+      "ball_actions": 474.0,
+      "ball_losses": 44.0,
+      "prog_passes": 174.0,
+      "prog_carries": 60.0,
+      "box_passes": 14.0,
+      "box_presence": 20.0,
+      "npxg": 1.812,
+      "xa": 1.812
+    }
+  },
+  "contribution_examples": {
+    "pass": {
+      "event": {
+        "event_id": "synthetic-2",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 0,
+        "second": 1,
+        "team_id": "24",
+        "player_id": "3635",
+        "type": "pass",
+        "x": 37.64,
+        "y": 34.72,
+        "end_x": 55.54,
+        "end_y": 23.15,
+        "success": true,
+        "possession_id": 0,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "recipient_id": "4590",
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3635",
+          "team_id": "24",
+          "component": "ball_actions",
+          "value": 1.0,
+          "minute": 0
+        }
+      ]
+    },
+    "pressure": {
+      "event": {
+        "event_id": "synthetic-5",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 0,
+        "second": 4,
+        "team_id": "1",
+        "player_id": "3517",
+        "type": "pressure",
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3517",
+          "team_id": "1",
+          "component": "pressures",
+          "value": 1.0,
+          "minute": 0
+        }
+      ]
+    },
+    "tackle": {
+      "event": {
+        "event_id": "synthetic-6",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 0,
+        "second": 5,
+        "team_id": "1",
+        "player_id": "3517",
+        "type": "tackle",
+        "success": true,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3517",
+          "team_id": "1",
+          "component": "def_actions",
+          "value": 1.0,
+          "minute": 0
+        }
+      ]
+    },
+    "recovery": {
+      "event": {
+        "event_id": "synthetic-7",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 0,
+        "second": 6,
+        "team_id": "1",
+        "player_id": "3517",
+        "type": "recovery",
+        "success": true,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3517",
+          "team_id": "1",
+          "component": "def_actions",
+          "value": 1.0,
+          "minute": 0
+        }
+      ]
+    },
+    "carry": {
+      "event": {
+        "event_id": "synthetic-12",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 0,
+        "second": 20,
+        "team_id": "24",
+        "player_id": "3483",
+        "type": "carry",
+        "x": 75.93177699399278,
+        "y": 33.553104412463135,
+        "end_x": 87.74449056307817,
+        "end_y": 33.553104412463135,
+        "success": true,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3483",
+          "team_id": "24",
+          "component": "prog_carries",
+          "value": 1.0,
+          "minute": 0
+        }
+      ]
+    },
+    "miscontrol": {
+      "event": {
+        "event_id": "synthetic-38",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 1,
+        "second": 35,
+        "team_id": "24",
+        "player_id": "3635",
+        "type": "miscontrol",
+        "success": false,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "penalty": false,
+        "goal": false
+      },
+      "contributions": [
+        {
+          "player_id": "3635",
+          "team_id": "24",
+          "component": "ball_actions",
+          "value": 1.0,
+          "minute": 1
+        },
+        {
+          "player_id": "3635",
+          "team_id": "24",
+          "component": "ball_losses",
+          "value": 1.0,
+          "minute": 1
+        }
+      ]
+    },
+    "shot": {
+      "event": {
+        "event_id": "synthetic-100",
+        "match_id": "synthetic-demo",
+        "period": 1,
+        "minute": 4,
+        "second": 39,
+        "team_id": "1",
+        "player_id": "3496",
+        "type": "shot",
+        "x": 101.59,
+        "y": 42.21,
+        "success": false,
+        "under_pressure": false,
+        "aerial_contest": false,
+        "cross": false,
+        "transition": false,
+        "set_piece": false,
+        "xg": 0.041,
+        "penalty": false,
+        "on_target": true,
+        "goal": false,
+        "key_pass_id": "synthetic-99"
+      },
+      "contributions": [
+        {
+          "player_id": "3496",
+          "team_id": "1",
+          "component": "npxg",
+          "value": 0.041,
+          "minute": 4
+        },
+        {
+          "player_id": "3475",
+          "team_id": "1",
+          "component": "xa",
+          "value": 0.041,
+          "minute": 4
+        }
+      ]
+    }
+  },
+  "arsenal_checkpoints": [
+    {
+      "minute": 30,
+      "state": {
+        "minute": 30,
+        "goal_diff": 1,
+        "red_card_diff": 0,
+        "subs_left": 3
+      },
+      "needs": {
+        "threat": 0.6518,
+        "creation": 0.6098,
+        "progression": 0.5694,
+        "retention": 0.2112,
+        "defense": 0.7889
+      },
+      "importance": {
+        "threat": 1.35,
+        "creation": 1.25,
+        "progression": 1.15,
+        "retention": 0.988,
+        "defense": 0.901
+      },
+      "deficit_z": {
+        "threat": 0.04,
+        "creation": -0.22,
+        "progression": -2.32,
+        "retention": -1.94,
+        "defense": 2.29
+      },
+      "recommendation": "TACTICAL_ADJUSTMENT",
+      "selected_plan_id": "tactical",
+      "players": [
+        {
+          "id": "3511",
+          "name": "Héctor Bellerín",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.15,
+          "load_ratio": 0.3885,
+          "recent": {
+            "threat": 54.122,
+            "creation": 61.459,
+            "progression": 74.031,
+            "retention": 74.563,
+            "defense": 67.621,
+            "aerial": 58.979
+          },
+          "live_dimensions": {
+            "threat": -0.0246,
+            "creation": -0.02,
+            "progression": -0.0033,
+            "retention": 0.018799796626858246,
+            "defense": 0.4439,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 54.0236,
+            "creation": 61.379,
+            "progression": 74.0178,
+            "retention": 74.6382,
+            "defense": 69.3966
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 3.056872445946436,
+            "pressures": 5.207495430154116,
+            "def_actions": 3.164232973941803,
+            "ball_losses": 0.28883817421806685,
+            "prog_passes": 0.7550070004618615,
+            "prog_carries": 0.45410918134720024
+          }
+        },
+        {
+          "id": "3475",
+          "name": "Per Mertesacker",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.0461,
+          "load_ratio": 0.3763,
+          "recent": {
+            "threat": 42.951,
+            "creation": 55.235,
+            "progression": 55.486,
+            "retention": 61.912,
+            "defense": 84.056,
+            "aerial": 76.915
+          },
+          "live_dimensions": {
+            "threat": -0.0036,
+            "creation": 0.2473,
+            "progression": 0.3185,
+            "retention": 0.006255089299650546,
+            "defense": -0.108,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 42.9366,
+            "creation": 56.2242,
+            "progression": 56.76,
+            "retention": 61.937,
+            "defense": 83.624
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "pressures": 0.6736481132359153,
+            "ball_actions": 8.907268167244256,
+            "prog_passes": 2.473017391137613,
+            "ball_losses": 0.9016021866069939,
+            "prog_carries": 0.23035717574405004,
+            "box_passes": 1.1040918811390918,
+            "xa": 0.1589195840895338,
+            "def_actions": 0.4273858684636383
+          }
+        },
+        {
+          "id": "3394",
+          "name": "Laurent Koscielny",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.3378,
+          "recent": {
+            "threat": 42.235,
+            "creation": 63.355,
+            "progression": 72.496,
+            "retention": 68.744,
+            "defense": 85.44,
+            "aerial": 78.166
+          },
+          "live_dimensions": {
+            "threat": -0.0074,
+            "creation": 0.1236,
+            "progression": 0.0542,
+            "retention": 0.029858504664867024,
+            "defense": -0.2226,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 42.2054,
+            "creation": 63.8494,
+            "progression": 72.7128,
+            "retention": 68.8634,
+            "defense": 84.5496
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 4.85735179704364,
+            "ball_losses": 0.23642335182770197,
+            "pressures": 1.3297246841526231,
+            "prog_passes": 1.6262922747864228,
+            "box_passes": 0.5048367666142543,
+            "xa": 0.10005395582475973
+          }
+        },
+        {
+          "id": "3498",
+          "name": "Nacho Monreal",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.3125,
+          "recent": {
+            "threat": 53.953,
+            "creation": 74.069,
+            "progression": 72.116,
+            "retention": 76.157,
+            "defense": 81.289,
+            "aerial": 64.901
+          },
+          "live_dimensions": {
+            "threat": -0.0198,
+            "creation": -0.0323,
+            "progression": 0.1236,
+            "retention": 0.009962501654773305,
+            "defense": -0.0424,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 53.8738,
+            "creation": 73.9398,
+            "progression": 72.6104,
+            "retention": 76.1969,
+            "defense": 81.1194
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 6.419655053356099,
+            "prog_passes": 2.079498474494644,
+            "pressures": 1.2521756354724813,
+            "ball_losses": 1.2249492656172503,
+            "def_actions": 2.0540798988858637
+          }
+        },
+        {
+          "id": "3517",
+          "name": "Aaron Ramsey",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.2976,
+          "recent": {
+            "threat": 83.122,
+            "creation": 80.589,
+            "progression": 84.788,
+            "retention": 81.839,
+            "defense": 71.251,
+            "aerial": 60.402
+          },
+          "live_dimensions": {
+            "threat": 0.0954,
+            "creation": -0.0427,
+            "progression": 0.1173,
+            "retention": -0.003183438081202841,
+            "defense": -0.0404,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 83.5036,
+            "creation": 80.4182,
+            "progression": 85.2572,
+            "retention": 81.8263,
+            "defense": 71.0894
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "pressures": 1.446402036027536,
+            "def_actions": 2.838435878366745,
+            "ball_actions": 4.478492197179818,
+            "ball_losses": 0.9829590949556625,
+            "prog_passes": 2.9945694704118067,
+            "prog_carries": 0.5033808443046003,
+            "box_presence": 0.8730684461300158,
+            "npxg": 0.14943850016490906
+          }
+        },
+        {
+          "id": "6631",
+          "name": "Mathieu Flamini",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.1,
+          "load_ratio": 0.3526,
+          "recent": {
+            "threat": 63.769,
+            "creation": 68.844,
+            "progression": 70.364,
+            "retention": 75.429,
+            "defense": 75.601,
+            "aerial": 70.171
+          },
+          "live_dimensions": {
+            "threat": 0.0571,
+            "creation": 0.0579,
+            "progression": 0.4186,
+            "retention": 0.054162269574726765,
+            "defense": 0.0706,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 63.9974,
+            "creation": 69.0756,
+            "progression": 72.0384,
+            "retention": 75.6456,
+            "defense": 75.8834
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 7.397310709122963,
+            "prog_passes": 2.7042431664747357,
+            "ball_losses": 0.24641579966004573,
+            "box_passes": 0.25584347299919236,
+            "xa": 0.05659586640531435,
+            "def_actions": 2.6643534740031702,
+            "prog_carries": 1.9885246576920146,
+            "pressures": 2.557132703039425,
+            "box_presence": 0.399533640894881
+          }
+        },
+        {
+          "id": "5581",
+          "name": "Joel Campbell",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.1447,
+          "load_ratio": 0.3867,
+          "recent": {
+            "threat": 70.731,
+            "creation": 72.049,
+            "progression": 75.148,
+            "retention": 76.604,
+            "defense": 42.785,
+            "aerial": 64.682
+          },
+          "live_dimensions": {
+            "threat": -0.0192,
+            "creation": 0.0265,
+            "progression": 0.4139,
+            "retention": 0.0855321543515456,
+            "defense": 0.3246,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 70.6542,
+            "creation": 72.155,
+            "progression": 76.8036,
+            "retention": 76.9461,
+            "defense": 44.0834
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 7.837357270599079,
+            "prog_passes": 2.312281734729406,
+            "prog_carries": 1.686459529141487,
+            "pressures": 2.8943868518399873,
+            "def_actions": 3.350692166968669,
+            "box_passes": 0.25217549594759847,
+            "xa": 0.022717654497641418,
+            "box_presence": 0.27765954345987015,
+            "ball_losses": 0.6120267716523264
+          }
+        },
+        {
+          "id": "3496",
+          "name": "Mesut Özil",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.2024,
+          "load_ratio": 0.4325,
+          "recent": {
+            "threat": 76.073,
+            "creation": 89.989,
+            "progression": 86.468,
+            "retention": 86.839,
+            "defense": 22.482,
+            "aerial": 55.817
+          },
+          "live_dimensions": {
+            "threat": 0.067,
+            "creation": -0.1086,
+            "progression": 0.1139,
+            "retention": 0.017309649315653867,
+            "defense": 0.4227,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 76.341,
+            "creation": 89.5546,
+            "progression": 86.9236,
+            "retention": 86.9082,
+            "defense": 24.1728
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 5.34328002019474,
+            "prog_passes": 2.2410114617672763,
+            "prog_carries": 0.9764606552290448,
+            "pressures": 3.3698929978209597,
+            "box_presence": 0.7383045650250444,
+            "npxg": 0.032198738422266164,
+            "ball_losses": 0.8292926100595416,
+            "def_actions": 3.33265330758881
+          }
+        },
+        {
+          "id": "3668",
+          "name": "Theo Walcott",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.2117,
+          "load_ratio": 0.4039,
+          "recent": {
+            "threat": 77.295,
+            "creation": 72.611,
+            "progression": 78.339,
+            "retention": 77.592,
+            "defense": 33.765,
+            "aerial": 54.363
+          },
+          "live_dimensions": {
+            "threat": -0.0474,
+            "creation": -0.0258,
+            "progression": 0.4998,
+            "retention": 0.1048773028110991,
+            "defense": -0.0057,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 77.1054,
+            "creation": 72.5078,
+            "progression": 80.3382,
+            "retention": 78.0115,
+            "defense": 33.7422
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 8.578124159171885,
+            "prog_passes": 3.719342235438719,
+            "pressures": 1.3952071570143432,
+            "box_presence": 0.25584347299919236,
+            "npxg": 0.05659586640531435,
+            "def_actions": 0.6175104439932582,
+            "prog_carries": 1.7967795744302173,
+            "ball_losses": 0.5082503156285765
+          }
+        },
+        {
+          "id": "3604",
+          "name": "Olivier Giroud",
+          "minutes": 30.0,
+          "fatigue": 0.0,
+          "intensity": 1.153,
+          "load_ratio": 0.3744,
+          "recent": {
+            "threat": 80.869,
+            "creation": 74.727,
+            "progression": 69.633,
+            "retention": 75.044,
+            "defense": 38.446,
+            "aerial": 85.881
+          },
+          "live_dimensions": {
+            "threat": 0.0128,
+            "creation": -0.0159,
+            "progression": 0.4717,
+            "retention": 0.08513172545897206,
+            "defense": 0.222,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 80.9202,
+            "creation": 74.6634,
+            "progression": 71.5198,
+            "retention": 75.3845,
+            "defense": 39.334
+          },
+          "recent_window_minutes": 14.252,
+          "recent_window": {
+            "ball_actions": 6.683071164362142,
+            "ball_losses": 0.4550214213647344,
+            "pressures": 2.1465021892096683,
+            "prog_passes": 2.3823155418640845,
+            "prog_carries": 1.767322022699948,
+            "box_presence": 0.5048367666142543,
+            "npxg": 0.10005395582475973,
+            "def_actions": 1.4746952352726628
+          }
+        }
+      ]
+    },
+    {
+      "minute": 65,
+      "state": {
+        "minute": 65,
+        "goal_diff": 1,
+        "red_card_diff": 0,
+        "subs_left": 2
+      },
+      "needs": {
+        "threat": 0.6503,
+        "creation": 0.6098,
+        "progression": 0.5694,
+        "retention": 0.5159,
+        "defense": 0.3185
+      },
+      "importance": {
+        "threat": 1.35,
+        "creation": 1.25,
+        "progression": 1.15,
+        "retention": 1.0323333333333333,
+        "defense": 0.9604999999999999
+      },
+      "deficit_z": {
+        "threat": 0.03,
+        "creation": -0.03,
+        "progression": -2.96,
+        "retention": -1.99,
+        "defense": -1.02
+      },
+      "recommendation": "SUBSTITUTION",
+      "selected_plan_id": "swap:5581:3525",
+      "players": [
+        {
+          "id": "3713",
+          "name": "Calum Chambers",
+          "minutes": 1.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.0113,
+          "recent": {
+            "threat": 49.58,
+            "creation": 63.155,
+            "progression": 72.135,
+            "retention": 73.64,
+            "defense": 76.355,
+            "aerial": 67.37
+          },
+          "live_dimensions": {
+            "threat": -0.0001,
+            "creation": -0.0002,
+            "progression": -0.0024,
+            "retention": 0.0,
+            "defense": -0.0066,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 49.5796,
+            "creation": 63.1542,
+            "progression": 72.1254,
+            "retention": 73.64,
+            "defense": 76.3286
+          },
+          "recent_window_minutes": 0.972,
+          "recent_window": {}
+        },
+        {
+          "id": "3475",
+          "name": "Per Mertesacker",
+          "minutes": 64.75,
+          "fatigue": 0.4204,
+          "intensity": 1.15,
+          "load_ratio": 0.8928,
+          "recent": {
+            "threat": 42.951,
+            "creation": 55.235,
+            "progression": 55.486,
+            "retention": 61.912,
+            "defense": 84.056,
+            "aerial": 76.915
+          },
+          "live_dimensions": {
+            "threat": 0.0964,
+            "creation": 0.0376,
+            "progression": 0.4723,
+            "retention": 0.06161189707186971,
+            "defense": 0.405,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 43.3366,
+            "creation": 55.3854,
+            "progression": 57.3752,
+            "retention": 62.1584,
+            "defense": 85.676
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "pressures": 3.007066362680594,
+            "ball_actions": 11.082462142859722,
+            "prog_passes": 5.0946997130052205,
+            "ball_losses": 0.5423970413632415,
+            "prog_carries": 0.030950598358338053,
+            "box_passes": 0.14834486598241162,
+            "xa": 0.0213523030161405,
+            "def_actions": 2.096901690928239,
+            "box_presence": 0.43876275457828834,
+            "npxg": 0.03217453219385847
+          }
+        },
+        {
+          "id": "3394",
+          "name": "Laurent Koscielny",
+          "minutes": 64.75,
+          "fatigue": 0.2761,
+          "intensity": 1.0928,
+          "load_ratio": 0.7968,
+          "recent": {
+            "threat": 42.235,
+            "creation": 63.355,
+            "progression": 72.496,
+            "retention": 68.744,
+            "defense": 85.44,
+            "aerial": 78.166
+          },
+          "live_dimensions": {
+            "threat": -0.0117,
+            "creation": 0.0094,
+            "progression": 0.1519,
+            "retention": 0.03177507434570093,
+            "defense": 0.2036,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 42.1882,
+            "creation": 63.3926,
+            "progression": 73.1036,
+            "retention": 68.8711,
+            "defense": 86.2544
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 8.001285259995964,
+            "ball_losses": 0.7816407438550274,
+            "pressures": 2.925024828964981,
+            "prog_passes": 2.1796376867474376,
+            "box_passes": 0.06782944768067817,
+            "xa": 0.01344316620870454,
+            "def_actions": 2.6998605684117463,
+            "prog_carries": 0.6149798777544181
+          }
+        },
+        {
+          "id": "3498",
+          "name": "Nacho Monreal",
+          "minutes": 64.75,
+          "fatigue": 0.1244,
+          "intensity": 1.0,
+          "load_ratio": 0.6745,
+          "recent": {
+            "threat": 53.953,
+            "creation": 74.069,
+            "progression": 72.116,
+            "retention": 76.157,
+            "defense": 81.289,
+            "aerial": 64.901
+          },
+          "live_dimensions": {
+            "threat": -0.0312,
+            "creation": 0.0999,
+            "progression": 0.2853,
+            "retention": 0.04211045525272427,
+            "defense": 0.2643,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 53.8282,
+            "creation": 74.4686,
+            "progression": 73.2572,
+            "retention": 76.3254,
+            "defense": 82.3462
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 6.978310398121675,
+            "prog_passes": 3.20442671265384,
+            "pressures": 2.4199346029916655,
+            "ball_losses": 0.8197920627966828,
+            "def_actions": 3.8350330882580055,
+            "box_passes": 0.5141558998294555,
+            "xa": 0.12042836168728828,
+            "prog_carries": 0.6810503347555552
+          }
+        },
+        {
+          "id": "3517",
+          "name": "Aaron Ramsey",
+          "minutes": 64.75,
+          "fatigue": 0.1366,
+          "intensity": 1.0674,
+          "load_ratio": 0.6857,
+          "recent": {
+            "threat": 83.122,
+            "creation": 80.589,
+            "progression": 84.788,
+            "retention": 81.839,
+            "defense": 71.251,
+            "aerial": 60.402
+          },
+          "live_dimensions": {
+            "threat": -0.1251,
+            "creation": -0.067,
+            "progression": 0.2079,
+            "retention": 0.028558116501104337,
+            "defense": 0.193,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 82.6216,
+            "creation": 80.321,
+            "progression": 85.6196,
+            "retention": 81.9532,
+            "defense": 72.023
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "pressures": 2.762703792224472,
+            "def_actions": 4.019897927958071,
+            "ball_actions": 11.017391565918969,
+            "ball_losses": 1.8506186688033395,
+            "prog_passes": 2.856725031678977,
+            "prog_carries": 2.1013433419446863,
+            "box_presence": 0.117304749583892,
+            "npxg": 0.020078432473124283
+          }
+        },
+        {
+          "id": "6631",
+          "name": "Mathieu Flamini",
+          "minutes": 64.75,
+          "fatigue": 0.2276,
+          "intensity": 1.1,
+          "load_ratio": 0.761,
+          "recent": {
+            "threat": 63.769,
+            "creation": 68.844,
+            "progression": 70.364,
+            "retention": 75.429,
+            "defense": 75.601,
+            "aerial": 70.171
+          },
+          "live_dimensions": {
+            "threat": -0.0194,
+            "creation": -0.0071,
+            "progression": 0.1109,
+            "retention": -0.032484460522848445,
+            "defense": -0.2598,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 63.6914,
+            "creation": 68.8156,
+            "progression": 70.8076,
+            "retention": 75.2991,
+            "defense": 74.5618
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 5.528538722177142,
+            "prog_passes": 2.5630292935418884,
+            "ball_losses": 1.2361210504358584,
+            "box_passes": 0.03437491603994379,
+            "xa": 0.007604173493598161,
+            "def_actions": 1.1187625982727547,
+            "prog_carries": 0.26717651754100724,
+            "pressures": 0.3435742211420507,
+            "box_presence": 0.053681007374919223
+          }
+        },
+        {
+          "id": "5581",
+          "name": "Joel Campbell",
+          "minutes": 64.75,
+          "fatigue": 0.3041,
+          "intensity": 1.1198,
+          "load_ratio": 0.8165,
+          "recent": {
+            "threat": 70.731,
+            "creation": 72.049,
+            "progression": 75.148,
+            "retention": 76.604,
+            "defense": 42.785,
+            "aerial": 64.682
+          },
+          "live_dimensions": {
+            "threat": -0.0492,
+            "creation": 0.0131,
+            "progression": 0.391,
+            "retention": 0.08976106438239602,
+            "defense": -0.0094,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 70.5342,
+            "creation": 72.1014,
+            "progression": 76.712,
+            "retention": 76.963,
+            "defense": 42.7474
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 7.174028626749118,
+            "prog_passes": 3.1169919000192277,
+            "prog_carries": 1.2704318315439431,
+            "pressures": 2.4369826156260395,
+            "def_actions": 0.7477843403696945,
+            "box_passes": 0.2618127118364724,
+            "xa": 0.01560058381436132,
+            "box_presence": 0.29687090711049086,
+            "ball_losses": 0.37302261553143207,
+            "npxg": 0.009093518227778576
+          }
+        },
+        {
+          "id": "3496",
+          "name": "Mesut Özil",
+          "minutes": 64.75,
+          "fatigue": 0.2668,
+          "intensity": 1.0177,
+          "load_ratio": 0.7901,
+          "recent": {
+            "threat": 76.073,
+            "creation": 89.989,
+            "progression": 86.468,
+            "retention": 86.839,
+            "defense": 22.482,
+            "aerial": 55.817
+          },
+          "live_dimensions": {
+            "threat": -0.1031,
+            "creation": -0.1078,
+            "progression": 0.0007,
+            "retention": 0.029898508229653068,
+            "defense": 0.0862,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 75.6606,
+            "creation": 89.5578,
+            "progression": 86.4708,
+            "retention": 86.9586,
+            "defense": 22.8268
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 8.10241297633665,
+            "prog_passes": 3.0069755610156443,
+            "prog_carries": 0.5343746006736044,
+            "pressures": 0.45277601771789405,
+            "box_presence": 0.09919798671089493,
+            "npxg": 0.0043261956886467305,
+            "ball_losses": 1.2799103463912078,
+            "def_actions": 2.10856576799184,
+            "box_passes": 0.21083213243873536,
+            "xa": 0.01962627352512769
+          }
+        },
+        {
+          "id": "3668",
+          "name": "Theo Walcott",
+          "minutes": 64.75,
+          "fatigue": 0.3582,
+          "intensity": 1.1857,
+          "load_ratio": 0.853,
+          "recent": {
+            "threat": 77.295,
+            "creation": 72.611,
+            "progression": 78.339,
+            "retention": 77.592,
+            "defense": 33.765,
+            "aerial": 54.363
+          },
+          "live_dimensions": {
+            "threat": -0.1435,
+            "creation": -0.0406,
+            "progression": 0.3845,
+            "retention": 0.10068713240864911,
+            "defense": 0.4527,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 76.721,
+            "creation": 72.4486,
+            "progression": 79.877,
+            "retention": 77.9947,
+            "defense": 35.5758
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 7.909037226684879,
+            "prog_passes": 2.7014701986063017,
+            "pressures": 2.4107519307692726,
+            "box_presence": 0.03437491603994379,
+            "npxg": 0.007604173493598161,
+            "def_actions": 3.326091112393165,
+            "prog_carries": 1.1335418727738182,
+            "ball_losses": 0.5692517210967768
+          }
+        },
+        {
+          "id": "3604",
+          "name": "Olivier Giroud",
+          "minutes": 64.75,
+          "fatigue": 0.2407,
+          "intensity": 1.1,
+          "load_ratio": 0.7708,
+          "recent": {
+            "threat": 80.869,
+            "creation": 74.727,
+            "progression": 69.633,
+            "retention": 75.044,
+            "defense": 38.446,
+            "aerial": 85.881
+          },
+          "live_dimensions": {
+            "threat": 0.1556,
+            "creation": -0.025,
+            "progression": 0.4886,
+            "retention": 0.12502217851773817,
+            "defense": -0.2058,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 81.4914,
+            "creation": 74.627,
+            "progression": 71.5874,
+            "retention": 75.5441,
+            "defense": 37.6228
+          },
+          "recent_window_minutes": 16.901,
+          "recent_window": {
+            "ball_actions": 11.09937744382727,
+            "ball_losses": 1.8967175214047032,
+            "pressures": 0.2884022471578591,
+            "prog_passes": 2.8664459354478495,
+            "prog_carries": 1.1189700184112785,
+            "box_presence": 1.480636651854618,
+            "npxg": 0.1815459212901488,
+            "def_actions": 0.1981388241128314
+          }
+        }
+      ]
+    },
+    {
+      "minute": 85,
+      "state": {
+        "minute": 85,
+        "goal_diff": -1,
+        "red_card_diff": 0,
+        "subs_left": 1
+      },
+      "needs": {
+        "threat": 0.808,
+        "creation": 0.7479,
+        "progression": 0.669,
+        "retention": 0.1399,
+        "defense": 0.646
+      },
+      "importance": {
+        "threat": 2.05125,
+        "creation": 1.7222222222222223,
+        "progression": 1.4215277777777777,
+        "retention": 0.95,
+        "defense": 0.85
+      },
+      "deficit_z": {
+        "threat": -0.08,
+        "creation": -0.55,
+        "progression": -3.48,
+        "retention": -2.57,
+        "defense": 1.39
+      },
+      "recommendation": "TACTICAL_ADJUSTMENT",
+      "selected_plan_id": "tactical",
+      "players": [
+        {
+          "id": "3713",
+          "name": "Calum Chambers",
+          "minutes": 21.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.2365,
+          "recent": {
+            "threat": 49.58,
+            "creation": 63.155,
+            "progression": 72.135,
+            "retention": 73.64,
+            "defense": 76.355,
+            "aerial": 67.37
+          },
+          "live_dimensions": {
+            "threat": -0.0092,
+            "creation": 0.3243,
+            "progression": 0.3836,
+            "retention": 0.055771388989275396,
+            "defense": -0.1467,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 49.5432,
+            "creation": 64.4522,
+            "progression": 73.6694,
+            "retention": 73.8631,
+            "defense": 75.7682
+          },
+          "recent_window_minutes": 12.165,
+          "recent_window": {
+            "ball_actions": 5.65837589006714,
+            "prog_passes": 3.81913557013609,
+            "pressures": 1.3088335527101502,
+            "def_actions": 0.4311049733632555,
+            "box_passes": 1.8470978050425189,
+            "xa": 0.2137764165779264,
+            "prog_carries": 0.63360984914353
+          }
+        },
+        {
+          "id": "3475",
+          "name": "Per Mertesacker",
+          "minutes": 84.75,
+          "fatigue": 1.0,
+          "intensity": 1.25,
+          "load_ratio": 1.2702,
+          "recent": {
+            "threat": 42.951,
+            "creation": 55.235,
+            "progression": 55.486,
+            "retention": 61.912,
+            "defense": 84.056,
+            "aerial": 76.915
+          },
+          "live_dimensions": {
+            "threat": 0.2065,
+            "creation": 0.0113,
+            "progression": 0.5247,
+            "retention": 0.08340132729957062,
+            "defense": 0.216,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 43.777,
+            "creation": 55.2802,
+            "progression": 57.5848,
+            "retention": 62.2456,
+            "defense": 84.92
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "pressures": 2.7252341402214157,
+            "ball_actions": 10.189615581330472,
+            "prog_passes": 4.62941758803326,
+            "ball_losses": 0.17084436245356147,
+            "prog_carries": 1.2248097579113066,
+            "box_passes": 0.04672570482376846,
+            "xa": 0.006725554008442274,
+            "def_actions": 0.6604826449901581,
+            "box_presence": 0.9250549485663551,
+            "npxg": 0.07550607326589297
+          }
+        },
+        {
+          "id": "3394",
+          "name": "Laurent Koscielny",
+          "minutes": 84.75,
+          "fatigue": 0.775,
+          "intensity": 1.1427,
+          "load_ratio": 1.0906,
+          "recent": {
+            "threat": 42.235,
+            "creation": 63.355,
+            "progression": 72.496,
+            "retention": 68.744,
+            "defense": 85.44,
+            "aerial": 78.166
+          },
+          "live_dimensions": {
+            "threat": -0.0116,
+            "creation": 0.184,
+            "progression": 0.436,
+            "retention": 0.0937046078455941,
+            "defense": 0.0536,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 42.1886,
+            "creation": 64.091,
+            "progression": 74.24,
+            "retention": 69.1188,
+            "defense": 85.6544
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 10.086860256224284,
+            "ball_losses": 0.24620140665960796,
+            "pressures": 1.9334417924587624,
+            "prog_passes": 3.243183738385988,
+            "box_passes": 0.656807368458027,
+            "xa": 0.16642822162052756,
+            "def_actions": 2.434084951261426,
+            "prog_carries": 1.8508257153905865
+          }
+        },
+        {
+          "id": "3498",
+          "name": "Nacho Monreal",
+          "minutes": 84.75,
+          "fatigue": 0.4044,
+          "intensity": 1.0,
+          "load_ratio": 0.8828,
+          "recent": {
+            "threat": 53.953,
+            "creation": 74.069,
+            "progression": 72.116,
+            "retention": 76.157,
+            "defense": 81.289,
+            "aerial": 64.901
+          },
+          "live_dimensions": {
+            "threat": -0.0309,
+            "creation": -0.0024,
+            "progression": 0.1844,
+            "retention": 0.03926949883688718,
+            "defense": 0.108,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 53.8294,
+            "creation": 74.0594,
+            "progression": 72.8536,
+            "retention": 76.3141,
+            "defense": 81.721
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 6.6316529021188195,
+            "prog_passes": 2.330125018338325,
+            "pressures": 2.3523881627778325,
+            "ball_losses": 0.7894820024211444,
+            "def_actions": 2.582819734987735,
+            "box_passes": 0.16194896028069194,
+            "xa": 0.03793255697354183,
+            "prog_carries": 0.6194723650822626
+          }
+        },
+        {
+          "id": "3517",
+          "name": "Aaron Ramsey",
+          "minutes": 84.75,
+          "fatigue": 0.4034,
+          "intensity": 1.0492,
+          "load_ratio": 0.8822,
+          "recent": {
+            "threat": 83.122,
+            "creation": 80.589,
+            "progression": 84.788,
+            "retention": 81.839,
+            "defense": 71.251,
+            "aerial": 60.402
+          },
+          "live_dimensions": {
+            "threat": -0.1421,
+            "creation": -0.0665,
+            "progression": 0.0801,
+            "retention": 0.06447696870756507,
+            "defense": -0.1727,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 82.5536,
+            "creation": 80.323,
+            "progression": 85.1084,
+            "retention": 82.0969,
+            "defense": 70.5602
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "pressures": 1.5408374777367244,
+            "def_actions": 1.6746673677760593,
+            "ball_actions": 7.890805622395746,
+            "ball_losses": 0.5829083540384363,
+            "prog_passes": 2.8639700878586885,
+            "prog_carries": 1.1457806488308129,
+            "box_presence": 0.036948680813347956,
+            "npxg": 0.00632430993044549
+          }
+        },
+        {
+          "id": "6631",
+          "name": "Mathieu Flamini",
+          "minutes": 84.75,
+          "fatigue": 0.5964,
+          "intensity": 1.1,
+          "load_ratio": 0.996,
+          "recent": {
+            "threat": 63.769,
+            "creation": 68.844,
+            "progression": 70.364,
+            "retention": 75.429,
+            "defense": 75.601,
+            "aerial": 70.171
+          },
+          "live_dimensions": {
+            "threat": -0.0267,
+            "creation": -0.0138,
+            "progression": 0.1642,
+            "retention": 0.00832066485683906,
+            "defense": 0.2263,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 63.6622,
+            "creation": 68.7888,
+            "progression": 71.0208,
+            "retention": 75.4623,
+            "defense": 76.5062
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 6.582977605793664,
+            "prog_passes": 1.6667807516092588,
+            "ball_losses": 0.8122375722312967,
+            "box_passes": 0.010827420076773488,
+            "xa": 0.0023951645629092327,
+            "def_actions": 4.528467885707581,
+            "prog_carries": 1.017188321158687,
+            "pressures": 2.082715142811495,
+            "box_presence": 0.01690845779280562
+          }
+        },
+        {
+          "id": "3525",
+          "name": "Alex Oxlade-Chamberlain",
+          "minutes": 11.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.1222,
+          "recent": {
+            "threat": 71.607,
+            "creation": 73.701,
+            "progression": 82.889,
+            "retention": 82.173,
+            "defense": 46.04,
+            "aerial": 54.709
+          },
+          "live_dimensions": {
+            "threat": -0.0435,
+            "creation": -0.0278,
+            "progression": 0.2126,
+            "retention": 0.027301593955828516,
+            "defense": -0.0477,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 71.433,
+            "creation": 73.5898,
+            "progression": 83.7394,
+            "retention": 82.2822,
+            "defense": 45.8492
+          },
+          "recent_window_minutes": 8.141,
+          "recent_window": {
+            "ball_actions": 4.647142863464029,
+            "ball_losses": 0.5617715838987236,
+            "prog_passes": 2.1132316452812328,
+            "prog_carries": 1.395012119129954,
+            "def_actions": 0.9055991093758456
+          }
+        },
+        {
+          "id": "3496",
+          "name": "Mesut Özil",
+          "minutes": 84.75,
+          "fatigue": 0.7027,
+          "intensity": 1.0365,
+          "load_ratio": 1.0533,
+          "recent": {
+            "threat": 76.073,
+            "creation": 89.989,
+            "progression": 86.468,
+            "retention": 86.839,
+            "defense": 22.482,
+            "aerial": 55.817
+          },
+          "live_dimensions": {
+            "threat": -0.1164,
+            "creation": -0.1369,
+            "progression": 0.1184,
+            "retention": 0.06143948537117422,
+            "defense": 0.3578,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 75.6074,
+            "creation": 89.4414,
+            "progression": 86.9416,
+            "retention": 87.0848,
+            "defense": 23.9132
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 6.767934701747059,
+            "prog_passes": 3.0570845199942953,
+            "prog_carries": 1.3114295114785053,
+            "pressures": 2.1808185311234696,
+            "box_presence": 0.031245407891061956,
+            "npxg": 0.0013626662535226105,
+            "ball_losses": 0.40314649684912846,
+            "def_actions": 3.044413127073725,
+            "box_passes": 0.06640796041344643,
+            "xa": 0.006181888786325677
+          }
+        },
+        {
+          "id": "3668",
+          "name": "Theo Walcott",
+          "minutes": 84.75,
+          "fatigue": 0.8106,
+          "intensity": 1.1772,
+          "load_ratio": 1.1086,
+          "recent": {
+            "threat": 77.295,
+            "creation": 72.611,
+            "progression": 78.339,
+            "retention": 77.592,
+            "defense": 33.765,
+            "aerial": 54.363
+          },
+          "live_dimensions": {
+            "threat": 0.2393,
+            "creation": -0.0403,
+            "progression": 0.3851,
+            "retention": 0.11378353749940452,
+            "defense": 0.3584,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 78.2522,
+            "creation": 72.4498,
+            "progression": 79.8794,
+            "retention": 78.0471,
+            "defense": 35.1986
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 10.908394873111199,
+            "prog_passes": 3.0260230644563317,
+            "pressures": 2.9311350629106165,
+            "box_presence": 1.7065143153778164,
+            "npxg": 0.3129937400699654,
+            "def_actions": 1.9974523605034884,
+            "prog_carries": 0.6872380212421307,
+            "ball_losses": 1.6549552535122702
+          }
+        },
+        {
+          "id": "3604",
+          "name": "Olivier Giroud",
+          "minutes": 84.75,
+          "fatigue": 0.6199,
+          "intensity": 1.1,
+          "load_ratio": 1.0089,
+          "recent": {
+            "threat": 80.869,
+            "creation": 74.727,
+            "progression": 69.633,
+            "retention": 75.044,
+            "defense": 38.446,
+            "aerial": 85.881
+          },
+          "live_dimensions": {
+            "threat": -0.0572,
+            "creation": -0.0248,
+            "progression": 0.5234,
+            "retention": 0.1519680302875176,
+            "defense": -0.1308,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 80.6402,
+            "creation": 74.6278,
+            "progression": 71.7266,
+            "retention": 75.6519,
+            "defense": 37.9228
+          },
+          "recent_window_minutes": 17.183,
+          "recent_window": {
+            "ball_actions": 11.838652619516662,
+            "ball_losses": 1.3692766994665115,
+            "pressures": 1.3727786179904242,
+            "prog_passes": 3.300532135643364,
+            "prog_carries": 1.2729955364458696,
+            "box_presence": 0.4663713212293727,
+            "npxg": 0.05718338193900386,
+            "def_actions": 0.06240981882529329
+          }
+        }
+      ]
+    },
+    {
+      "minute": 90,
+      "state": {
+        "minute": 90,
+        "goal_diff": -1,
+        "red_card_diff": 0,
+        "subs_left": 1
+      },
+      "needs": {
+        "threat": 0.8425,
+        "creation": 0.7538,
+        "progression": 0.6739,
+        "retention": 0.136,
+        "defense": 0.5959
+      },
+      "importance": {
+        "threat": 2.0925000000000002,
+        "creation": 1.75,
+        "progression": 1.4375,
+        "retention": 0.95,
+        "defense": 0.85
+      },
+      "deficit_z": {
+        "threat": 0.3,
+        "creation": -0.13,
+        "progression": -2.79,
+        "retention": -2.62,
+        "defense": 1.07
+      },
+      "recommendation": "NO_SUBSTITUTION",
+      "selected_plan_id": "wait",
+      "players": [
+        {
+          "id": "3713",
+          "name": "Calum Chambers",
+          "minutes": 26.0,
+          "fatigue": 0.0,
+          "intensity": 1.0,
+          "load_ratio": 0.2928,
+          "recent": {
+            "threat": 49.58,
+            "creation": 63.155,
+            "progression": 72.135,
+            "retention": 73.64,
+            "defense": 76.355,
+            "aerial": 67.37
+          },
+          "live_dimensions": {
+            "threat": -0.0108,
+            "creation": 0.27,
+            "progression": 0.2796,
+            "retention": 0.07173443546823655,
+            "defense": -0.2108,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 49.5368,
+            "creation": 64.235,
+            "progression": 73.2534,
+            "retention": 73.9269,
+            "defense": 75.5118
+          },
+          "recent_window_minutes": 13.456,
+          "recent_window": {
+            "ball_actions": 6.733555056245845,
+            "prog_passes": 2.8611189261431793,
+            "pressures": 0.9805172872396326,
+            "def_actions": 0.32296381623344933,
+            "box_passes": 1.3837598564892946,
+            "xa": 0.16015135891402224,
+            "prog_carries": 0.4746710604752583
+          }
+        },
+        {
+          "id": "3475",
+          "name": "Per Mertesacker",
+          "minutes": 89.75,
+          "fatigue": 1.0,
+          "intensity": 1.25,
+          "load_ratio": 1.3452,
+          "recent": {
+            "threat": 42.951,
+            "creation": 55.235,
+            "progression": 55.486,
+            "retention": 61.912,
+            "defense": 84.056,
+            "aerial": 76.915
+          },
+          "live_dimensions": {
+            "threat": 0.1564,
+            "creation": 0.0082,
+            "progression": 0.4468,
+            "retention": 0.07738386556934394,
+            "defense": 0.5091,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 43.5766,
+            "creation": 55.2678,
+            "progression": 57.2732,
+            "retention": 62.2215,
+            "defense": 86.0924
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "pressures": 3.814387558390115,
+            "ball_actions": 9.28330852123146,
+            "prog_passes": 3.468144566983802,
+            "ball_losses": 0.12798865865432776,
+            "prog_carries": 0.9175705640530623,
+            "box_passes": 0.035004727104751554,
+            "xa": 0.005038472583382689,
+            "def_actions": 3.2339951883894855,
+            "box_presence": 0.693008187968382,
+            "npxg": 0.05656564196072822
+          }
+        },
+        {
+          "id": "3394",
+          "name": "Laurent Koscielny",
+          "minutes": 89.75,
+          "fatigue": 0.926,
+          "intensity": 1.1527,
+          "load_ratio": 1.165,
+          "recent": {
+            "threat": 42.235,
+            "creation": 63.355,
+            "progression": 72.496,
+            "retention": 68.744,
+            "defense": 85.44,
+            "aerial": 78.166
+          },
+          "live_dimensions": {
+            "threat": -0.0118,
+            "creation": 0.1375,
+            "progression": 0.3863,
+            "retention": 0.07778831229277128,
+            "defense": 0.2147,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 42.1878,
+            "creation": 63.905,
+            "progression": 74.0412,
+            "retention": 69.0552,
+            "defense": 86.2988
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 8.399935582438433,
+            "ball_losses": 0.184442654967542,
+            "pressures": 3.1522745462335173,
+            "prog_passes": 3.2729711031724933,
+            "box_passes": 0.4920495641527055,
+            "xa": 0.12468029112301858,
+            "def_actions": 2.757435013122566,
+            "prog_carries": 1.3865526337175298
+          }
+        },
+        {
+          "id": "3498",
+          "name": "Nacho Monreal",
+          "minutes": 89.75,
+          "fatigue": 0.4897,
+          "intensity": 1.0,
+          "load_ratio": 0.9349,
+          "recent": {
+            "threat": 53.953,
+            "creation": 74.069,
+            "progression": 72.116,
+            "retention": 76.157,
+            "defense": 81.289,
+            "aerial": 64.901
+          },
+          "live_dimensions": {
+            "threat": -0.0314,
+            "creation": -0.0152,
+            "progression": 0.3534,
+            "retention": -0.0036165115303945666,
+            "defense": -0.0177,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 53.8274,
+            "creation": 74.0082,
+            "progression": 73.5296,
+            "retention": 76.1425,
+            "defense": 81.2182
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 10.986611572546169,
+            "prog_passes": 4.261276092826668,
+            "pressures": 1.7622999159254795,
+            "ball_losses": 2.4565266400776387,
+            "def_actions": 1.9349285436144372,
+            "box_passes": 0.12132463664069051,
+            "xa": 0.028417309278742774,
+            "prog_carries": 0.4640799142661444
+          }
+        },
+        {
+          "id": "3517",
+          "name": "Aaron Ramsey",
+          "minutes": 89.75,
+          "fatigue": 0.4761,
+          "intensity": 1.0409,
+          "load_ratio": 0.9268,
+          "recent": {
+            "threat": 83.122,
+            "creation": 80.589,
+            "progression": 84.788,
+            "retention": 81.839,
+            "defense": 71.251,
+            "aerial": 60.402
+          },
+          "live_dimensions": {
+            "threat": -0.1454,
+            "creation": -0.0675,
+            "progression": -0.0368,
+            "retention": 0.06937809353020924,
+            "defense": -0.2361,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 82.5404,
+            "creation": 80.319,
+            "progression": 84.6408,
+            "retention": 82.1165,
+            "defense": 70.3066
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "pressures": 1.154323848604874,
+            "def_actions": 1.254582984276655,
+            "ball_actions": 7.660927922242334,
+            "ball_losses": 0.4366878560131633,
+            "prog_passes": 2.145553325300901,
+            "prog_carries": 0.8583656273457803,
+            "box_presence": 0.02768023497194844,
+            "npxg": 0.004737879162573973
+          }
+        },
+        {
+          "id": "6631",
+          "name": "Mathieu Flamini",
+          "minutes": 89.75,
+          "fatigue": 0.7055,
+          "intensity": 1.1,
+          "load_ratio": 1.0548,
+          "recent": {
+            "threat": 63.769,
+            "creation": 68.844,
+            "progression": 70.364,
+            "retention": 75.429,
+            "defense": 75.601,
+            "aerial": 70.171
+          },
+          "live_dimensions": {
+            "threat": -0.0281,
+            "creation": -0.0149,
+            "progression": 0.0635,
+            "retention": 0.03511809916393391,
+            "defense": 0.0699,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 63.6566,
+            "creation": 68.7844,
+            "progression": 70.618,
+            "retention": 75.5695,
+            "defense": 75.8806
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 7.586385426697428,
+            "prog_passes": 1.2486746978689913,
+            "ball_losses": 0.6084906512896424,
+            "box_passes": 0.008111400062673182,
+            "xa": 0.0017943460074455729,
+            "def_actions": 3.3925177402822224,
+            "prog_carries": 0.7620302300541842,
+            "pressures": 1.5602734187963438,
+            "box_presence": 0.012667030985015659
+          }
+        },
+        {
+          "id": "3525",
+          "name": "Alex Oxlade-Chamberlain",
+          "minutes": 16.0,
+          "fatigue": 0.0,
+          "intensity": 1.0824,
+          "load_ratio": 0.1924,
+          "recent": {
+            "threat": 71.607,
+            "creation": 73.701,
+            "progression": 82.889,
+            "retention": 82.173,
+            "defense": 46.04,
+            "aerial": 54.709
+          },
+          "live_dimensions": {
+            "threat": -0.0648,
+            "creation": -0.0415,
+            "progression": 0.1827,
+            "retention": 0.0575826679258223,
+            "defense": 0.0778,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 71.3478,
+            "creation": 73.535,
+            "progression": 83.6198,
+            "retention": 82.4033,
+            "defense": 46.3512
+          },
+          "recent_window_minutes": 10.442,
+          "recent_window": {
+            "ball_actions": 6.397458207201389,
+            "ball_losses": 0.4208531698718396,
+            "prog_passes": 1.5831349646023107,
+            "prog_carries": 2.033592285563468,
+            "def_actions": 1.4622619159749182,
+            "pressures": 0.9064713534281099
+          }
+        },
+        {
+          "id": "3496",
+          "name": "Mesut Özil",
+          "minutes": 89.75,
+          "fatigue": 0.7901,
+          "intensity": 1.0205,
+          "load_ratio": 1.0982,
+          "recent": {
+            "threat": 76.073,
+            "creation": 89.989,
+            "progression": 86.468,
+            "retention": 86.839,
+            "defense": 22.482,
+            "aerial": 55.817
+          },
+          "live_dimensions": {
+            "threat": -0.119,
+            "creation": -0.1416,
+            "progression": -0.0081,
+            "retention": 0.06771599488685574,
+            "defense": 0.3383,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 75.597,
+            "creation": 89.4226,
+            "progression": 86.4356,
+            "retention": 87.1099,
+            "defense": 23.8352
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 6.8509331190551865,
+            "prog_passes": 2.2902256854588,
+            "prog_carries": 0.9824620589365862,
+            "pressures": 1.633767919283049,
+            "box_presence": 0.0234076078815383,
+            "npxg": 0.0010208462455369785,
+            "ball_losses": 0.30201862462354573,
+            "def_actions": 3.197736909820082,
+            "box_passes": 0.0497497585242066,
+            "xa": 0.004631183858508176
+          }
+        },
+        {
+          "id": "3668",
+          "name": "Theo Walcott",
+          "minutes": 89.75,
+          "fatigue": 0.9904,
+          "intensity": 1.1988,
+          "load_ratio": 1.1955,
+          "recent": {
+            "threat": 77.295,
+            "creation": 72.611,
+            "progression": 78.339,
+            "retention": 77.592,
+            "defense": 33.765,
+            "aerial": 54.363
+          },
+          "live_dimensions": {
+            "threat": 0.1457,
+            "creation": -0.0409,
+            "progression": 0.3612,
+            "retention": 0.11180322391792873,
+            "defense": 0.3051,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 77.8778,
+            "creation": 72.4474,
+            "progression": 79.7838,
+            "retention": 78.0392,
+            "defense": 34.9854
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 9.889855649896138,
+            "prog_passes": 2.2669558861334895,
+            "pressures": 2.9479141578011654,
+            "box_presence": 1.2784412377609726,
+            "npxg": 0.23448036788246468,
+            "def_actions": 1.4963985037332035,
+            "prog_carries": 1.377056742089417,
+            "ball_losses": 1.239815584125837
+          }
+        },
+        {
+          "id": "3604",
+          "name": "Olivier Giroud",
+          "minutes": 89.75,
+          "fatigue": 0.7318,
+          "intensity": 1.1,
+          "load_ratio": 1.0685,
+          "recent": {
+            "threat": 80.869,
+            "creation": 74.727,
+            "progression": 69.633,
+            "retention": 75.044,
+            "defense": 38.446,
+            "aerial": 85.881
+          },
+          "live_dimensions": {
+            "threat": -0.0841,
+            "creation": -0.0252,
+            "progression": 0.5434,
+            "retention": 0.1409552545408492,
+            "defense": -0.1679,
+            "aerial": null
+          },
+          "effective": {
+            "threat": 80.5326,
+            "creation": 74.6262,
+            "progression": 71.8066,
+            "retention": 75.6078,
+            "defense": 37.7744
+          },
+          "recent_window_minutes": 17.215,
+          "recent_window": {
+            "ball_actions": 10.552725212587248,
+            "ball_losses": 1.0257984845065085,
+            "pressures": 1.0284219591600205,
+            "prog_passes": 4.156362040480694,
+            "prog_carries": 0.9536691105446367,
+            "box_presence": 0.3493837255251483,
+            "npxg": 0.04283913291947583,
+            "def_actions": 0.0467545366062642
+          }
+        }
+      ]
+    }
+  ]
+}

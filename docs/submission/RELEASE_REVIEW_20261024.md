@@ -1,5 +1,7 @@
 # Independent release review — 24 October 2026
 
+> Historical review retained with its original build/results. For the merged #28–#32 integration and the preserved 46-case acceptance at 980bde2, see [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md).
+
 **Functional demo: recordable. Submission clearance: not complete.** The live Azure baseline was independently checked at `95456a7d6924a350c8a78821ad6800e65f6e3b07`. This polish branch changes presentation/CI/docs only; no engine weights, thresholds, player priors or scenario rules were changed in this pass.
 
 ## Evidence

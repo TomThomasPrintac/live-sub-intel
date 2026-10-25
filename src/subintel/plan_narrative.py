@@ -30,7 +30,7 @@ DEFAULT_AUDIENCE = 'broadcaster'
 # English and Hebrew are hand-written; the others are model-translated templates, validated (translation.py).
 LANGUAGES = ('en', 'he', 'ar', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'zh-Hans')
 RTL = ('he', 'ar')
-TEMPLATE_VERSION = 'plan-templates-v4-context'
+TEMPLATE_VERSION = 'plan-templates-v5-submission'
 LOG = logging.getLogger(__name__)
 # Selection (12 s) + a first translation answered within this + a 10 s retry stays under the 35 s single-flight wait.
 RETRY_WITHIN_SECONDS = 8
@@ -242,8 +242,8 @@ TEMPLATES['en'].update({
  'state.lead':'{team} lead {score} at {minute}′; the priority is to {objective}.',
  'state.level':'{team} are level at {score} in minute {minute}; the priority is to {objective}.',
  'state.trail':'{team} trail {score} at {minute}′; the priority is to {objective}.',
- 'stats.attack.context':'{team} are {situation} at {score}; their attacking output is {xg} xG and {on_target} shots on target, against {opp_xg} xG for {opponent}.',
- 'stats.defense.context':'{team} are {situation} at {score}; {opponent} have generated {opp_xg} xG and {opp_on_target} shots on target, compared with {xg} xG for {team_name}.',
+ 'stats.attack.context':'{team} are {situation} at {score}; their attacking output is {xg} xG (shots on target: {on_target}), against {opp_xg} xG for {opponent}.',
+ 'stats.defense.context':'{team} are {situation} at {score}; {opponent} have generated {opp_xg} xG (shots on target: {opp_on_target}), compared with {xg} xG for {team_name}.',
  'stats.defense.lead.pressure':'{team} lead {score}, but {opponent} have generated the higher xG total ({opp_xg} against {xg}); defensive cover is the purpose of this change.',
  'stats.passing.context':'With {team} {situation} at {score}, their passing platform is {accuracy} accuracy and {possession} possession.',
  'stats.passing.no_possession.context':'With {team} {situation} at {score}, pass accuracy is {accuracy}.',
