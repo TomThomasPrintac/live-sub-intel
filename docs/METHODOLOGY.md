@@ -1,5 +1,7 @@
 # Methodology
 
+[Event-by-event conversion, player performance and team-deficit walkthrough](EVENT_PIPELINE.md) · [Latest release evidence](submission/FINAL_RELEASE_20261025.md)
+
 How the coach room produces its numbers, its recommendation and its explanation. Every number on screen is either computed from the synthetic event stream or a model score; none is an official tracking measurement or a prediction of the real match.
 
 ## Synthetic match

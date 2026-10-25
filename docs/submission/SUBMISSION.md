@@ -1,8 +1,8 @@
-# Live Substitution Intelligence - Hackathon Submission Draft
+# Live Substitution Intelligence — submission copy
 
-24 October 2026 · Thomas, Tal and Ofir
+25 October 2026 · Thomas, Tal and Ofir
 
-English text for the Inside the Game project page, ready to paste once the team signs off. Submission closes 27 October 2026 at 23:59 Pacific (28 October, 08:59 Israel).
+English text for the Inside the Game project page. [Current release evidence and remaining tasks](FINAL_RELEASE_20261025.md). Submission closes 27 October 2026 at 23:59 Pacific (28 October, 08:59 Israel). This file is prepared copy, not proof that the form has been submitted.
 
 ## Elevator pitch
 
@@ -67,7 +67,7 @@ The app is live with no login at [live-sub-intel on Azure](https://live-sub-inte
 2. Read the bench decision: the recommended plan, its benefit against the 0.15 threshold, and the ranked alternatives that pass the rules.
 3. Click the second alternative. The proposed pitch and the explanation both switch to that plan.
 4. Keep Audience on Broadcaster and click **Explain this plan**. The line under the text reads "Model-assisted fact selection (gpt-4.1-mini)" when Foundry selected the facts, or "Verified template" with the reason when it did not.
-5. Switch Audience to Analyst for match statistics and the benefit against the threshold, or Coach for the game state and the downside. Pick another explanation language, for example Français or العربية, next to the audience: the page itself stays in English, and the note says whether Foundry translated the templates or the text is shown in English.
+5. Switch Audience to Analyst for relevant match statistics, player movements and trade-offs, or Coach for the game state and tactical purpose. Pick another explanation language, for example Français or العربية, next to the audience: the page itself stays in English, and the note says whether Foundry translated the templates or the text is shown in English.
 6. Step forward or back five minutes, or change the approach and result objective; the analysis recalculates from the events up to that minute.
 
 `/healthz` reports the deployed build, the data mode and whether Foundry is configured, without exposing settings or keys. How every number is computed: [Methodology](../METHODOLOGY.md).
@@ -86,23 +86,8 @@ Then open `http://127.0.0.1:8779/?team=1&minute=65&stance=attack&objective=win&i
 
 ## Finalization status
 
-This is a candidate description, not proof of submission.
+The deployed integration at **980bde2** includes #28 and the #29–#32 contextual translation/broadcaster fixes. The [preserved live acceptance](../research/live_acceptance_980bde2_20261024.json) records **46/46 model-assisted explanations**, eight translated locales, no English fallback, no recorded identity failures and a stable deployment during the run. This report was produced on 24 October and independently retrieved on 25 October; later changes need their own acceptance.
 
-- **Done and deployed:**
-  - The Broadcast design and the evolving synthetic match (#21).
-  - The three audiences with server-computed match statistics (#22).
-  - The ten explanation languages with validated template translation (#23).
-  - The build SHA and the live acceptance script and workflow (#24, #25).
-  - The translation status-polarity fix (#26).
-- **Verified offline:** 271 Python tests and 16 Node tests, plus the synthetic and historical explanation audits.
-- **Verified live on Azure, 24 October** ([report](../research/LIVE_ACCEPTANCE_20261024.md)):
-  - Model fact selection for all three audiences in English and Hebrew.
-  - Model translation for all eight other languages, for recommended and rejected plans.
-  - The recommendation status correct in every checked language.
-  - The first run found a reversed status in Arabic, German and Portuguese. It was fixed and re-checked the same day.
-- **Additional independent verification:** all 16 coach/broadcaster combinations in the eight translated locales returned model-assisted output after two connection failures were retried. The original failures remain recorded; see [independent release review](RELEASE_REVIEW_20261024.md).
-- **Not verified:** native-speaker fluency and professional football validation. Successful schema/status checks do not certify complete translation semantics.
-- **Remaining release gates:**
-  - Finish the data-license and attribution review (see DATA_SOURCES.md).
-  - Record and upload the English video, under two minutes.
-  - Add the public video URL and complete the submission.
+The repository includes Python/Node regression coverage, synthetic/historical explanation audits and a [reproducible event-pipeline trace](../EVENT_PIPELINE.md). These establish technical consistency, not calibrated coaching accuracy or native-language fluency. Exact current results belong to the relevant CI run and PR, rather than an outdated hard-coded count here.
+
+Remaining tasks: review/deploy the final submission polish, close the [data publication gate](DATA_SOURCES.md), record/upload the English video, add its real public URL, verify the team fields and complete the form. [Final checklist](SUBMISSION_CHECKLIST.md). No video has been created and no submission made by this document.

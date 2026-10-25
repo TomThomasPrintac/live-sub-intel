@@ -1,6 +1,6 @@
 # Demo video — English narration, target 1:45–1:50
 
-The audience/language work is deployed on the reviewed Azure baseline 95456a7. Record that validated build, or recheck the deployed build after any polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
+The reviewed Azure integration baseline is 980bde2, with a preserved 46/46 strict acceptance report linked in [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
 
 | Time | Screen action | Narration |
 | --- | --- | --- |
@@ -8,7 +8,7 @@ The audience/language work is deployed on the reviewed Azure baseline 95456a7. R
 | 0:12–0:28 | Arsenal at 60, advance to 65 instantly | “This is a synthetic scenario with historical squad profiles. Events update the score, statistics and lineup. Scripted manager substitutions change who is available as the game progresses.” |
 | 0:28–0:45 | Set More attacking / Seek a win; inspect plans | “The coach supplies intent. The engine considers the bench, position suitability, tactical trade-offs and estimated freshness. A recommendation must clear both a benefit threshold and a quality check.” |
 | 0:45–1:02 | Inspect first, then second/rejected alternative | “Each alternative has its own proposed lineup and explanation. A rejected option remains inspectable, with its rejection reason visible.” |
-| 1:02–1:23 | Request Broadcaster then Analyst; one additional language | “Microsoft Foundry selects verified facts. The broadcaster gets a concise explanation; the analyst gets relevant match statistics and the score breakdown. Language changes preserve the selected plan and facts.” |
+| 1:02–1:23 | Request Broadcaster then Analyst; one additional language | “Microsoft Foundry selects verified facts. The broadcaster gets a concise football explanation; the analyst gets relevant match statistics and tactical trade-offs. Language changes preserve the selected plan and facts.” |
 | 1:23–1:38 | Coach audience; change to Arsenal at 85 attack/win | “The coach view emphasizes game context and tactical consequences. Sometimes repositioning the current eleven is preferred to using the remaining substitution.” |
 | 1:38–1:48 | Wide view; end card with public repo and site | “Azure App Service hosts the experience, with GitHub Actions testing and deploying it. The goal is a decision you can inspect and question, rather than an unexplained ranking.” |
 

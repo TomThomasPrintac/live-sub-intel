@@ -6,7 +6,7 @@
 
 [Open Arsenal, 65, more attacking / seek a win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1).
 
-The reviewed build recommends **Campbell → Oxlade-Chamberlain**, incremental benefit about **0.192** against **0.150**. This is a model score, not a goal prediction. Select Analyst and Explain: the output includes actual match-so-far facts from the synthetic stream. Choose the second alternative or a rejected one; both the pitch and explanation follow that exact plan. Rejection can be due to tactical quality even when a rounded score appears near the threshold.
+The reviewed build recommends **Campbell → Oxlade-Chamberlain**, incremental benefit about **0.192** against **0.150**. This is a model score, not a goal prediction. Select Analyst and Explain: the output links relevant past-event statistics to the inspected plan and names its position changes. Choose the second alternative or a rejected one; both the pitch and explanation follow that exact plan. Rejection can be due to tactical quality even when a rounded score appears near the threshold.
 
 ## 2. Personalize the same facts
 
@@ -29,4 +29,4 @@ Use the same Arsenal scenario throughout the video. Move between the first recom
 - [Release evidence and remaining gates](RELEASE_REVIEW_20261024.md).
 - [Architecture and submission description](SUBMISSION.md).
 
-The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). Numbers above were checked on deployed baseline `95456a7`; replay or model changes require rechecking the route.
+The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `980bde2`, with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_980bde2_20261024.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_RELEASE_20261025.md).
