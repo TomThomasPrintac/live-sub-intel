@@ -25,3 +25,4 @@ html[data-design=broadcast]{background:#edf0f4;--green:#7b39de;--muted:#607084}h
 .info-link{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
 
 .data-credit{display:flex;gap:18px;align-items:center;flex-wrap:wrap;padding:22px 0;color:var(--muted);font-size:11px}.data-credit img{display:block;width:190px;height:auto;background:white;padding:10px;border-radius:4px}
+.data-credit-copy{display:grid;gap:5px;line-height:1.5}.data-credit-copy small{font-size:inherit}.data-credit-copy a{color:inherit;text-underline-offset:2px}

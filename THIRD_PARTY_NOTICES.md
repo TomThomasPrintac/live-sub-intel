@@ -16,6 +16,8 @@ Historical evidence and derived analysis use https://github.com/hudl/open-data, 
 
 The source revision and unresolved redistribution permission are recorded in DATA_SOURCES.md. Naming the source does not grant rights. Original project code licensing must not purport to relicense these inputs.
 
+This project is not endorsed by or affiliated with EA or its licensors. This notice follows the wording in EA's content policy; it is not a claim that the policy authorizes the retained CSV, scraping or every project use. The [26 October license review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the applicable sources and open questions.
+
 ## Runtime packages
 
 NumPy and pandas: BSD-3-Clause; pydantic: MIT; OpenAI Python SDK: Apache-2.0. Install via the declared package dependencies and retain notices distributed with the exact installed versions, including bundled binaries and transitive packages when redistributed. This short inventory is not a complete software bill of materials. No copied SDK implementation is vendored in this repository.

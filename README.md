@@ -4,7 +4,7 @@
 
 [Open the live Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [60-second judge guide](docs/submission/JUDGE_GUIDE.md) · [Event-to-decision walkthrough](docs/EVENT_PIPELINE.md) · [Submission description](docs/submission/SUBMISSION.md)
 
-Built for the Microsoft × Premier League hackathon by Thomas, Tal and Ofir. **Deployed acceptance baseline: `980bde2`, 46/46 model-assisted explanations, all eight translated locales, no English fallback.** [Exact evidence and release status](docs/submission/FINAL_RELEASE_20261025.md). Later branch changes require their own deployment check.
+Built for the Microsoft × Premier League hackathon by Thomas, Tal and Ofir. **Deployed acceptance baseline: `0f3e19d` (PR #33), 46/46 model-assisted explanations, all eight translated locales, no English fallback.** [Exact evidence and release status](docs/submission/FINAL_RELEASE_20261025.md). Later branch changes require their own deployment check.
 
 ![Arsenal's current eleven, with goal, assist and booking markers](docs/submission/coach-room-arsenal.png)
 
@@ -75,7 +75,7 @@ node --test tests/test_coach_room_ui.cjs tests/test_match_replay_ui.cjs tests/te
 python scripts/live_acceptance.py https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net --require-model --extended-audiences
 ```
 
-The last command makes bounded real model requests. Local tests do not prove Azure connectivity. Health reports build/configuration; fresh acceptance establishes request-time behavior. The live acceptance workflow is available under Actions. [Latest preserved 46-case report](docs/research/live_acceptance_980bde2_20261024.json) · [Release status](docs/submission/FINAL_RELEASE_20261025.md) · [Earlier independent review](docs/submission/RELEASE_REVIEW_20261024.md).
+The last command makes bounded real model requests. Local tests do not prove Azure connectivity. Health reports build/configuration; fresh acceptance establishes request-time behavior. The live acceptance workflow is available under Actions. [Latest preserved 46-case report](docs/research/live_acceptance_0f3e19d_20261025.json) · [Release status](docs/submission/FINAL_RELEASE_20261025.md) · [Earlier independent review](docs/submission/RELEASE_REVIEW_20261024.md).
 
 ## Scope, sources and limitations
 
@@ -91,4 +91,4 @@ One substitution is inspected at a time. No ten-player solver, opposition-specif
 
 Historical research uses StatsBomb Open Data; the displayed match events are synthetic. Physical estimates use SkillCorner positional references. [Official logo provenance](docs/submission/STATSBOMB_LOGO.md).
 
-Publication rights for retained FIFA/StatsBomb-derived inputs are not established merely by citations, old dates or removal of export archives. Those gates remain explicit; this README does not certify them.
+Publication permissions for retained third-party inputs and derived profiles remain documented in [data provenance](docs/submission/DATA_SOURCES.md). Citations, historical dates and generated estimates do not by themselves resolve those permissions.

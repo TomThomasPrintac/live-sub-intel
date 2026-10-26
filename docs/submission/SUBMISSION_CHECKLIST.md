@@ -11,9 +11,11 @@ Owner: the team's authorized project representative. This checklist records task
 - [x] Official Hudl Statsbomb logo/credit and SkillCorner MIT notice retained.
 - [x] Accepted 46-case Azure artifact at 980bde2 preserved and linked.
 - [x] Arsenal-only recording route and English narration script prepared.
-- [ ] Submission-readiness branch reviewed, merged/deployed, and the resulting SHA checked live.
-- [ ] New English count-neutral statistic templates checked with strict live acceptance after deployment.
+- [x] PR #33 merged/deployed as 0f3e19d and the resulting SHA checked live.
+- [x] New English count-neutral statistic templates passed strict 46-case live acceptance after deployment: run 40195568545.
 - [ ] Data publication permissions resolved for retained inputs/derived profiles; see DATA_SOURCES.md. Renaming them does not complete this item.
+
+26 October review: StatsBomb research/public analysis permission and attribution are distinguished from redistribution; SkillCorner's MIT notice is retained. FIFA/SoFIFA source redistribution remains unverified with the numerical profiles fixed. [Detailed source review](LICENSE_REVIEW_20261026.md). Do not check the publication-permissions item based on a new code license or an affiliation disclaimer.
 
 ## Video
 
