@@ -1,15 +1,13 @@
-Live Substitution Intelligence turns football events into explainable bench decisions. Coaches set their intent; the system compares substitutions with tactical changes across the whole eleven.
+Live Sub Intel helps you make the next move: who comes on, who comes off, and where everyone plays.
 
-The match is synthetic, with historical player profiles and generated physical estimates. Here, the system first recommends repositioning. Events then update the score, player markers and match statistics.
+We’re following Arsenal in a generated match, using historical player profiles and physical estimates. As time advances, events arrive and the statistics update with the game.
 
-At sixty-five minutes, it recommends Oxlade-Chamberlain for Campbell. The comparison includes estimated freshness, position suitability and tactical cost, measured against the best action without a substitute.
+At twenty-five minutes, it recommends swapping Ramsey and Flamini’s midfield positions. Ramsey moves left; Flamini moves right. The proposed lineup highlights both moves.
 
-Every alternative has its own proposed lineup. This option exceeds the numerical threshold but is still rejected: its tactical loss fails a separate quality check.
+The broadcaster gets a short explanation of that move. Switch to Spanish, and the same plan is explained in Spanish. Choose Analyst, and the explanation adds relevant match statistics and trade-offs.
 
-Microsoft Foundry selects verified facts for the inspected plan. Broadcasters get a concise explanation; analysts get relevant statistics and trade-offs. The model cannot change the decision or its numbers.
+Now Arsenal are leading. The system recommends fresh legs on the wing: Oxlade-Chamberlain for Campbell. Open the comparison to see their profiles and what the change adds to the team.
 
-Explanation language is separate from the interface. Protected templates, validation and labelled fallback help preserve the selected plan and its facts.
+At eighty-five minutes, Arsenal are behind. Seeking a win calls for a midfield adjustment. Switch to avoiding defeat, and the system recommends holding the current setup.
 
-Now Arsenal is behind. Seeking a win produces a tactical adjustment; changing the objective changes the recommendation. Inspecting a plan never executes it or rewrites the match.
-
-Azure App Service hosts the experience, with GitHub Actions testing and deploying it. Every recommendation is a proposal you can inspect, compare and question.
+Azure App Service hosts the match room. Microsoft Foundry selects the relevant facts and translates the explanation, so a coach and a Spanish-speaking broadcaster can follow the same decision.

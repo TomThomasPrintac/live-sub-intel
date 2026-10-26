@@ -21,7 +21,7 @@
 ## חומרים לצילום
 
 - [RECORDING_ROUTE_HE.md](RECORDING_ROUTE_HE.md): קישורים, פעולות במסך וקריינות מתוזמנת, יעד 1:50.
-- [VIDEO_NARRATION_EN.txt](VIDEO_NARRATION_EN.txt): קריינות נקייה באנגלית, 205 מילים.
+- [VIDEO_NARRATION_EN.txt](VIDEO_NARRATION_EN.txt): קריינות נקייה באנגלית, 184 מילים.
 - [RECORDING_CHECKPOINT_REVIEW.md](RECORDING_CHECKPOINT_REVIEW.md): כל הדקות, ששת ההקשרים, אירועים ומגבלות.
 - [CSV מלא](../research/recording_route_audit_20261026.csv) ו־[JSON מלא](../research/recording_route_audit_20261026.json.gz).
 - שחזור מקומי: `python scripts/audit_recording_route.py` עם PYTHONPATH הכולל src ו־scripts.
