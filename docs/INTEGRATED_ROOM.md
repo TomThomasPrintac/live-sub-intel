@@ -81,11 +81,9 @@ Node tests cover complete locale parity and stale-response identity, alongside
 the existing replay checks. Manual browser review checks the two pitches,
 candidate switching, English/Hebrew layout and explanation content.
 
-The current machine has no Foundry configuration; local explanations therefore
-truthfully show verified-template provenance. The teammate's deployed main
-returned LLM unavailable during the earlier live review. This branch does not
-claim to fix Azure credentials, quota, model deployment or network access.
-Give [CLAUDE_FOUNDRY_HANDOFF.md](submission/FINAL_STATUS.md) to the teammate's Claude.
+A local run without Foundry configuration shows verified-template provenance.
+The deployed Azure app is configured for Foundry; the current live acceptance
+evidence is in [FINAL_STATUS.md](submission/FINAL_STATUS.md).
 
 Remaining football limitations are unchanged: suitability/exposure and load are
 heuristic, supported shapes are a bounded catalog, one substitution at a time,
