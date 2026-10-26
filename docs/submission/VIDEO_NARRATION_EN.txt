@@ -2,12 +2,12 @@ Live Sub Intel helps you make the next move: who comes on, who comes off, and wh
 
 We’re following Arsenal in a generated match, using historical player profiles and physical estimates. As time advances, events arrive and the statistics update with the game.
 
-At twenty-five minutes, it recommends swapping Ramsey and Flamini’s midfield positions. Ramsey moves left; Flamini moves right. The proposed lineup highlights both moves.
+At sixty-five minutes, Arsenal are leading. The recommendation is Oxlade-Chamberlain for Campbell, adding fresh legs on the right wing.
 
-The broadcaster gets a short explanation of that move. Switch to Spanish, and the same plan is explained in Spanish. Choose Analyst, and the explanation adds relevant match statistics and trade-offs.
+The proposed lineup highlights the incoming player. Open the comparison to see both profiles and the changes in attacking threat, chance creation and ball progression.
 
-Now Arsenal are leading. The system recommends fresh legs on the wing: Oxlade-Chamberlain for Campbell. Open the comparison to see their profiles and what the change adds to the team.
+The broadcaster explains this substitution in a short line. Switch to Spanish, and the same plan is explained in Spanish. Choose Analyst, and the explanation adds relevant match statistics and trade-offs.
 
-At eighty-five minutes, Arsenal are behind. Seeking a win calls for a midfield adjustment. Switch to avoiding defeat, and the system recommends holding the current setup.
+At eighty-five minutes, Arsenal are behind. Seeking a win calls for a tactical adjustment. Switch to avoiding defeat, and the system recommends holding the current setup.
 
 Azure App Service hosts the match room. Microsoft Foundry selects the relevant facts and translates the explanation, so a coach and a Spanish-speaking broadcaster can follow the same decision.

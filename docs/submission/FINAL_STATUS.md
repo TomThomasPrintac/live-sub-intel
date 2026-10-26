@@ -19,7 +19,7 @@ The documentation audit changes no decision code, player values, source inputs, 
 | [Submission copy](SUBMISSION.md) | English pitch, product description, Azure usage, source summary and testing instructions |
 | [Judge guide](JUDGE_GUIDE.md) | Short Arsenal-only inspection route |
 | [Video script](VIDEO_SCRIPT.md) | Screen actions and English narration, target 1:45–1:50 |
-| [Audited recording route](RECORDING_ROUTE_HE.md) and [228-case review](RECORDING_CHECKPOINT_REVIEW.md) | Every checkpoint/intent evaluated locally; recording route 0 → 5 → 10 → 25 → 65 → 85; English voiceover and Spanish explanation example |
+| [Audited recording route](RECORDING_ROUTE_HE.md) and [228-case review](RECORDING_CHECKPOINT_REVIEW.md) | Every checkpoint/intent evaluated locally; recording route 0 → 5 → 10 → 65 → 85; English voiceover and Spanish explanation example |
 | [Architecture](architecture.svg) | Decision engine, fact selection, translation and validation |
 | [Methodology](../METHODOLOGY.md) and [event pipeline](../EVENT_PIPELINE.md) | How events become player metrics, needs and recommendations |
 | [Data sources](DATA_SOURCES.md) and [third-party notices](../../THIRD_PARTY_NOTICES.md) | Exact source provenance, attribution and remaining permission limits |
