@@ -44,6 +44,8 @@ The running app uses Microsoft Foundry and Azure App Service, with GitHub Action
 
 ## Data and originality
 
+[Detailed source/use boundaries and consistent claims](RIGHTS_AND_CLAIMS.md) are documented separately; this product summary does not assert blanket third-party publication permission.
+
 Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
 
 - **Match events:** original synthetic events from our own scripted-possession generator, in the same event format the engine reads live. They are not a real fixture, a prediction or licensed Premier League data.

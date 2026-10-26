@@ -8,6 +8,7 @@ Start with the [live Azure app](https://live-sub-intel-fcfudheze9b5ewfz.swedence
 - [Methodology](METHODOLOGY.md), [event-to-decision pipeline](EVENT_PIPELINE.md), [automatic tactical plans](AUTO_TACTICAL_PLANS.md) and [estimated match load](MATCH_LOAD.md).
 - [Calculation walkthrough in Hebrew](research/CALCULATIONS_SANITY_HE_20261024.md) and [five football decision sanity checks](submission/DECISION_REVIEW_20261024.md).
 - [Exact data sources](submission/DATA_SOURCES.md), [source/license review](submission/LICENSE_REVIEW_20261026.md), [logo provenance](submission/STATSBOMB_LOGO.md) and [third-party notices](../THIRD_PARTY_NOTICES.md).
+- [Consolidated rights and claims](submission/RIGHTS_AND_CLAIMS.md): every source, publication surface and permitted product description; [ready-to-forward final owner message](submission/THOMAS_FINAL_MESSAGE_HE.md).
 - [Repository audit](submission/REPOSITORY_AUDIT_20261026.md) and [final owner steps](submission/OWNER_FINAL_STEPS_HE.md).
 
 ## Research and development history

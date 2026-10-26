@@ -19,6 +19,8 @@
 
 החלוקה היא יעד לעריכה. אם הקריינות ארוכה מדי, להוציא את קטע דקה 30 או את השפה הנוספת; אין לעבור שתי דקות. [טקסט הקריינות להקלטה](VIDEO_NARRATION_EN.txt).
 
+בכרטיס הסיום של הסרטון לשמור גם לוגו StatsBomb הרשמי מהפרויקט ולצדו שורת מקור קצרה: `Historical research: StatsBomb Open Data. Physical references: SkillCorner Open Data.` בתיאור הסרטון להוסיף קישור ל־DATA_SOURCES.md בריפו. אין צורך להקריא את רשימת המקורות; הקרדיט אינו הצהרה שכל שאלות ההרשאה נפתרו. הסבר מרוכז לכל שכבות הנתונים: [RIGHTS_AND_CLAIMS.md](RIGHTS_AND_CLAIMS.md).
+
 ## קישורים מוכנים
 
 - [פתיחה — 25, מאוזן / ניצחון](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=25&stance=balanced&objective=win&inspect=1&lang=en).

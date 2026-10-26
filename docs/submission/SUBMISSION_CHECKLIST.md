@@ -2,6 +2,8 @@
 
 Owner: the team's authorized project representative. This checklist records tasks, not completion of the Studio form.
 
+Source/use/declaration boundaries are consolidated in [RIGHTS_AND_CLAIMS.md](RIGHTS_AND_CLAIMS.md); technical merge/deploy steps in [THOMAS_FINAL_MESSAGE_HE.md](THOMAS_FINAL_MESSAGE_HE.md).
+
 ## Repository and demo
 
 - [x] Public repository and live demo linked from the README.
@@ -24,6 +26,7 @@ Owner: the team's authorized project representative. This checklist records task
 - [ ] Show a recommendation, a different/rejected option, contextual explanation and another explanation language.
 - [ ] Show a late tactical action without implying that inspection executes it.
 - [ ] Add corrected English captions; check player names, xG and Foundry.
+- [ ] Retain the official StatsBomb logo/source credit in the video end card and link the source document in the video description; use original or appropriately licensed narration/music/assets.
 - [ ] Export MP4, target 1:45–1:50, strictly less than two minutes.
 - [ ] Check the full export, including sound and text, and upload to a supported public video service.
 - [ ] Open the video without login; add its real URL to the README and submission.
