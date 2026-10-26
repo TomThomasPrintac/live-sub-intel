@@ -44,7 +44,7 @@ The running app uses Microsoft Foundry and Azure App Service, with GitHub Action
 
 ## Data and originality
 
-[Detailed source/use boundaries and consistent claims](RIGHTS_AND_CLAIMS.md) are documented separately; this product summary does not assert blanket third-party publication permission.
+[Sources and transformations](DATA_SOURCES.md) are documented separately from this product summary.
 
 Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
 
@@ -59,7 +59,7 @@ Live Substitution Intelligence transforms synthetic football events into explain
 
 ![Hudl Statsbomb](../../web/coach-room/statsbomb-logo.png)
 
-Historical research uses StatsBomb Open Data. Physical references use [SkillCorner Open Data](https://github.com/SkillCorner/opendata), with its MIT notice retained. See [DATA_SOURCES.md](DATA_SOURCES.md) for separate publication-rights questions.
+Historical research uses StatsBomb Open Data. Physical references use [SkillCorner Open Data](https://github.com/SkillCorner/opendata), with its MIT notice retained. See [DATA_SOURCES.md](DATA_SOURCES.md) for input versions, transformations and source conditions.
 
 The app is live with no login at [live-sub-intel on Azure](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/) and stays up through the end of judging (11 November 2026 in Israel; maintain a safety buffer). The first load can take up to 30 seconds while the server starts.
 
@@ -88,8 +88,8 @@ Then open `http://127.0.0.1:8779/?team=1&minute=65&stance=attack&objective=win&i
 
 ## Finalization status
 
-The verified deployed integration is **ca18fb4** (PR #34). The [preserved live acceptance](../research/live_acceptance_ca18fb4_20261026.json) records **46/46 model-assisted explanations**, translation in all eight additional locales, no English fallback, no recorded identity failures and no digits in broadcaster output. The build SHA is unchanged before and after the run. [Actions run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40299465098). See [current status](FINAL_STATUS.md) for the remaining submission steps and known limits.
+The verified deployed integration is **6056cb4** (PR #36). The [preserved live acceptance](../research/live_acceptance_6056cb4_20261026.json) records **46/46 model-assisted explanations**, translation in all eight additional locales, no English fallback, no recorded identity failures and no digits in broadcaster output. The build SHA is unchanged before and after the run. [Actions run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40352309569). See [current status](FINAL_STATUS.md) for the remaining submission steps and known limits.
 
 The repository includes Python/Node regression coverage, synthetic/historical explanation audits and a [reproducible event-pipeline trace](../EVENT_PIPELINE.md). These establish technical consistency, not calibrated coaching accuracy or native-language fluency. Exact current results belong to the relevant CI run and PR, rather than an outdated hard-coded count here.
 
-Remaining tasks: deploy any subsequent polish, close the [data publication gate](DATA_SOURCES.md), record/upload the English video, add its real public URL, verify the team fields and complete the form. [Final checklist](SUBMISSION_CHECKLIST.md). No video has been created and no submission made by this document.
+Delivery: the team has recorded footage. Finish editing/captions, upload the final video and add its actual public URL. Confirm the team fields, complete the entry declarations and submit. [Final checklist](SUBMISSION_CHECKLIST.md).

@@ -1,42 +1,29 @@
-# Current release and submission status
+# Release and delivery status
 
-Verified 26 October 2026. This is the current status entry point; dated handoffs and audits retain their original results.
+26 October 2026. [Live Arsenal demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1).
 
-## Working release
+## Verified release
 
-- Public app: [Arsenal, 65 minutes, attack / win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1).
-- Deployed build: **ca18fb480a5e78ce9205dfc7aa31669f427a0750**, merged PR #34. Live `/healthz` independently returned this SHA, synthetic mode and `CONFIG_VALID` on 26 October.
-- [Strict live acceptance run 40299465098](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40299465098): successful; **46/46** model-assisted explanations, all eight translated locales, no English fallback, no recorded identity failures and no digits in broadcaster output. The artifact's build SHA matches before and after the run. [Original report retrieved from that run](../research/live_acceptance_ca18fb4_20261026.json).
-- Regression baseline: **292 Python passed, one optional historical-cache check skipped; 16 Node passed**. These are technical consistency checks, not proof of improved football outcomes or perfect translations.
-- The teammate reported an Italian plural agreement issue in one live output. Automatic structural checks do not establish native-speaker fluency. The recording route uses English.
+- Main and live health: **6056cb414d5b669543e494863ed0c792a7f210c9**, merged PR #36. Health reports synthetic mode and CONFIG_VALID.
+- [Live acceptance run 40352309569](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40352309569): successful. The original artifact was independently retrieved; **46/46 model-assisted explanations**, all eight translated locales, no English fallback, no recorded identity failures or broadcaster digits, and the same build SHA before and after. [Preserved report](../research/live_acceptance_6056cb4_20261026.json).
+- Regression baseline: **292 Python passed, one optional historical-cache check skipped; 16 Node passed**.
+- Local scenario coverage: **228 cases**, two teams × nineteen checkpoints × six coach contexts. [Computed review](RECORDING_CHECKPOINT_REVIEW.md).
 
-The documentation audit changes no decision code, player values, source inputs, weights, thresholds or scenario events. Its recording follow-up removes the precautionary non-affiliation sentence from the UI. Exact source provenance remains in the source documents, and the provider logo/credit remains in the footer. No applicable permission is asserted on the basis of removing that sentence. This HTML-only layout change is not yet deployed. No new decision feature work is needed for the English recording route. An inspected plan does not execute a counterfactual match.
+The package includes the current narration revision and concise submission entry points. Runtime code, data, weights, thresholds and scenario events are unchanged by this documentation cleanup. Technical checks establish software consistency; coaching accuracy and native-speaker fluency have separate limits documented in the methodology and research.
 
-## Prepared materials
+## Ready materials
 
-| Material | Use |
+| Material | Purpose |
 |---|---|
-| [Submission copy](SUBMISSION.md) | English pitch, product description, Azure usage, source summary and testing instructions |
-| [Judge guide](JUDGE_GUIDE.md) | Short Arsenal-only inspection route |
-| [Video script](VIDEO_SCRIPT.md) | Screen actions and English narration, target 1:45–1:50 |
-| [Audited recording route](RECORDING_ROUTE_HE.md) and [228-case review](RECORDING_CHECKPOINT_REVIEW.md) | Every checkpoint/intent evaluated locally; recording route 0 → 5 → 10 → 65 → 85; English voiceover and Spanish explanation example |
-| [Architecture](architecture.svg) | Decision engine, fact selection, translation and validation |
-| [Methodology](../METHODOLOGY.md) and [event pipeline](../EVENT_PIPELINE.md) | How events become player metrics, needs and recommendations |
-| [Data sources](DATA_SOURCES.md) and [third-party notices](../../THIRD_PARTY_NOTICES.md) | Exact source provenance, attribution and remaining permission limits |
-| [Submission checklist](SUBMISSION_CHECKLIST.md) | Team, recording, links and final form tasks |
+| [Submission copy](SUBMISSION.md) | English pitch, Azure implementation and testing instructions |
+| [Judge guide](JUDGE_GUIDE.md) | Short inspection route |
+| [Video table](RECORDING_ROUTE_HE.md) and [voiceover](VIDEO_NARRATION_EN.txt) | Opening match playback, Chamberlain substitution, Spanish/audience examples and late objective comparison |
+| [Architecture](architecture.svg) | Decision engine, Foundry fact selection, translation and validation |
+| [Sources](DATA_SOURCES.md) | Input provenance, generated layers, attribution and applicable source conditions |
+| [Checklist](SUBMISSION_CHECKLIST.md) | Remaining delivery and entry-form actions |
 
-## Remaining actions
+## Delivery
 
-1. Record the actual Azure app with Arsenal, English narration and corrected English captions. Export less than two minutes; upload to a supported public video service and test without login.
-2. Add the actual video URL to the README and project form. There is no fabricated or placeholder video link in these materials.
-3. Confirm team membership and the authorized representative. Paste the prepared English text, include the live app, repository and video URLs, complete the required declarations, submit and save confirmation. The preparation of these files does not complete the Studio form.
-4. The representative has chosen to retain the current inputs after the source review. That decision is distinct from proof of permission: the questions documented in [the source review](LICENSE_REVIEW_20261026.md) remain unresolved. Do not claim independent generation of all profile inputs or blanket legal clearance.
-5. Keep the Azure app available through judging, ending 10 November 2026 at 23:59 Pacific, which is 11 November at 09:59 Israel; retain a safety buffer.
+The team has recorded footage; final editing/upload is pending. Finish the video and captions, check the export is less than two minutes, upload it and verify playback without login. Add the actual URL to the README and entry form. Confirm team membership, complete the required entry declarations and submit before **28 October 2026 at 08:59 Israel**; save confirmation. Keep Azure available through the end of judging, 11 November 2026 at 09:59 Israel, with a safety buffer. [Official rules](https://github.com/microsoft/insidethegamehackathon/blob/main/OFFICIAL%20RULES.md).
 
-Submission deadline: **28 October 2026, 08:59 Israel**. Aim to complete submission on 27 October evening. [Official rules](https://github.com/microsoft/insidethegamehackathon/blob/main/OFFICIAL%20RULES.md).
-
-## Change control before recording
-
-The current deployed build can be recorded now. Do not merge unrelated work before recording. The deployment workflow also runs on documentation-only merges, so any later merge requires checking the new `/healthz` SHA and running **Live acceptance on Azure** again. Do not reuse an old report as evidence of a new deployment.
-
-The team's original code has no newly applied MIT grant; source visibility and code licensing are separate. This status does not claim that the video is uploaded, the form is submitted, all translations are fluent or all third-party publication permissions are established.
+The existing workflow deploys documentation-only merges as well. Avoid merging during recording/edit capture; after a merge, verify the new health SHA and run Live acceptance on Azure. An earlier report remains evidence for its own build, not a later deployment.

@@ -85,7 +85,7 @@ The current machine has no Foundry configuration; local explanations therefore
 truthfully show verified-template provenance. The teammate's deployed main
 returned LLM unavailable during the earlier live review. This branch does not
 claim to fix Azure credentials, quota, model deployment or network access.
-Give [CLAUDE_FOUNDRY_HANDOFF.md](CLAUDE_FOUNDRY_HANDOFF.md) to the teammate's Claude.
+Give [CLAUDE_FOUNDRY_HANDOFF.md](submission/FINAL_STATUS.md) to the teammate's Claude.
 
 Remaining football limitations are unchanged: suitability/exposure and load are
 heuristic, supported shapes are a bounded catalog, one substitution at a time,

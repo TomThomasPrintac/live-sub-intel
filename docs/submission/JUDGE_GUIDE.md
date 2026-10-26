@@ -29,4 +29,4 @@ Use the same Arsenal scenario throughout the video. Move between the first recom
 - [Current release evidence and remaining steps](FINAL_STATUS.md).
 - [Architecture and submission description](SUBMISSION.md).
 
-The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `ca18fb4` (PR #34), with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_ca18fb4_20261026.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_STATUS.md).
+The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `6056cb4` (PR #36), with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_6056cb4_20261026.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_STATUS.md).
