@@ -21,7 +21,7 @@ These automated checks do not certify native-speaker fluency, opponent-specific 
 
 Local validation on this branch: **292 Python passed / 1 optional historical raw-cache check skipped; all 16 Node tests passed.** The event trace was reproduced with the committed audit script. A narrow tracked-file scan found no matches for the selected common token/private-key patterns; it is not an exhaustive secret audit.
 
-After this branch is merged/deployed, verify the new `/healthz` SHA and run the strict extended live acceptance again. Do not claim that an open PR is already on Azure. Baseline reports retain their original counts and dates.
+PR #33 was merged and deployed as **0f3e19d24963c41ca12e857a65fc942381426bf7**. [Build and deployment](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40195478083) succeeded. The subsequent [strict extended live acceptance](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40195568545) passed **46/46** with model-assisted explanations, translation in all eight additional locales, no translation fallback, no plan-identity failures and no broadcaster digits. The earlier 980bde2 artifact above remains a separate historical baseline. Any later deployment requires its own SHA and live check.
 
 ## Remaining submission tasks
 

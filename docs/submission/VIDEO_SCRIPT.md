@@ -1,11 +1,11 @@
 # Demo video — English narration, target 1:45–1:50
 
-The reviewed Azure integration baseline is 980bde2, with a preserved 46/46 strict acceptance report linked in [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
+The reviewed Azure integration baseline is 0f3e19d (PR #33), with a preserved 46/46 strict acceptance report linked in [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
 
 | Time | Screen action | Narration |
 | --- | --- | --- |
 | 0:00–0:12 | Project title and coach room | “Live Substitution Intelligence turns a football event stream into an explainable bench decision. It compares substitutions and tactical changes across the whole eleven.” |
-| 0:12–0:28 | Arsenal at 60, advance to 65 instantly | “This is a synthetic scenario with historical squad profiles. Events update the score, statistics and lineup. Scripted manager substitutions change who is available as the game progresses.” |
+| 0:12–0:28 | Arsenal at 60, advance to 65 instantly | “The match is synthetic. Player profiles use historical data, supplemented by generated physical estimates. Events and scripted substitutions update the score, lineup and available bench.” |
 | 0:28–0:45 | Set More attacking / Seek a win; inspect plans | “The coach supplies intent. The engine considers the bench, position suitability, tactical trade-offs and estimated freshness. A recommendation must clear both a benefit threshold and a quality check.” |
 | 0:45–1:02 | Inspect first, then second/rejected alternative | “Each alternative has its own proposed lineup and explanation. A rejected option remains inspectable, with its rejection reason visible.” |
 | 1:02–1:23 | Request Broadcaster then Analyst; one additional language | “Microsoft Foundry selects verified facts. The broadcaster gets a concise football explanation; the analyst gets relevant match statistics and tactical trade-offs. Language changes preserve the selected plan and facts.” |
