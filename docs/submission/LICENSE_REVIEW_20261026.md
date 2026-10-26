@@ -56,12 +56,12 @@ The film can be prepared as a functional demonstration; this review does not cer
 
 ## Unchanged-data check
 
-SHA-256 values recorded before this license-only work:
+SHA-256 values recorded before this license-only work. The first column was computed on a Windows checkout (CRLF line endings); the second is the content stored in Git (LF), which is what a Linux checkout, GitHub and Azure see. Both describe the same unchanged files, last modified in commit 84b7926 (18 October).
 
-| File | SHA-256 |
-|---|---|
-| demo_player_profiles.json | 8456e8e73109002faae436382dc46ef42cb5391e6473a74772b90267e17d278c |
-| source_evidence.json | e371eb5114a7508e52d93c926ca2288a74c417a4d62f8e07168520073eae2290 |
-| fifa16_anchors.json | 6497567b4c453c46c184aac648a472f327706169b60f18e372b1b5b548130a45 |
+| File | SHA-256, Windows checkout (CRLF) | SHA-256, stored in Git (LF) |
+|---|---|---|
+| demo_player_profiles.json | 8456e8e73109002faae436382dc46ef42cb5391e6473a74772b90267e17d278c | 88675d732f44faa02d1319932316de150b79b2d5c841ebaac687ffd71028ec77 |
+| source_evidence.json | e371eb5114a7508e52d93c926ca2288a74c417a4d62f8e07168520073eae2290 | d3ba7ba27b3335fd3d544ed1d62c2c840d9e2d2d369e525f7bb03534074f1d4b |
+| fifa16_anchors.json | 6497567b4c453c46c184aac648a472f327706169b60f18e372b1b5b548130a45 | d1845a1ab248004ec19bc0ca91fa86eec19014af8af95594a274dc0b2dbec4ba |
 
 These hashes establish that those inputs were not changed by the review; they are not permission evidence.
