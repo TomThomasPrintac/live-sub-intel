@@ -1,95 +1,84 @@
 # Live Substitution Intelligence — submission copy
 
-26 October 2026 · Thomas, Tal and Ofir
-
-English text for the Inside the Game project page. [Current release evidence and remaining tasks](FINAL_STATUS.md). Submission closes 27 October 2026 at 23:59 Pacific (28 October, 08:59 Israel). This file is prepared copy, not proof that the form has been submitted.
+26 October 2026 · Thomas, Tal and Ofir. Prepared English text for the project page. [Current release](FINAL_STATUS.md) · [Judging fit](JUDGING_FIT.md).
 
 ## Elevator pitch
 
-Live Substitution Intelligence turns a stream of football match events into a bench decision that a coach, analyst or broadcaster can check. At any five-minute checkpoint it works out what the team needs now, searches substitutions, repositioning and formation changes across the whole XI, and explains the plan for a broadcaster, an analyst or a coach in ten languages. A deterministic engine makes the call; Microsoft Foundry picks which verified facts to tell and translates fixed sentence templates, while the server preserves the plan identities and numeric values.
+Live Sub Intel turns synthetic football events into a clear next move: a substitution, a tactical adjustment or a decision to wait. It compares the whole lineup and explains each plan for broadcasters, analysts and coaches in ten languages, using Microsoft Foundry and Azure App Service.
 
-## Project description
+## Problem and value
 
-**The problem.** A substitution is one of the few levers a coach can pull mid-match, and it is often decided on instinct and a look at tired legs. Fans and broadcasters see the change but rarely the reasoning behind it. Match statistics show what happened, not what the team needs next or what a change would cost.
+A substitution affects the shape and capabilities of the team around the incoming player. Coaching staff need to compare those consequences; analysts and broadcasters need to communicate the reason for the change while the match moves on.
 
-**What the app does.**
+Live Sub Intel connects that decision and its explanation in one workflow. The coach supplies intent, the engine compares feasible plans, and the pitch shows the proposed eleven. The same inspected plan becomes concise commentary, statistical analysis or a coaching explanation in the selected language.
 
-1. Reads the match as a stream of events (passes, carries, pressures, recoveries, shots) and keeps running measures per player: attacking threat, chance creation, ball progression, ball retention, defending and estimated physical load.
-2. Combines the score, the minute and the coach's intent (more attacking, balanced or more defensive; seek a win or avoid defeat) into the team's current needs.
-3. Searches every available one-for-one substitution across six supported formations and position assignments, and compares each with the best plan that uses no substitution. Unsupported positions are blocked.
-4. Recommends a change only when it beats that no-substitution plan by a set threshold. Fresh legs justify a change only when the tactical loss stays small, so a key player is not removed just because a fresher, weaker player is on the bench.
-5. Explains the inspected plan for three audiences: a broadcaster gets a qualitative football explanation with key player movements, an analyst gets relevant game-state statistics and the plan's benefit and cost, and a coach gets the game state, intent, role changes and trade-offs, with estimated fatigue when relevant. Threshold scores are available for analysts without repeating eligibility boilerplate. Match statistics in explanations are computed on the server from the same events and rules as the page.
-6. Offers the explanation in ten languages (English, Hebrew, Arabic, Spanish, French, German, Italian, Portuguese, Japanese, Simplified Chinese), separately from the page language.
+## A concrete example
 
-**Why the explanation can be trusted.** The explanation layer cannot change the decision. Microsoft Foundry receives verified facts about the plan and returns only the IDs of the facts worth telling; the app validates them and writes the sentences itself. For languages other than English and Hebrew, Foundry translates only the fixed English sentence templates; names and numbers are inserted afterwards by the server, and a translation is used only if every placeholder, digit and negation survives. If the model is unavailable or its answer fails validation, the app shows a clearly labelled template or English explanation instead.
+At minute 65 of the Arsenal demo, the system recommends Oxlade-Chamberlain for Campbell on the right wing. The proposed pitch, player comparison and explanation all refer to that selected plan. The analyst can inspect the freshness benefit and tactical cost, while the broadcaster gets a short football explanation. Switching output to Spanish preserves the inspected plan.
 
-**Who it is for.** Coaching staff get a ranked shortlist with its trade-offs, analysts get the numbers behind it, and broadcasters get a line they can say on air, in their own language. Inspecting a plan never executes it, and the app says so on screen.
+At minute 85, Arsenal is behind. Changing the result objective changes the recommendation. The tool makes that policy choice visible through the current needs, proposed action and score breakdown.
 
-## Architecture
+## Distinctive design
 
-![The decision engine evaluates plans; Foundry selects facts and translates protected templates](architecture.svg)
+1. **Compare the bench with the current eleven's best alternative.** A substitute must add value beyond the best available tactical adjustment without a swap. The search covers eligible one-for-one substitutions, six supported formations and feasible positional assignments.
+2. **Keep freshness and quality accountable.** Benefit and tactical-quality checks let a fresh player help while limiting the loss of team capability. Every alternative can be inspected with its own status and proposed lineup.
+3. **Connect the explanation to the exact plan.** Microsoft Foundry selects from verified facts about the inspected option. The server preserves identities and literal values and renders audience-specific sentences.
+4. **Personalize one intelligence for global viewing.** Broadcaster, Analyst and Coach outputs share the underlying plan. Ten explanation locales are selectable independently of the English/Hebrew interface.
 
-The engine in App Service makes every decision. Foundry selects optional verified fact IDs and translates protected sentence templates into eight additional languages. Mandatory facts stay server-controlled. Validation and labelled template/English fallback handle unavailable or rejected model outputs. Structural and status checks reduce errors, but do not guarantee complete translation semantics.
+## Working Microsoft implementation
 
-## Microsoft and Azure technologies
+| Component | Role in the deployed app |
+|---|---|
+| Microsoft Foundry, gpt-4.1-mini deployment | Selects relevant verified fact IDs; translates protected templates into eight additional locales. Server validation and labelled fallback control how responses enter the UI. |
+| Azure App Service, Python 3.12 | Hosts the coach room, event replay and evaluation/explanation APIs. Model credentials are server-side. |
+| GitHub Actions and Azure OIDC | Run Python/Node regression checks, deploy main, record the build SHA and support a separate live acceptance workflow. |
 
-The running app uses Microsoft Foundry and Azure App Service, with GitHub Actions for CI/CD: Foundry selects verified facts for the explanation, App Service hosts it, and GitHub Actions tests and deploys every change.
+![Decision engine, Foundry explanation and validation](architecture.svg)
 
-| Technology | What it does in the running app |
-| --- | --- |
-| Microsoft Foundry, Azure OpenAI deployment of gpt-4.1-mini | Selects which verified facts explain the inspected plan (JSON only, 250 tokens, 12 s, no retries), and translates the fixed sentence templates into eight more languages (strict JSON schema, 15 s, validated before use, cached per language). Explanations cached for 10 minutes, two calls at a time. |
-| Azure App Service (Linux, Python 3.12) | Hosts the coach room and its API (`/api/bootstrap`, `/api/evaluate`, `/api/explain`, `/healthz`). The Foundry key lives only in App settings and never reaches the browser. |
-| GitHub Actions with Azure OpenID Connect login | Every merge to `main` runs the full Python test suite, then deploys to App Service. A failing test blocks the deploy. |
-| GitHub | Public repository; the integration and submission updates are documented in pull requests. |
+The workflow is a deterministic planner connected to model-assisted fact selection and translation. Audience modes are output experiences within that workflow. Translation checks protect placeholders and recommendation status; the methodology records the remaining semantic and fluency limits.
 
-## Data and originality
+## Data creation and research
 
-[Sources and transformations](DATA_SOURCES.md) are documented separately from this product summary.
+The displayed match is generated by our seeded possession/event simulator. Its lively scenario contains **1,593 statistical events and 505 visible feed events** in the audited generator version, including authored manager substitutions that change the available XI and bench.
 
-Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
+We computed **72 player profiles** from historical base attributes and pre-cutoff season evidence, and supplemented them with generated physical estimates informed by SkillCorner positional references. StatsBomb Open Data supported the historical research and analytical methodology. The extension connects these layers through a shared schema used by the metrics, search, visualization and explanation facts. [Exact sources and transformations](DATA_SOURCES.md) · [Event pipeline](../EVENT_PIPELINE.md).
 
-- **Match events:** original synthetic events from our own scripted-possession generator, in the same event format the engine reads live. They are not a real fixture, a prediction or licensed Premier League data.
-- **Player profiles:** derived from historical player-attribute data and match-event statistics, and supplemented by generated physical estimates. Historical attributes are adjusted, by at most 6 points, using match evidence from before the match date. Starting line-ups and shirt numbers use historical metadata. Exact input sources, transformations and publication-permission status are documented in [DATA_SOURCES.md](DATA_SOURCES.md).
-- **Estimates:** physical load and position suitability are heuristics, shown as estimates on screen.
-- **Data extension:** 72 derived player profiles connect historical evidence with synthetic physical estimates referenced to SkillCorner's A-League positional aggregates. Our reproducible lively scenario contains 1,593 statistical events and 505 visible feed events in the audited generator version. This is original schema/generation/analysis work, not measured Premier League tracking. See [calculation walkthrough](../research/CALCULATIONS_SANITY_HE_20261024.md).
-- **Research mode:** a separate mode replays four team views across three Premier League 2015/16 fixtures from StatsBomb Open Data to benchmark the engine. It is not the submission demo.
-- **Original work:** the code was written for this hackathon; the first commit is dated 15 October 2026. Open-source libraries: NumPy, pandas, pydantic and the OpenAI Python SDK.
+The match is an authored scenario; player profiles, physical load and positional fit are estimates. The replay does not simulate a causal outcome for an inspected alternative. Historical research mode is available separately from the synthetic submission demo.
+
+## Verification
+
+- **292 Python passed, one optional historical-cache check skipped; 16 Node passed.** Coverage includes event boundaries, rewind, valid lineups, scoring gates, audience/language behavior and server/browser statistics parity.
+- **228 local checkpoint/context evaluations** cover two teams, 19 time checkpoints and six combinations of approach/objective. This is model-logic coverage, separate from live provider testing.
+- **46/46 model-assisted explanations on Azure build 6056cb4**, translation in all eight additional locales, no English fallback, no recorded identity failures and no digits in broadcaster output. [Accepted run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40352309569) · [Original report](../research/live_acceptance_6056cb4_20261026.json).
+
+These results support the technical behavior shown in the demo. Coaching utility, model scores and translation fluency are evaluated separately; [methodology](../METHODOLOGY.md) and [decision sanity review](DECISION_REVIEW_20261024.md) describe the prototype's scope.
 
 ## Testing instructions for judges
 
-![Hudl Statsbomb](../../web/coach-room/statsbomb-logo.png)
+The [Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) is public and needs no login. Allow time for the initial server startup.
 
-Historical research uses StatsBomb Open Data. Physical references use [SkillCorner Open Data](https://github.com/SkillCorner/opendata), with its MIT notice retained. See [DATA_SOURCES.md](DATA_SOURCES.md) for input versions, transformations and source conditions.
+1. Start at Arsenal 65, More attacking / Seek a win. Inspect Campbell → Oxlade-Chamberlain and open the player comparison.
+2. Request a Broadcaster explanation, select Spanish, then compare the Analyst output. Keep the same plan selected.
+3. Select another alternative and verify that its lineup and explanation update together.
+4. At Arsenal 85, compare Seek a win and Avoid defeat. Inspect the changed recommendation and its supporting needs.
 
-The app is live with no login at [live-sub-intel on Azure](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/) and stays up through the end of judging (11 November 2026 in Israel; maintain a safety buffer). The first load can take up to 30 seconds while the server starts.
+[One-minute judge guide](JUDGE_GUIDE.md) · [Full capture table](RECORDING_ROUTE_HE.md).
 
-**Two-minute walkthrough**
-
-1. Open [this checkpoint](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&freshness_cap=1&lang=en&inspect=1): Arsenal at minute 65, More attacking, Seek a win, plans open.
-2. Read the bench decision: the recommended plan, its benefit against the 0.15 threshold, and the ranked alternatives that pass the rules.
-3. Click the second alternative. The proposed pitch and the explanation both switch to that plan.
-4. Keep Audience on Broadcaster and click **Explain this plan**. The line under the text reads "Model-assisted fact selection (gpt-4.1-mini)" when Foundry selected the facts, or "Verified template" with the reason when it did not.
-5. Switch Audience to Analyst for relevant match statistics, player movements and trade-offs, or Coach for the game state and tactical purpose. Pick another explanation language, for example Français or العربية, next to the audience: the page itself stays in English, and the note says whether Foundry translated the templates or the text is shown in English.
-6. Step forward or back five minutes, or change the approach and result objective; the analysis recalculates from the events up to that minute.
-
-`/healthz` reports the deployed build, the data mode and whether Foundry is configured, without exposing settings or keys. How every number is computed: [Methodology](../METHODOLOGY.md).
-
-**Run it locally** (Python 3.12):
+To run locally with Python 3.12:
 
 ```bash
 git clone https://github.com/TomThomasPrintac/live-sub-intel.git
 cd live-sub-intel
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+# Activate .venv, then:
 pip install -e ".[dev,llm]"
 python scripts/serve_app.py --port 8779
 ```
 
-Then open `http://127.0.0.1:8779/?team=1&minute=65&stance=attack&objective=win&inspect=1`. Without Foundry settings the decisions are identical and explanations are labelled templates; set `FOUNDRY_ENDPOINT`, `FOUNDRY_API_KEY` and `FOUNDRY_DEPLOYMENT` to use the model. Tests: `python -m pytest -q`.
+Set FOUNDRY_ENDPOINT, FOUNDRY_API_KEY and FOUNDRY_DEPLOYMENT server-side for model calls. Without settings, the decisions remain available with labelled templates. `/healthz` reports the build/configuration without exposing keys.
 
-## Finalization status
+![Hudl Statsbomb](../../web/coach-room/statsbomb-logo.png)
 
-The verified deployed integration is **6056cb4** (PR #36). The [preserved live acceptance](../research/live_acceptance_6056cb4_20261026.json) records **46/46 model-assisted explanations**, translation in all eight additional locales, no English fallback, no recorded identity failures and no digits in broadcaster output. The build SHA is unchanged before and after the run. [Actions run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40352309569). See [current status](FINAL_STATUS.md) for the remaining submission steps and known limits.
+Historical research uses StatsBomb Open Data. Physical references use SkillCorner Open Data, with its MIT notice retained. [Source conditions and attribution](DATA_SOURCES.md).
 
-The repository includes Python/Node regression coverage, synthetic/historical explanation audits and a [reproducible event-pipeline trace](../EVENT_PIPELINE.md). These establish technical consistency, not calibrated coaching accuracy or native-language fluency. Exact current results belong to the relevant CI run and PR, rather than an outdated hard-coded count here.
-
-Delivery: the team has recorded footage. Finish editing/captions, upload the final video and add its actual public URL. Confirm the team fields, complete the entry declarations and submit. [Final checklist](SUBMISSION_CHECKLIST.md).
+Delivery: recorded footage is being edited. Add the final public video URL and complete the team fields and entry declarations using the [submission checklist](SUBMISSION_CHECKLIST.md).

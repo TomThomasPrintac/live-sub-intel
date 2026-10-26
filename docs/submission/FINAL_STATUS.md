@@ -16,6 +16,7 @@ The package includes the current narration revision and concise submission entry
 | Material | Purpose |
 |---|---|
 | [Submission copy](SUBMISSION.md) | English pitch, Azure implementation and testing instructions |
+| [Hackathon fit](JUDGING_FIT.md) | Implemented strengths and evidence mapped to the five judging areas |
 | [Judge guide](JUDGE_GUIDE.md) | Short inspection route |
 | [Video table](RECORDING_ROUTE_HE.md) and [voiceover](VIDEO_NARRATION_EN.txt) | Opening match playback, Chamberlain substitution, Spanish/audience examples and late objective comparison |
 | [Architecture](architecture.svg) | Decision engine, Foundry fact selection, translation and validation |

@@ -5,6 +5,7 @@
 ## Submission materials
 
 - [English project description](submission/SUBMISSION.md).
+- [Hackathon fit and evidence](submission/JUDGING_FIT.md): a concise mapping from the implemented experience to the official challenge and judging areas.
 - [Video script](submission/VIDEO_SCRIPT.md), [capture table in Hebrew](submission/RECORDING_ROUTE_HE.md) and [standalone narration](submission/VIDEO_NARRATION_EN.txt).
 - [Final submission checklist](submission/SUBMISSION_CHECKLIST.md).
 - [Architecture](submission/architecture.svg), [data sources](submission/DATA_SOURCES.md), [logo provenance](submission/STATSBOMB_LOGO.md) and [third-party notices](../THIRD_PARTY_NOTICES.md).

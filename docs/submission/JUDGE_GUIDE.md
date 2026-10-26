@@ -1,32 +1,32 @@
-# Judge guide — a one-minute route through the live app
+# Judge guide — one decision, several experiences
 
-**Live Substitution Intelligence:** an AI-assisted decision workflow that compares the bench with the best tactical use of the current eleven. No login required.
+Open the [live Arsenal demo at 65 minutes](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1). No login required. [Judging fit and evidence](JUDGING_FIT.md).
 
-## 1. A substitution, with a cost — Arsenal at 65
+## 1. See the proposed change
 
-[Open Arsenal, 65, more attacking / seek a win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1).
+The audited build recommends **Campbell → Oxlade-Chamberlain**, with benefit about **0.192** against **0.150**. Compare the current and proposed pitches, then open the player comparison. The incoming player takes the right-wing role; the plan also records its other positional movements.
 
-The reviewed build recommends **Campbell → Oxlade-Chamberlain**, incremental benefit about **0.192** against **0.150**. This is a model score, not a goal prediction. Select Analyst and Explain: the output links relevant past-event statistics to the inspected plan and names its position changes. Choose the second alternative or a rejected one; both the pitch and explanation follow that exact plan. Rejection can be due to tactical quality even when a rounded score appears near the threshold.
+The substitute is compared with the best action available without using a bench player. The score breakdown separates freshness and tactical contributions, and a separate quality check governs eligibility.
 
-## 2. Personalize the same facts
+## 2. Hear the same plan differently
 
-Choose Broadcaster, Analyst and Coach. Then choose Français or العربية in the separate explanation selector and press Explain. The page language stays unchanged. The source line distinguishes model fact selection, model translation and fallback. Names/numbers are server-inserted; the model does not decide the substitution.
+Choose Broadcaster and press Explain. Switch explanation language to Español, then choose Analyst and explain again. The interface remains in English while the explanation changes language and audience emphasis. Select another alternative: its pitch and explanation follow that plan's identity.
 
-## 3. A tactical action can be preferable — Arsenal at 85
+The source label identifies model-assisted fact selection, translation and any fallback. The server owns the plan and inserts protected literal values after template translation.
 
-[Open Arsenal, 85, more attacking / seek a win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=85&stance=attack&objective=win&inspect=1).
+## 3. Change the match objective
 
-Arsenal is behind with one substitution remaining. The model prefers repositioning at about **0.217**; its best substitution adds only **0.115** beyond the best action without a swap. Switch the objective to a draw and inspect the changed policy. Waiting or repositioning is a valid result, not an empty demo.
+Open [Arsenal 85, attack / win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=85&stance=attack&objective=win&inspect=1). Arsenal trails with one substitution available. The tactical adjustment scores about **0.217**; the best swap adds about **0.115** beyond the best no-swap action. Change the objective to Avoid defeat and inspect the recalculated recommendation.
 
-## 4. Keep the presentation with Arsenal
+## Optional: a shape-changing plan
 
-Use the same Arsenal scenario throughout the video. Move between the first recommendation, a rejected alternative and the late tactical action; compare coach intent without switching teams. The Liverpool perspective remains available in the app and the research review, but is outside this recording route.
+Explore [Liverpool 85, balanced / win](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=24&minute=85&stance=balanced&objective=win&inspect=1). The reviewed scenario recommends **Ibe → Lucas Leiva** in **4-1-4-1**, trading attacking contribution for defending/retention and freshness. This is outside the Arsenal recording route and illustrates another use of the formation search.
 
-## What to evaluate
+## Evidence and method
 
-- [Methodology](../METHODOLOGY.md): time boundaries, unknown values, estimated possession/load and scoring.
-- [Independent decision sanity review](DECISION_REVIEW_20261024.md): five outcomes, with professional limits.
-- [Current release evidence and remaining steps](FINAL_STATUS.md).
-- [Architecture and submission description](SUBMISSION.md).
+- [Current build and live acceptance](FINAL_STATUS.md): 6056cb4 and its preserved 46-case provider report.
+- [Methodology](../METHODOLOGY.md): event cutoffs, estimated values, player metrics and scoring.
+- [Decision review](DECISION_REVIEW_20261024.md) and [228-case checkpoint review](RECORDING_CHECKPOINT_REVIEW.md).
+- [Architecture and product description](SUBMISSION.md) and [source inventory](DATA_SOURCES.md).
 
-The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `6056cb4` (PR #36), with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_6056cb4_20261026.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_STATUS.md).
+Match actions are synthetic; profiles use historical inputs and generated physical estimates. The pitch is schematic. These are inspectable model proposals; scores are model units and the authored replay continues independently of the inspected alternative.
