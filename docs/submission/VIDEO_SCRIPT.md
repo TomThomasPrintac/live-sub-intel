@@ -1,35 +1,26 @@
-# Demo video — English narration, target 1:45–1:50
+# Demo video — concrete screen-led narration
 
-> Expanded recording route based on all 228 checkpoint/intent/team combinations: [screen actions and narration](RECORDING_ROUTE_HE.md), [full checkpoint review](RECORDING_CHECKPOINT_REVIEW.md), and [standalone English narration](VIDEO_NARRATION_EN.txt). These local coverage checks do not claim 228 live model calls.
+26 October 2026 revision. Route: **0 → 5 → 10 → cut to 65 → cut to 85**. English narration: **175 words**, target 1:50–1:55 and strictly under two minutes. [Standalone voiceover](VIDEO_NARRATION_EN.txt) · [Hebrew capture instructions](RECORDING_ROUTE_HE.md) · [All audited checkpoints](RECORDING_CHECKPOINT_REVIEW.md).
 
-The reviewed Azure integration baseline is ca18fb4 (PR #34), with a preserved 46/46 strict acceptance report linked in [FINAL_STATUS.md](FINAL_STATUS.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
+| Video time | Screen action | English narration |
+|---|---|---|
+| 0:00–0:10 | Minute 0, Arsenal, Balanced / Seek a win. Show the lineup and bench. | “Live Sub Intel helps you make the next move: who comes on, who comes off, and where everyone plays.” |
+| 0:10–0:25 | Advance from 0 to 5 to 10; show the clock, event feed and statistics. Fast playback is optional for this opening; return to Instant for the remaining scenes. | “We’re following Arsenal in a generated match, using historical player profiles and physical estimates. As time advances, events arrive and the statistics update with the game.” |
+| 0:25–0:42 | Cut to 65, More attacking / Seek a win. Inspect Campbell → Oxlade-Chamberlain. Point to the outgoing and incoming players on the current/proposed pitches. | “At sixty-five minutes, Arsenal are leading. The recommendation is Oxlade-Chamberlain for Campbell, adding fresh legs on the right wing.” |
+| 0:42–0:59 | Stay at 65. Point to Oxlade-Chamberlain at right wing in the proposed lineup, then open Compare players & scoring. Keep the focus on the winger substitution rather than the other position adjustments. | “The proposed lineup highlights the incoming player. Open the comparison to see both profiles and the changes in attacking threat, chance creation and ball progression.” |
+| 0:59–1:23 | Stay on the same substitution at 65. Explain as Broadcaster in English, switch explanation language to Español and explain again, then select Analyst and explain. Point to one statistic in the returned explanation of this substitution. | “The broadcaster explains this substitution in a short line. Switch to Spanish, and the same plan is explained in Spanish. Choose Analyst, and the explanation adds relevant match statistics and trade-offs.” |
+| 1:23–1:40 | Cut to 85, Attack / Win. Show Arsenal behind, select Coach, then change Result objective to Avoid defeat and show the recalculated recommendation. | “At eighty-five minutes, Arsenal are behind. Seeking a win calls for a tactical adjustment. Switch to avoiding defeat, and the system recommends holding the current setup.” |
+| 1:40–1:55 | Wide app view, then end card with project name, live site, repository and source attribution. Optional on-screen flow: match events → decision engine → Foundry explanation. | “Azure App Service hosts the match room. Microsoft Foundry selects the relevant facts and translates the explanation, so a coach and a Spanish-speaking broadcaster can follow the same decision.” |
 
-| Time | Screen action | Narration |
-| --- | --- | --- |
-| 0:00–0:12 | Project title and coach room | “Live Substitution Intelligence turns a football event stream into an explainable bench decision. It compares substitutions and tactical changes across the whole eleven.” |
-| 0:12–0:28 | Arsenal at 60, advance to 65 instantly | “The match is synthetic. Player profiles use historical data, supplemented by generated physical estimates. Events and scripted substitutions update the score, lineup and available bench.” |
-| 0:28–0:45 | Set More attacking / Seek a win; inspect plans | “The coach supplies intent. The engine considers the bench, position suitability, tactical trade-offs and estimated freshness. A recommendation must clear both a benefit threshold and a quality check.” |
-| 0:45–1:02 | Inspect first, then second/rejected alternative | “Each alternative has its own proposed lineup and explanation. A rejected option remains inspectable, with its rejection reason visible.” |
-| 1:02–1:23 | Request Broadcaster then Analyst; one additional language | “Microsoft Foundry selects verified facts. The broadcaster gets a concise football explanation; the analyst gets relevant match statistics and tactical trade-offs. Language changes preserve the selected plan and facts.” |
-| 1:23–1:38 | Coach audience; change to Arsenal at 85 attack/win | “The coach view emphasizes game context and tactical consequences. Sometimes repositioning the current eleven is preferred to using the remaining substitution.” |
-| 1:38–1:48 | Wide view; end card with public repo and site | “Azure App Service hosts the experience, with GitHub Actions testing and deploying it. The goal is a decision you can inspect and question, rather than an unexplained ranking.” |
+## Off-mic production notes
 
-Coach and extra languages are present in the reviewed build. Before recording, make one warm-up request for the exact plan/audience/language you will show and confirm the source label. Translation validation is not a guarantee of native-level fluency. Never call a model score a probability of winning. Do not claim that inspecting a plan simulates its counterfactual outcome.
-
-## Capture and upload checklist
-
-- Start with English interface, Arsenal, 65, attack/win and plans open. Check the plan actually present in the deployed build before naming a player in narration.
-- Warm up once, then record. Model requests must show the correct source; do not disguise a template as Foundry.
-- Keep the browser zoom readable; collapse JSON/methodology panels.
-- Cut to fixed checkpoints if necessary; do not imply a cut is continuous real-time playback.
-- Export MP4, check duration and readable text, upload to your own supported video account, verify public playback without login.
-- Put the exact video and repository URLs into the submission and save submission confirmation. Video recording/upload have not been done by this document.
-
-## Recording route (stable links)
-
-- Opening: https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1
-- Late tactical case: https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=85&stance=attack&objective=win&inspect=1
-
-Use Arsenal throughout the final video, including alternative plans and language changes. Do not spend screen time reading raw JSON. If showcasing innovation, replace a generic architecture line with: “Our translation checks also protect whether a plan is recommended or rejected.” Avoid claiming general hallucination elimination.
-
-The video can be recorded as a functional demonstration now. Submission still has the separate documented data-rights gate; a successful recording does not certify that gate or complete the submission.
+- Record the real Azure app, with the interface in English. Prepare the exact plan/audience/language requests once before recording. Confirm the source label; do not present a template fallback as a successful model request. This is a production check, not spoken narration.
+- Keep JSON, methodology and sensitivity panels closed. Open Compare players & scoring at 65 when the narration points to it. Position-adjustment details are not a separate talking point in this film.
+- Spanish is the **explanation language**; leave the interface in English. Press Explain after each audience/language change. Check that the output really is Spanish before recording it.
+- Keep cuts visible as edits. The 65-minute plan retains 4-2-3-1. Focus the role explanation on the incoming right winger; do not describe a formation change. Inspection does not execute a substitute or change future events; no line about that is required in the voiceover, but the film must not imply otherwise.
+- At 65 the recommendation is mainly freshness-led. Do not claim the booking is an independently scored sending-off-risk penalty. Do not include the Mertesacker/Gabriel alternative in this film.
+- At 85, Win yields a tactical adjustment and Draw yields Wait on the audited baseline. Show the actual result; this demonstrates policy sensitivity, not proven coaching accuracy. If you need to save time, omit the Coach explanation request and show only the objective change.
+- Keep the final export strictly below two minutes. Target 1:50–1:55; measure your actual voice recording. Shorten transition pauses or omit the opening 10-minute checkpoint if needed. Do not speed the narration until it becomes hard to follow.
+- Put the official StatsBomb logo and a short source line on the end card: `Historical research: StatsBomb Open Data. Physical references: SkillCorner Open Data.` Link DATA_SOURCES.md in the public video description. Use original or appropriately licensed audio/assets; background music is optional.
+- Add corrected English captions. Check Campbell, Oxlade-Chamberlain, Foundry and Spanish names/output. Captions follow the voiceover; they need not transcribe the whole UI explanation.
+- Warm up/check the actual deployed build before recording. Do not merge/deploy during capture. This script edit does not modify the app, player data, ratings or decision rules.

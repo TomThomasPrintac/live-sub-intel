@@ -1,58 +1,63 @@
 # Live Substitution Intelligence
 
-**From match events to an explainable bench decision.** Compare a substitution with the best tactical adjustment available to the current eleven, then explain the inspected plan for a broadcaster, analyst or coach.
+**The next bench decision, with the whole team in view.**
 
-Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
+Live Sub Intel connects what is happening in a match to the next bench decision. It compares substitutions and tactical changes across the current eleven, then explains the selected plan for broadcasters, analysts and coaches in ten languages.
 
-[Open the live Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [60-second judge guide](docs/submission/JUDGE_GUIDE.md) · [Event-to-decision walkthrough](docs/EVENT_PIPELINE.md) · [Submission description](docs/submission/SUBMISSION.md)
+[Try the Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [One-minute judge guide](docs/submission/JUDGE_GUIDE.md) · [Submission description](docs/submission/SUBMISSION.md) · [Hackathon fit and evidence](docs/submission/JUDGING_FIT.md)
 
-Built for the Microsoft × Premier League hackathon by Thomas, Tal and Ofir. **Verified deployed baseline: `ca18fb4` (PR #34), 46/46 model-assisted explanations, all eight translated locales, no English fallback.** [Current status and evidence](docs/submission/FINAL_STATUS.md). This documentation branch does not change that deployed build.
+Built by Thomas, Tal and Ofir for the Microsoft × Premier League hackathon.
 
-![Arsenal's current eleven, with goal, assist and booking markers](docs/submission/coach-room-arsenal.png)
+![Arsenal's current and proposed lineups in the Azure coach room](docs/submission/coach-room-arsenal.png)
 
-*Actual Azure interface, Arsenal at 65 minutes. The pitch is schematic; match actions are synthetic.*
+*Actual Azure interface. Match events are synthetic; player profiles use historical attributes and generated physical estimates. Pitch locations are schematic.*
 
-## Start with Arsenal
+## What makes the decision useful
 
-1. **Arsenal, 65, attack / win:** inspect a proposed substitution and select a different alternative. Each has its own lineup, score, rejection status and explanation.
-2. **Arsenal, 85, attack / win:** the side is behind. Compare repositioning without a substitution against the remaining bench option.
-3. **Arsenal, 90, attack / win:** inspect why waiting can be preferred when no plan clears both decision gates. Change coach intent and compare the result.
+- **A fair comparison for the bench.** Each eligible substitution is compared with the best tactical use of the players already on the pitch. Freshness, role suitability, positional movements and tactical costs contribute to the result.
+- **Coach intent changes the context.** Choose an attacking, balanced or defensive approach and a result objective. The system recalculates needs and candidate plans.
+- **The entire proposed XI is visible.** Inspect the incoming player, named movements, formation, score and alternatives on the pitch. Separate benefit and quality checks govern recommendations.
+- **One plan reaches different audiences.** A broadcaster gets a concise football explanation; an analyst gets relevant match statistics and trade-offs; a coach gets game context and role changes.
+- **Language is independent of the interface.** Ten explanation locales share the same server-verified plan. English/Hebrew interface controls remain separate from output language.
 
-The recording route stays with Arsenal. Liverpool's perspective remains available in the team selector for additional exploration.
+## See it in one minute
 
-The timeline advances under your control every five minutes. Instant is the default; slower playback is optional. Scripted manager substitutions change the active XI and remaining bench. Inspecting an option does not execute it or rewrite subsequent events.
+1. **Arsenal, 65, attack / win:** inspect Campbell → Oxlade-Chamberlain. Open the player comparison, then select another alternative; the pitch and explanation follow the selected plan.
+2. **Stay on that plan:** request Broadcaster, switch explanation output to Spanish, then select Analyst. Compare the presentation of the same football decision.
+3. **Arsenal, 85:** compare Seek a win with Avoid defeat. Observe how the changed objective affects the proposed action.
 
-## One intelligence, three experiences
+The replay advances at five-minute checkpoints; Instant is the default. Scripted manager substitutions update the active XI and available bench. Plan inspection is a comparison view; the replay continues along its authored event timeline. [Recording table](docs/submission/RECORDING_ROUTE_HE.md).
 
-| Audience | Output |
-| --- | --- |
-| Broadcaster | A compact qualitative decision, its purpose, cost and key named movements. No numerical scores. |
-| Analyst | Relevant past-event statistics, concrete position changes, benefit and cost; numerical utility is available when selected. |
-| Coach | Game state and intent, concrete role changes, benefits and costs, with estimated fatigue or discipline context when relevant. |
-
-The interface is English/Hebrew. Explanation output is separately selectable in English, Hebrew, Arabic, Spanish, French, German, Italian, Portuguese, Japanese and Simplified Chinese. English/Hebrew sentences are authored templates; Foundry translates the other eight with validation and explicit English fallback. This is ten supported locales, not a claim of universal language coverage or native-speaker verification.
-
-## How it works
+## How the intelligence works
 
 ```mermaid
 flowchart LR
-    E[Synthetic event stream] --> M[Metrics and estimated load]
-    P[Historical player priors] --> X[Full-XI search]
-    C[Coach intent] --> N[Current needs]
+    E[Synthetic match events] --> M[Player metrics and estimated load]
+    P[Historical-derived profiles] --> X[Whole-XI plan search]
+    C[Coach intent] --> N[Current team needs]
     M --> N --> X
-    X --> F[Server-verified plan and match facts]
-    F --> A[Foundry selects optional fact IDs]
-    A --> V[Audience-specific verified templates]
-    V --> T[Foundry translates protected templates]
-    T --> G[Validate status, IDs and placeholders]
-    G --> U[Coach room / explicit fallback]
+    X --> F[Verified plan and match facts]
+    F --> A[Foundry fact selection]
+    A --> T[Audience templates and translation]
+    T --> V[Server validation and protected values]
+    V --> U[Coach room and labelled fallback]
 ```
 
-The deterministic engine owns the decision. All available one-for-one swaps, six supported shapes and feasible position assignments are compared with the best action without a substitute. A quality gate prevents freshness from justifying excessive tactical loss. Scores are model units, not win probabilities. Foundry selects which optional facts to tell; mandatory decision/rejection facts remain server-controlled. Names and numbers are inserted by the server after template translation.
+The deterministic engine evaluates eligible one-for-one swaps across six supported formations and feasible position assignments. Microsoft Foundry selects optional verified facts and translates protected templates. The server owns plan identity, decision status and literal values; validation and labelled fallback handle rejected or unavailable model output. [Architecture](docs/submission/architecture.svg) · [Event-to-decision walkthrough](docs/EVENT_PIPELINE.md).
 
-The translation validator caught a real limitation: valid JSON can reverse recommendation status. Regression cases now cover those failures. Translation uses fixed grammatical context, protected values and one bounded retry for rejected items. These checks reduce errors; they do not certify native-speaker fluency.
+## Working Microsoft integration and evidence
 
-## Run locally
+| Evidence | Result |
+|---|---|
+| Azure App Service + Microsoft Foundry | Public working app with server-side model credentials; GitHub Actions tests and deploys main using OIDC |
+| Accepted deployed build | `6056cb4` (PR #36); [live acceptance run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40352309569) |
+| Real model requests in that run | **46/46**, all eight translated locales, no English fallback or recorded plan-identity failures |
+| Regression verification | **292 Python passed, one optional check skipped; 16 Node passed** |
+| Checkpoint/context coverage | **228 local evaluations** across two teams, 19 checkpoints and six coach contexts |
+
+[Original live report](docs/research/live_acceptance_6056cb4_20261026.json) · [Current release and delivery status](docs/submission/FINAL_STATUS.md) · [Full checkpoint review](docs/submission/RECORDING_CHECKPOINT_REVIEW.md).
+
+## Run and verify
 
 Python 3.12 recommended:
 
@@ -65,32 +70,24 @@ python scripts/serve_app.py --port 8779
 
 Open `http://127.0.0.1:8779/?team=1&minute=65&stance=attack&objective=win&inspect=1`.
 
-The default is `--data-mode synthetic --scenario lively`. `--scenario original` retains the old fixed-XI comparison. `--data-mode historical` is a separate research benchmark, not the submission demo. Optional research exports are generated locally and are not bundled as ZIP/Excel assets.
-
-Without credentials the decisions work offline and explanations are labelled templates. For Foundry, set `FOUNDRY_ENDPOINT`, `FOUNDRY_API_KEY` and `FOUNDRY_DEPLOYMENT` server-side; never commit keys. Azure App Service hosts the app, and GitHub Actions tests/deploys main using OIDC.
-
-## Verify
+Default: synthetic data, lively scenario. Historical research mode is separately selectable. Without provider settings, the same decision engine runs locally with labelled template explanations. For Foundry, configure `FOUNDRY_ENDPOINT`, `FOUNDRY_API_KEY` and `FOUNDRY_DEPLOYMENT` server-side.
 
 ```bash
 python -m pytest -q
 node --test tests/test_coach_room_ui.cjs tests/test_match_replay_ui.cjs tests/test_integrated_ui.cjs
-python scripts/live_acceptance.py https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net --require-model --extended-audiences
+python scripts/audit_submission_package.py
 ```
 
-The last command makes bounded real model requests. Local tests do not prove Azure connectivity. Health reports build/configuration; fresh acceptance establishes request-time behavior. The live acceptance workflow is available under Actions. [Latest preserved 46-case report](docs/research/live_acceptance_ca18fb4_20261026.json) · [Release status](docs/submission/FINAL_STATUS.md) · [Earlier independent review](docs/submission/RELEASE_REVIEW_20261024.md).
+The manual **Live acceptance on Azure** workflow makes bounded real model requests and records the deployed SHA. Run it after deployment; each report applies to its recorded build.
 
-## Scope, sources and limitations
+## Methodology and sources
 
-The original match generator produces reproducible football-like events. Player profiles are derived from historical priors and event evidence; physical estimates use SkillCorner positional references. Exact sources, transformations and publication status are in [data provenance](docs/submission/DATA_SOURCES.md). The profile layer is not independently generated from scratch. Estimated possession comes from event-control time; load and pitch positions are estimates. Counts use only past events and rewind with the clock.
+The demo combines an authored synthetic match with profiles computed from historical base attributes and season evidence, supplemented by generated physical estimates. StatsBomb Open Data supports the historical research; SkillCorner positional references inform physical estimates. [Source versions, attribution and conditions](docs/submission/DATA_SOURCES.md) · [Third-party notices](THIRD_PARTY_NOTICES.md).
 
-One substitution is inspected at a time. No ten-player solver, opposition-specific weakness detector, real-time tracking, validated win-probability model or autonomous multi-agent team is claimed. Technical consistency tests do not establish that a substitution improves results. See [five decision sanity checks](docs/submission/DECISION_REVIEW_20261024.md).
-
-[Data sources and outstanding permissions](docs/submission/DATA_SOURCES.md) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Final checklist in Hebrew](docs/submission/FINAL_CLOSEOUT_HE.md) · [English video script](docs/submission/VIDEO_SCRIPT.md)
-
-[Documentation index](docs/README.md) · [How incoming events become player performance and team needs](docs/EVENT_PIPELINE.md) · [Calculation walkthrough and sanity checks (Hebrew)](docs/research/CALCULATIONS_SANITY_HE_20261024.md) · [Final submission checklist](docs/submission/SUBMISSION_CHECKLIST.md)
+The prototype evaluates one substitution at a time. Load, role fit and utility are estimates; scores are not win probabilities. Technical test results and translation checks are separate from coaching-outcome validation and native-speaker fluency. [Methodology](docs/METHODOLOGY.md) · [Decision review](docs/submission/DECISION_REVIEW_20261024.md).
 
 ![Hudl Statsbomb](web/coach-room/statsbomb-logo.png)
 
-Historical research uses StatsBomb Open Data; the displayed match events are synthetic. Physical estimates use SkillCorner positional references. [Official logo provenance](docs/submission/STATSBOMB_LOGO.md).
+Historical research uses StatsBomb Open Data. [Logo provenance](docs/submission/STATSBOMB_LOGO.md).
 
-Publication permissions for retained third-party inputs and derived profiles remain documented in [data provenance](docs/submission/DATA_SOURCES.md). Citations, historical dates and generated estimates do not by themselves resolve those permissions.
+[Documentation index](docs/README.md) · [Submission checklist](docs/submission/SUBMISSION_CHECKLIST.md) · [English video script](docs/submission/VIDEO_SCRIPT.md)

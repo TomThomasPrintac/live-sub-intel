@@ -1,8 +1,8 @@
 # Third-party notices and source boundaries
 
-Project-generated match events and project code are distinct from retained historical data. This file is not a blanket license for all repository content.
+This inventory distinguishes original project code and generated match events from historical inputs and external software.
 
-The [consolidated source/use/claims matrix](docs/submission/RIGHTS_AND_CLAIMS.md) maps these inputs to the website, API, data files, research snapshots, history and submission materials.
+The [source inventory](docs/submission/DATA_SOURCES.md) records input versions, transformations and applicable conditions.
 
 ## SkillCorner Open Data
 
@@ -10,15 +10,15 @@ Physical-generation references use position-group aggregates from SkillCorner's 
 
 ## StatsBomb Open Data
 
-Historical evidence and derived analysis use https://github.com/hudl/open-data, pinned in the collector. StatsBomb's Public Data User Agreement applies; it is not a blanket MIT/CC0 license. The app footer and this repository include the official Hudl Statsbomb logo with attribution; [asset provenance](docs/submission/STATSBOMB_LOGO.md). Attribution and redistribution/commercial-use conditions are distinct. See [data-source gate](docs/submission/DATA_SOURCES.md).
+Historical evidence and derived analysis use https://github.com/hudl/open-data, pinned in the collector and subject to its Public Data User Agreement. The official Hudl Statsbomb logo and attribution are retained in the website and repository; [asset provenance](docs/submission/STATSBOMB_LOGO.md). The applicable source conditions are summarized in [DATA_SOURCES.md](docs/submission/DATA_SOURCES.md).
 
 ![Hudl Statsbomb](web/coach-room/statsbomb-logo.png)
 
-## FIFA16 / SoFIFA-derived profiles
+## Historical player-attribute inputs
 
-The source revision and unresolved redistribution permission are recorded in DATA_SOURCES.md. Naming the source does not grant rights. Original project code licensing must not purport to relicense these inputs.
+Source versions and conditions for historical-derived profiles are recorded in [DATA_SOURCES.md](docs/submission/DATA_SOURCES.md). Code and input-data licensing remain separate.
 
-The [26 October source review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the retained inputs and outstanding permission questions. This project does not claim a blanket content-policy authorization for those inputs.
+The project describes computed profiles as historical-derived estimates, alongside original synthetic match events and generated physical estimates.
 
 ## Runtime packages
 

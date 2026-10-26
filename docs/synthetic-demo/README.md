@@ -20,4 +20,4 @@ python scripts/serve_demo.py --port 8765
 Open `http://127.0.0.1:8765` on that same computer. The server creates a fresh
 engine per viewer and feeds events sequentially. No hosted backend or remote
 LLM is deployed. Checkpoints and an explanation template are not proof of
-football decision quality; see [the handoff](../TEAM_HANDOFF_HE.md).
+football decision quality; see [the handoff](../submission/FINAL_STATUS.md).
