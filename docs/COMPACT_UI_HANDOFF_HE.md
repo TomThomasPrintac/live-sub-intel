@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # עיצוב חדר המאמן וסימון התרחיש
 
 עיצוב חדר המאמן — תצוגה פחות עמוסה, 21.10.2026

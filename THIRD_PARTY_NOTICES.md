@@ -2,6 +2,8 @@
 
 Project-generated match events and project code are distinct from retained historical data. This file is not a blanket license for all repository content.
 
+The [consolidated source/use/claims matrix](docs/submission/RIGHTS_AND_CLAIMS.md) maps these inputs to the website, API, data files, research snapshots, history and submission materials.
+
 ## SkillCorner Open Data
 
 Physical-generation references use position-group aggregates from SkillCorner's Australian A-League 2024/25 Open Data, revision `4340d274572876239c154c90bc507a9b3250a656`. These are not observed tracking measurements for the displayed players. The original MIT notice is retained in [LICENSES/SkillCorner-MIT.txt](LICENSES/SkillCorner-MIT.txt). Source: https://github.com/SkillCorner/opendata.
@@ -16,7 +18,7 @@ Historical evidence and derived analysis use https://github.com/hudl/open-data, 
 
 The source revision and unresolved redistribution permission are recorded in DATA_SOURCES.md. Naming the source does not grant rights. Original project code licensing must not purport to relicense these inputs.
 
-This project is not endorsed by or affiliated with EA or its licensors. This notice follows the wording in EA's content policy; it is not a claim that the policy authorizes the retained CSV, scraping or every project use. The [26 October license review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the applicable sources and open questions.
+The [26 October source review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the retained inputs and outstanding permission questions. This project does not claim a blanket content-policy authorization for those inputs.
 
 ## Runtime packages
 

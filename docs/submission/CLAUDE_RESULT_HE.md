@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 # סיכום שילוב — קלוד, 24.10.2026
 
 > מסמך היסטורי של שלב השילוב הראשון. לסטטוס אחרי PR #28–#32 ולראיות הקבלה העדכניות: [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md). הסעיפים הפתוחים כאן אינם רשימת המשימות הנוכחית.

@@ -1,6 +1,8 @@
 # Demo video — English narration, target 1:45–1:50
 
-The reviewed Azure integration baseline is 0f3e19d (PR #33), with a preserved 46/46 strict acceptance report linked in [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
+> Expanded recording route based on all 228 checkpoint/intent/team combinations: [screen actions and narration](RECORDING_ROUTE_HE.md), [full checkpoint review](RECORDING_CHECKPOINT_REVIEW.md), and [standalone English narration](VIDEO_NARRATION_EN.txt). These local coverage checks do not claim 228 live model calls.
+
+The reviewed Azure integration baseline is ca18fb4 (PR #34), with a preserved 46/46 strict acceptance report linked in [FINAL_STATUS.md](FINAL_STATUS.md). Recheck the deployed build after any later polish merge. No localhost address, design-lab toolbar, API keys, internal diagnostics, or unimplemented feature claims. Use original audio or properly licensed audio; silent background is sufficient. Record a short retake rather than hiding a failed model call.
 
 | Time | Screen action | Narration |
 | --- | --- | --- |

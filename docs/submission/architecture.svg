@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">Live Substitution Intelligence architecture</title>
+<desc id="desc">Synthetic events, historical-derived profiles and coach intent feed a deterministic decision engine on Azure App Service. Microsoft Foundry selects optional verified facts and translates protected templates. The server validates the output and renders broadcaster, analyst or coach explanations, with labelled fallback.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#786b95"/></marker></defs>
+<rect width="1200" height="650" fill="#faf8ff"/>
+<g font-family="Arial, sans-serif" text-anchor="middle" fill="#24143d">
+<text x="600" y="42" font-size="26" font-weight="700">The engine decides. Foundry explains verified facts.</text>
+<text x="600" y="72" font-size="16" fill="#645775">Azure App Service hosts the API and coach room; GitHub Actions tests and deploys main.</text>
+<g fill="white" stroke="#c9bfdb" stroke-width="2">
+<rect x="40" y="110" width="330" height="85" rx="14"/><rect x="435" y="110" width="330" height="85" rx="14"/><rect x="830" y="110" width="330" height="85" rx="14"/>
+<rect x="40" y="255" width="330" height="110" rx="14"/><rect x="435" y="255" width="330" height="110" rx="14" fill="#eee5ff" stroke="#7b39de"/><rect x="830" y="255" width="330" height="110" rx="14"/>
+<rect x="830" y="435" width="330" height="115" rx="14" fill="#eee5ff" stroke="#7b39de"/><rect x="435" y="435" width="330" height="115" rx="14"/><rect x="40" y="435" width="330" height="115" rx="14"/>
+</g>
+<g font-size="20" font-weight="700">
+<text x="205" y="144">Synthetic event stream</text><text x="600" y="144">Player profiles</text><text x="995" y="144">Coach intent</text>
+<text x="205" y="289">Live metrics and needs</text><text x="600" y="289">Whole-XI decision search</text><text x="995" y="289">Verified plan and facts</text>
+<text x="995" y="470">Microsoft Foundry</text><text x="600" y="470">Validate and render</text><text x="205" y="470">Coach room</text>
+</g>
+<g font-size="16" fill="#645775">
+<text x="205" y="172">Authored match, fixed seed</text><text x="600" y="172">Historical inputs + generated estimates</text><text x="995" y="172">Approach and result objective</text>
+<text x="205" y="320">Past events, score and minute</text><text x="205" y="344">Performance and estimated load</text>
+<text x="600" y="320">Substitutions, shapes, role fit</text><text x="600" y="344">Compare with best no-swap action</text>
+<text x="995" y="320">Plan identity, benefits and costs</text><text x="995" y="344">Relevant checkpoint statistics</text>
+<text x="995" y="498">Select optional fact IDs</text><text x="995" y="526">Translate protected templates</text>
+<text x="600" y="498">Server inserts names and numbers</text><text x="600" y="526">Reject invalid output; labelled fallback</text>
+<text x="205" y="498">Broadcaster / Analyst / Coach</text><text x="205" y="526">EN/HE interface; 10 explanation locales</text>
+</g>
+<g fill="none" stroke="#786b95" stroke-width="2.5" marker-end="url(#arrow)">
+<path d="M205 195V255"/><path d="M600 195V255"/><path d="M995 195V220H205V255"/>
+<path d="M370 310H435"/><path d="M765 310H830"/><path d="M995 365V435"/><path d="M830 492H765"/><path d="M435 492H370"/>
+</g>
+<text x="600" y="600" font-size="17" font-weight="700">The model cannot change the selected plan or its numeric values.</text>
+<text x="600" y="626" font-size="15" fill="#645775">Synthetic demonstration and heuristic scores; no claim of calibrated win probabilities or counterfactual match outcomes.</text>
+</g></svg>

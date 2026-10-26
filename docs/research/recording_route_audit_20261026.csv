@@ -1,0 +1,229 @@
+﻿team,minute,stance,objective,goal_diff,subs_left,recommendation,plan,benefit,formation,recommended_swaps
+Arsenal,0,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,0,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,0,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,0,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,0,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,0,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,5,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,10,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,15,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,20,balanced,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.32355,4-2-3-1,0
+Arsenal,20,balanced,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.24377,4-2-3-1,0
+Arsenal,20,attack,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.53048,4-2-3-1,0
+Arsenal,20,attack,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.4467,4-2-3-1,0
+Arsenal,20,defend,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39854,4-2-3-1,0
+Arsenal,20,defend,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.41935,4-2-3-1,0
+Arsenal,25,balanced,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.35323,4-2-3-1,0
+Arsenal,25,balanced,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.261,4-2-3-1,0
+Arsenal,25,attack,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.54491,4-2-3-1,0
+Arsenal,25,attack,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44923,4-2-3-1,0
+Arsenal,25,defend,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39008,4-2-3-1,0
+Arsenal,25,defend,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.40746,4-2-3-1,0
+Arsenal,30,balanced,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.2674,4-2-3-1,0
+Arsenal,30,balanced,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.2674,4-2-3-1,0
+Arsenal,30,attack,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44489,4-2-3-1,0
+Arsenal,30,attack,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44489,4-2-3-1,0
+Arsenal,30,defend,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39977,4-2-3-1,0
+Arsenal,30,defend,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39977,4-2-3-1,0
+Arsenal,35,balanced,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.27859,4-2-3-1,0
+Arsenal,35,balanced,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.27859,4-2-3-1,0
+Arsenal,35,attack,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43029,4-2-3-1,0
+Arsenal,35,attack,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43029,4-2-3-1,0
+Arsenal,35,defend,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.35755,4-2-3-1,0
+Arsenal,35,defend,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.35755,4-2-3-1,0
+Arsenal,40,balanced,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.21348,4-2-3-1,0
+Arsenal,40,balanced,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.21348,4-2-3-1,0
+Arsenal,40,attack,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.35533,4-2-3-1,0
+Arsenal,40,attack,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.35533,4-2-3-1,0
+Arsenal,40,defend,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.32949,4-2-3-1,0
+Arsenal,40,defend,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.32949,4-2-3-1,0
+Arsenal,45,balanced,win,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,45,balanced,draw,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,45,attack,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.24762,4-2-3-1,0
+Arsenal,45,attack,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.24762,4-2-3-1,0
+Arsenal,45,defend,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.24943,4-2-3-1,0
+Arsenal,45,defend,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.24943,4-2-3-1,0
+Arsenal,50,balanced,win,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,50,balanced,draw,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,50,attack,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.18236,4-2-3-1,0
+Arsenal,50,attack,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.18236,4-2-3-1,0
+Arsenal,50,defend,win,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.18054,4-2-3-1,0
+Arsenal,50,defend,draw,1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.18054,4-2-3-1,0
+Arsenal,55,balanced,win,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.15,4-2-3-1,1
+Arsenal,55,balanced,draw,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.15,4-2-3-1,1
+Arsenal,55,attack,win,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,55,attack,draw,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,55,defend,win,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,55,defend,draw,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,60,balanced,win,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.19406,4-2-3-1,1
+Arsenal,60,balanced,draw,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.19406,4-2-3-1,1
+Arsenal,60,attack,win,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,60,attack,draw,1,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,60,defend,win,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.19155,4-2-3-1,1
+Arsenal,60,defend,draw,1,3,SUBSTITUTION,Héctor Bellerín -> Calum Chambers,0.19155,4-2-3-1,1
+Arsenal,65,balanced,win,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.20134,4-2-3-1,2
+Arsenal,65,balanced,draw,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.20134,4-2-3-1,2
+Arsenal,65,attack,win,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.19201,4-2-3-1,2
+Arsenal,65,attack,draw,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.19201,4-2-3-1,2
+Arsenal,65,defend,win,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.19127,4-2-3-1,1
+Arsenal,65,defend,draw,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.19127,4-2-3-1,1
+Arsenal,70,balanced,win,1,2,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.24584,4-2-3-1,3
+Arsenal,70,balanced,draw,1,2,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.24584,4-2-3-1,3
+Arsenal,70,attack,win,1,2,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.25916,4-2-3-1,3
+Arsenal,70,attack,draw,1,2,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.25916,4-2-3-1,3
+Arsenal,70,defend,win,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.21879,4-2-3-1,2
+Arsenal,70,defend,draw,1,2,SUBSTITUTION,Joel Campbell -> Alex Oxlade-Chamberlain,0.21879,4-2-3-1,2
+Arsenal,75,balanced,win,1,1,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.24299,4-2-3-1,2
+Arsenal,75,balanced,draw,1,1,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.24299,4-2-3-1,2
+Arsenal,75,attack,win,1,1,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.2542,4-2-3-1,3
+Arsenal,75,attack,draw,1,1,SUBSTITUTION,Per Mertesacker -> Gabriel Paulista,0.2542,4-2-3-1,3
+Arsenal,75,defend,win,1,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.15962,4-2-3-1,1
+Arsenal,75,defend,draw,1,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.15962,4-2-3-1,1
+Arsenal,80,balanced,win,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.21882,4-2-3-1,2
+Arsenal,80,balanced,draw,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.22465,4-2-3-1,3
+Arsenal,80,attack,win,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.20445,4-2-3-1,2
+Arsenal,80,attack,draw,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.22916,4-2-3-1,3
+Arsenal,80,defend,win,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.16959,4-2-3-1,1
+Arsenal,80,defend,draw,0,1,SUBSTITUTION,Laurent Koscielny -> Gabriel Paulista,0.20163,4-2-3-1,1
+Arsenal,85,balanced,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.16853,4-2-3-1,0
+Arsenal,85,balanced,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,85,attack,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.21695,4-2-3-1,0
+Arsenal,85,attack,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,85,defend,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.18539,4-2-3-1,0
+Arsenal,85,defend,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,balanced,win,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,balanced,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,attack,win,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,attack,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,defend,win,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Arsenal,90,defend,draw,-1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,0,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,5,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,10,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,balanced,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,balanced,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,attack,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,attack,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,defend,win,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,15,defend,draw,0,3,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,20,balanced,win,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.23658,4-3-3,3
+Liverpool,20,balanced,draw,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.37495,4-3-3,4
+Liverpool,20,attack,win,0,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.17582,4-3-3,1
+Liverpool,20,attack,draw,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.71746,4-3-3,0
+Liverpool,20,defend,win,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.4547,4-3-3,4
+Liverpool,20,defend,draw,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.49562,4-3-3,4
+Liverpool,25,balanced,win,0,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.54884,4-3-3,0
+Liverpool,25,balanced,draw,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.20991,4-3-3,2
+Liverpool,25,attack,win,0,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.2456,4-3-3,1
+Liverpool,25,attack,draw,0,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.18105,4-3-3,1
+Liverpool,25,defend,win,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.2825,4-3-3,4
+Liverpool,25,defend,draw,0,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.4079,4-3-3,4
+Liverpool,30,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39707,4-3-3,0
+Liverpool,30,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.39707,4-3-3,0
+Liverpool,30,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.16311,4-3-3,1
+Liverpool,30,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.16311,4-3-3,1
+Liverpool,30,defend,win,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.3179,4-3-3,4
+Liverpool,30,defend,draw,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.3179,4-3-3,4
+Liverpool,35,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.41006,4-3-3,0
+Liverpool,35,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.41006,4-3-3,0
+Liverpool,35,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.20112,4-3-3,1
+Liverpool,35,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.20112,4-3-3,1
+Liverpool,35,defend,win,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.26342,4-3-3,4
+Liverpool,35,defend,draw,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.26342,4-3-3,4
+Liverpool,40,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44836,4-3-3,0
+Liverpool,40,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44836,4-3-3,0
+Liverpool,40,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.21598,4-3-3,1
+Liverpool,40,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.21598,4-3-3,1
+Liverpool,40,defend,win,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.21134,4-3-3,3
+Liverpool,40,defend,draw,-1,3,SUBSTITUTION,Adam Lallana -> Lucas Leiva,0.21134,4-3-3,3
+Liverpool,45,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44735,4-3-3,0
+Liverpool,45,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44735,4-3-3,0
+Liverpool,45,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.22703,4-3-3,1
+Liverpool,45,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.22703,4-3-3,1
+Liverpool,45,defend,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44227,4-3-3,0
+Liverpool,45,defend,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.44227,4-3-3,0
+Liverpool,50,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43854,4-3-3,0
+Liverpool,50,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43854,4-3-3,0
+Liverpool,50,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.22489,4-3-3,1
+Liverpool,50,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.22489,4-3-3,1
+Liverpool,50,defend,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43903,4-3-3,0
+Liverpool,50,defend,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.43903,4-3-3,0
+Liverpool,55,balanced,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.48704,4-3-3,0
+Liverpool,55,balanced,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.48704,4-3-3,0
+Liverpool,55,attack,win,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.21119,4-3-3,1
+Liverpool,55,attack,draw,-1,3,SUBSTITUTION,Roberto Firmino -> Christian Benteke,0.21119,4-3-3,1
+Liverpool,55,defend,win,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.47967,4-3-3,0
+Liverpool,55,defend,draw,-1,3,TACTICAL_ADJUSTMENT,Reposition / wait,0.47967,4-3-3,0
+Liverpool,60,balanced,win,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.48502,4-3-3,0
+Liverpool,60,balanced,draw,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.48502,4-3-3,0
+Liverpool,60,attack,win,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.56308,4-3-3,0
+Liverpool,60,attack,draw,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.56308,4-3-3,0
+Liverpool,60,defend,win,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.16838,4-1-4-1,1
+Liverpool,60,defend,draw,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.16838,4-1-4-1,1
+Liverpool,65,balanced,win,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.44609,4-3-3,0
+Liverpool,65,balanced,draw,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.44609,4-3-3,0
+Liverpool,65,attack,win,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.50528,4-3-3,0
+Liverpool,65,attack,draw,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.50528,4-3-3,0
+Liverpool,65,defend,win,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.18767,4-1-4-1,1
+Liverpool,65,defend,draw,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.18767,4-1-4-1,1
+Liverpool,70,balanced,win,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.18722,4-1-4-1,1
+Liverpool,70,balanced,draw,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.18722,4-1-4-1,1
+Liverpool,70,attack,win,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.43264,4-3-3,0
+Liverpool,70,attack,draw,-1,2,TACTICAL_ADJUSTMENT,Reposition / wait,0.43264,4-3-3,0
+Liverpool,70,defend,win,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.22787,4-1-4-1,1
+Liverpool,70,defend,draw,-1,2,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.22787,4-1-4-1,1
+Liverpool,75,balanced,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.48408,4-3-3,0
+Liverpool,75,balanced,draw,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.32272,4-3-3,0
+Liverpool,75,attack,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.53478,4-3-3,0
+Liverpool,75,attack,draw,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.35652,4-3-3,0
+Liverpool,75,defend,win,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.48984,4-3-3,0
+Liverpool,75,defend,draw,-1,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.32656,4-3-3,0
+Liverpool,80,balanced,win,0,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.34752,4-3-3,0
+Liverpool,80,balanced,draw,0,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.18759,4-1-4-1,2
+Liverpool,80,attack,win,0,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.4238,4-3-3,0
+Liverpool,80,attack,draw,0,1,TACTICAL_ADJUSTMENT,Reposition / wait,0.15993,4-3-3,0
+Liverpool,80,defend,win,0,1,SUBSTITUTION,James Milner -> Lucas Leiva,0.17981,4-3-3,1
+Liverpool,80,defend,draw,0,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.2102,4-1-4-1,2
+Liverpool,85,balanced,win,1,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.16817,4-1-4-1,1
+Liverpool,85,balanced,draw,1,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.16817,4-1-4-1,1
+Liverpool,85,attack,win,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,85,attack,draw,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,85,defend,win,1,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.17133,4-1-4-1,1
+Liverpool,85,defend,draw,1,1,SUBSTITUTION,Jordon Ibe -> Lucas Leiva,0.17133,4-1-4-1,1
+Liverpool,90,balanced,win,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,90,balanced,draw,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,90,attack,win,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,90,attack,draw,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,90,defend,win,1,1,NO_SUBSTITUTION,Reposition / wait,,,0
+Liverpool,90,defend,draw,1,1,NO_SUBSTITUTION,Reposition / wait,,,0

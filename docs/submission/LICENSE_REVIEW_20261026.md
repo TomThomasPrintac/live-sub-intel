@@ -2,9 +2,9 @@
 
 ## Scope and constraints
 
-The team requested that the existing numerical profiles, recommendations and real names remain unchanged before filming. No independent replacement dataset is being generated, and retained historical inputs are not relabelled as independently generated. This is a documented source review, not a legal opinion or an organizer's acceptance decision.
+This review covers the retained numerical profiles, recommendations and descriptive real names. No independent replacement dataset is included in the audited release; historical-derived inputs remain identified as such. This is a documented source review, not a legal opinion or an organizer's acceptance decision.
 
-The team subsequently authorized publishing the submission updates and keeping the current repository visibility. MIT approval remains deferred; no code-license grant is applied by this review.
+The repository is public. No MIT code-license grant is applied by this review.
 
 ## Findings
 
@@ -15,7 +15,7 @@ The team subsequently authorized publishing the submission updates and keeping t
 | StatsBomb research/analysis | The agreement permits research/analysis and public sharing of conclusions, with brand attribution. | Official logo and source credit are already in the app/repository. This supports presenting the work as noncommercial analysis. |
 | StatsBomb data redistribution | The same agreement separately restricts providing/editing/distributing the data and commercial exploitation. | Committed evidence rows, embedded exports and public bootstrap profiles require a scope/permission assessment. Noncommercial purpose and attribution alone do not prove that every retained file is covered. |
 | FIFA16/SoFIFA inputs | The pinned CSV source README explicitly describes scraped SoFIFA data. No license file was found at that revision's root. | No grant authorizing this project's CSV/derived-data redistribution has been established. A transformed rating is still derived from an input. |
-| EA policy | EA permits certain personal fan projects under conditions, including an affiliation disclaimer; it excludes other uses and does not grant third-party rights. | Add the requested non-endorsement wording as a precaution. Do not interpret that notice as approval of this particular dataset, scraping, integration or submission. |
+| EA policy | EA permits certain personal fan projects under conditions, including an affiliation disclaimer; it excludes other uses and does not grant third-party rights. | The precautionary non-endorsement sentence added earlier was subsequently removed from the UI. This review does not establish that the policy applies to or authorizes the retained dataset, scraping, integration or submission; no blanket policy permission is claimed. |
 | SoFIFA API | Its published API requirements describe a noncommercial partner API with a source logo/link and an existing database requirement. | This is not a retroactive license for an unrelated scraped historical CSV. No new API connection is being added. |
 | Team/player names | The hackathon rules reviewed do not impose a blanket fictional-name requirement. | Keep descriptive names as requested. No club crests, player photos, game art or asserted official endorsement are introduced. This is not a blanket clearance of identity/trademark rights. |
 

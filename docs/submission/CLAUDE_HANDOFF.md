@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 > Historical handoff: the audience/language requests below were implemented in PRs #22–#27. Do not repeat them as pending work. Current evidence and gates: [RELEASE_REVIEW_20261024.md](RELEASE_REVIEW_20261024.md).
 
 # Claude handoff — integrate the final demo, then finish explanations

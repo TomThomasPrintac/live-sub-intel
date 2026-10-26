@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # הרחבת המודל — חישובים, ראיות ומגבלות
 
 עדכון 18.10.2026. זהו אבטיפוס לבדיקה; ציוני היכולת ותועלת החילוף אינם אמת מדודה.
