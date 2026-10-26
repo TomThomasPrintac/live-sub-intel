@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 # לתומאס / Claude — סגירה לפני הסרטון, 26.10.2026
 
 מטרת הבראנץ׳: ניסוח קצר ומדויק להגשה, עדכון סטטוס PR #33 שכבר נפרס, וקישור למקורות ולרישיונות. אין שינוי במנוע, במשקלים, בסף, בשחקנים, במספרים או בתסריט.

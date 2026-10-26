@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 # לקלוד של הצוות: הסברים בהקשר המשחק וסגירת PR #28
 
 > ההנחיות להלן נשמרות כהיסטוריה: PR #28 מוזג, ועדכוני #29–#32 נפרסו ב־980bde2. אין לבצע שוב את המיזוג. סטטוס נוכחי: [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md); משימות סיום: [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md).

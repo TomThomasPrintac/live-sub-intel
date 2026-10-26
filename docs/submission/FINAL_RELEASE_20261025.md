@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 # Release and submission status — 25 October 2026
 
 ## Deployed integration

@@ -2,7 +2,7 @@
 
 Coverage: **228 evaluations = two teams × 19 checkpoints × three approaches × two result objectives**. Fixed lively scenario, seed 20261021, baseline ca18fb4. The decision engine and data match that deployed baseline. This is a local coverage audit, not 228 live model requests, professional coaching validation or a counterfactual simulation.
 
-[Full JSON](../research/recording_route_audit_20261026.json) · [Excel-friendly CSV](../research/recording_route_audit_20261026.csv) · [Recording route in Hebrew](RECORDING_ROUTE_HE.md)
+[Full JSON](../research/recording_route_audit_20261026.json.gz) · [Excel-friendly CSV](../research/recording_route_audit_20261026.csv) · [Recording route in Hebrew](RECORDING_ROUTE_HE.md)
 
 An optional live comparison was attempted separately, but the network connection to the evaluate endpoint was refused. No live parity result is claimed. The committed report is the successful local audit.
 

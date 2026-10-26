@@ -9,7 +9,8 @@ Owner: the team's authorized project representative. This checklist records task
 - [x] Three audiences, ten explanation locales, protected plan values and labelled fallback implemented.
 - [x] Original synthetic scenario, historical-derived profiles and synthetic physical estimates distinguished.
 - [x] Official Hudl Statsbomb logo/credit and SkillCorner MIT notice retained.
-- [x] Accepted 46-case Azure artifact at 980bde2 preserved and linked.
+- [x] Accepted 46-case Azure artifact at ca18fb4 preserved and linked.
+- [x] PR #34 merged/deployed; live health and acceptance run 40299465098 independently verified on 26 October.
 - [x] Arsenal-only recording route and English narration script prepared.
 - [x] PR #33 merged/deployed as 0f3e19d and the resulting SHA checked live.
 - [x] New English count-neutral statistic templates passed strict 46-case live acceptance after deployment: run 40195568545.
@@ -42,4 +43,4 @@ Owner: the team's authorized project representative. This checklist records task
 - [ ] Decide a team-approved code license if public reuse is intended. Public visibility alone is not an open-source license; no blanket license should be applied to third-party data.
 - [ ] Have a native speaker read one translated explanation and a football reviewer inspect 3–5 plans.
 
-Sources: [official rules](https://github.com/microsoft/insidethegamehackathon/blob/main/OFFICIAL%20RULES.md), [current release evidence](FINAL_RELEASE_20261025.md), [data sources](DATA_SOURCES.md).
+Sources: [official rules](https://github.com/microsoft/insidethegamehackathon/blob/main/OFFICIAL%20RULES.md), [current release evidence](FINAL_STATUS.md), [data sources](DATA_SOURCES.md).

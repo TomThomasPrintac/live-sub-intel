@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # סקירת דמו מגוון וקבלת Foundry
 
 עדכון למסירה לחבר ולקלוד — 21.10.2026, אחרי חיבור Foundry

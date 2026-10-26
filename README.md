@@ -2,9 +2,11 @@
 
 **From match events to an explainable bench decision.** Compare a substitution with the best tactical adjustment available to the current eleven, then explain the inspected plan for a broadcaster, analyst or coach.
 
+Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
+
 [Open the live Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [60-second judge guide](docs/submission/JUDGE_GUIDE.md) · [Event-to-decision walkthrough](docs/EVENT_PIPELINE.md) · [Submission description](docs/submission/SUBMISSION.md)
 
-Built for the Microsoft × Premier League hackathon by Thomas, Tal and Ofir. **Deployed acceptance baseline: `0f3e19d` (PR #33), 46/46 model-assisted explanations, all eight translated locales, no English fallback.** [Exact evidence and release status](docs/submission/FINAL_RELEASE_20261025.md). Later branch changes require their own deployment check.
+Built for the Microsoft × Premier League hackathon by Thomas, Tal and Ofir. **Verified deployed baseline: `ca18fb4` (PR #34), 46/46 model-assisted explanations, all eight translated locales, no English fallback.** [Current status and evidence](docs/submission/FINAL_STATUS.md). This documentation branch does not change that deployed build.
 
 ![Arsenal's current eleven, with goal, assist and booking markers](docs/submission/coach-room-arsenal.png)
 
@@ -75,7 +77,7 @@ node --test tests/test_coach_room_ui.cjs tests/test_match_replay_ui.cjs tests/te
 python scripts/live_acceptance.py https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net --require-model --extended-audiences
 ```
 
-The last command makes bounded real model requests. Local tests do not prove Azure connectivity. Health reports build/configuration; fresh acceptance establishes request-time behavior. The live acceptance workflow is available under Actions. [Latest preserved 46-case report](docs/research/live_acceptance_0f3e19d_20261025.json) · [Release status](docs/submission/FINAL_RELEASE_20261025.md) · [Earlier independent review](docs/submission/RELEASE_REVIEW_20261024.md).
+The last command makes bounded real model requests. Local tests do not prove Azure connectivity. Health reports build/configuration; fresh acceptance establishes request-time behavior. The live acceptance workflow is available under Actions. [Latest preserved 46-case report](docs/research/live_acceptance_ca18fb4_20261026.json) · [Release status](docs/submission/FINAL_STATUS.md) · [Earlier independent review](docs/submission/RELEASE_REVIEW_20261024.md).
 
 ## Scope, sources and limitations
 
@@ -85,7 +87,7 @@ One substitution is inspected at a time. No ten-player solver, opposition-specif
 
 [Data sources and outstanding permissions](docs/submission/DATA_SOURCES.md) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Final checklist in Hebrew](docs/submission/FINAL_CLOSEOUT_HE.md) · [English video script](docs/submission/VIDEO_SCRIPT.md)
 
-[How incoming events become player performance and team needs](docs/EVENT_PIPELINE.md) · [Calculation walkthrough and sanity checks (Hebrew)](docs/research/CALCULATIONS_SANITY_HE_20261024.md) · [Final submission checklist](docs/submission/SUBMISSION_CHECKLIST.md)
+[Documentation index](docs/README.md) · [How incoming events become player performance and team needs](docs/EVENT_PIPELINE.md) · [Calculation walkthrough and sanity checks (Hebrew)](docs/research/CALCULATIONS_SANITY_HE_20261024.md) · [Final submission checklist](docs/submission/SUBMISSION_CHECKLIST.md)
 
 ![Hudl Statsbomb](web/coach-room/statsbomb-logo.png)
 

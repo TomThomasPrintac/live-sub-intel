@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # Live Substitution Intelligence — סיכום לצוות
 
 עדכון 18.10.2026. האב־טיפוס הורחב ונבדק; איכות ההחלטות עדיין דורשת סקירה כדורגלנית.

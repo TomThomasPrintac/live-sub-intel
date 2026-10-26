@@ -1,5 +1,7 @@
 # Data contract and engine spec (v0)
 
+> Original v0 design reference. Current runtime behavior and decision formulas are described in [the methodology](METHODOLOGY.md), [event pipeline](EVENT_PIPELINE.md) and [automatic planner](AUTO_TACTICAL_PLANS.md). Current deployment evidence: [FINAL_STATUS.md](submission/FINAL_STATUS.md).
+
 Shared agreement between the three workstreams. Code is the source of truth:
 `src/subintel/schema.py` (types), `metrics.py` (what each dimension means),
 `profiles.py` (pre-match), `engine.py` (live). Change this file and the code in

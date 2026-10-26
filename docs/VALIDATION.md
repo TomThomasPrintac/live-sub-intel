@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # Validation record — 18 October 2026
 
 54 Python tests and 3 Node UI-logic tests pass. This establishes software behavior, not football decision quality.

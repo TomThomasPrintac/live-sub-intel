@@ -1,6 +1,6 @@
 # לתומאס / Claude — מסלול הסרטון והפוטר
 
-בראנץ׳: `release/recording-scenario-audit-20261026`, מעל ca18fb4. זה עדכון נוסף אחרי PR #35; מומלץ למזג את #35 ואז את ה־PR של הבראנץ׳ הזה ולבצע פריסה ובדיקת קבלה פעם אחת בסיום, לפני ההקלטה. אין לשנות משקלים, סף או נתונים כדי להתאים את הסרטון.
+בראנץ׳: `release/recording-scenario-audit-20261026`, מעל ca18fb4. הבראנץ׳ כולל גם את כל עדכוני PR #35 ואת פתרון ההתנגשות במסמך הסרטון. אפשר למזג את ה־PR המאוחד הזה במקום #35 ולבצע פריסה ובדיקת קבלה פעם אחת בסיום, לפני ההקלטה. אין לשנות משקלים, סף או נתונים כדי להתאים את הסרטון.
 
 ## שינוי האתר
 
@@ -21,7 +21,7 @@
 - [RECORDING_ROUTE_HE.md](RECORDING_ROUTE_HE.md): קישורים, פעולות במסך וקריינות מתוזמנת, יעד 1:50.
 - [VIDEO_NARRATION_EN.txt](VIDEO_NARRATION_EN.txt): קריינות נקייה באנגלית, 205 מילים.
 - [RECORDING_CHECKPOINT_REVIEW.md](RECORDING_CHECKPOINT_REVIEW.md): כל הדקות, ששת ההקשרים, אירועים ומגבלות.
-- [CSV מלא](../research/recording_route_audit_20261026.csv) ו־[JSON מלא](../research/recording_route_audit_20261026.json).
+- [CSV מלא](../research/recording_route_audit_20261026.csv) ו־[JSON מלא](../research/recording_route_audit_20261026.json.gz).
 - שחזור מקומי: `python scripts/audit_recording_route.py` עם PYTHONPATH הכולל src ו־scripts.
 
 ## בדיקה אחרי פריסה

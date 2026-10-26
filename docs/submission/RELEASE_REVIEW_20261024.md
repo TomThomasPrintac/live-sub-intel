@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](FINAL_STATUS.md); do not repeat completed integrations.
+
 # Independent release review — 24 October 2026
 
 > Historical review retained with its original build/results. For the merged #28–#32 integration and the preserved 46-case acceptance at 980bde2, see [FINAL_RELEASE_20261025.md](FINAL_RELEASE_20261025.md).

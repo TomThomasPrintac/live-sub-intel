@@ -7,6 +7,7 @@ accuracy or counterfactual outcome validation.
 import argparse
 from collections import Counter
 import csv
+import gzip
 import json
 from pathlib import Path
 import subprocess
@@ -39,7 +40,7 @@ def signature(snapshot):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('--out',type=Path,default=ROOT/'docs/research/recording_route_audit_20261026.json')
+    parser.add_argument('--out',type=Path,default=ROOT/'docs/research/recording_route_audit_20261026.json.gz')
     parser.add_argument('--live-base')
     args=parser.parse_args()
     baseline=subprocess.check_output(['git','rev-parse','origin/main'],cwd=ROOT,text=True).strip()
@@ -93,8 +94,9 @@ def main():
                 live_build=health_before.get('build_sha'),live_error=live_error,
                 elapsed_seconds=round(time.monotonic()-start,2),key_events=events,rows=rows)
     args.out.parent.mkdir(parents=True,exist_ok=True)
-    args.out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    csv_path=args.out.with_suffix('.csv')
+    encoded=(json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
+    args.out.write_bytes(gzip.compress(encoded,mtime=0) if args.out.suffix=='.gz' else encoded)
+    csv_path=args.out.with_name(args.out.name.removesuffix('.gz').removesuffix('.json')+'.csv')
     fields=['team','minute','stance','objective','goal_diff','subs_left','recommendation','plan','benefit','formation','recommended_swaps']
     with csv_path.open('w',encoding='utf-8-sig',newline='') as handle:
         writer=csv.DictWriter(handle,fieldnames=fields);writer.writeheader()
