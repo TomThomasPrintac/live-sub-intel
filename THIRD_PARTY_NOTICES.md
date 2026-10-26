@@ -16,7 +16,7 @@ Historical evidence and derived analysis use https://github.com/hudl/open-data, 
 
 The source revision and unresolved redistribution permission are recorded in DATA_SOURCES.md. Naming the source does not grant rights. Original project code licensing must not purport to relicense these inputs.
 
-This project is not endorsed by or affiliated with EA or its licensors. This notice follows the wording in EA's content policy; it is not a claim that the policy authorizes the retained CSV, scraping or every project use. The [26 October license review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the applicable sources and open questions.
+The [26 October source review](docs/submission/LICENSE_REVIEW_20261026.md) distinguishes the retained inputs and outstanding permission questions. This project does not claim a blanket content-policy authorization for those inputs.
 
 ## Runtime packages
 

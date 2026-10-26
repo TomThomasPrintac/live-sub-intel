@@ -2,7 +2,7 @@
 
 Baseline: `ca18fb480a5e78ce9205dfc7aa31669f427a0750`, merged PR #34. The audit covers the tracked submission package and distinguishes current documentation from development history. It does not rewrite history, delete source evidence or establish third-party legal permission.
 
-This report records the documentation-audit checkpoint in PR #35. The later [recording follow-up](RECORDING_HANDOFF_HE.md) includes that audit and adds a small HTML notice relocation plus the 228-case local recording review. The unchanged-web and 180-file counts below refer to the earlier documentation checkpoint, not to those subsequent additions.
+This report records the documentation-audit checkpoint in PR #35. The later [recording follow-up](RECORDING_HANDOFF_HE.md) includes that audit and adds the 228-case local recording review. A subsequent follow-up removes the precautionary non-affiliation sentence from the UI while preserving source documentation and provider attribution. The unchanged-web and 180-file counts below refer to the earlier documentation checkpoint, not to those subsequent additions.
 
 ## Checks and findings
 

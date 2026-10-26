@@ -10,7 +10,7 @@ Verified 26 October 2026. This is the current status entry point; dated handoffs
 - Regression baseline: **292 Python passed, one optional historical-cache check skipped; 16 Node passed**. These are technical consistency checks, not proof of improved football outcomes or perfect translations.
 - The teammate reported an Italian plural agreement issue in one live output. Automatic structural checks do not establish native-speaker fluency. The recording route uses English.
 
-The documentation audit changes no decision code, player values, source inputs, weights, thresholds or scenario events. Its recording follow-up moves the non-affiliation notice from the visible footer into the expandable About/data section; the notice and provenance remain accessible. This HTML-only layout change is not yet deployed. No new decision feature work is needed for the English recording route. An inspected plan does not execute a counterfactual match.
+The documentation audit changes no decision code, player values, source inputs, weights, thresholds or scenario events. Its recording follow-up removes the precautionary non-affiliation sentence from the UI. Exact source provenance remains in the source documents, and the provider logo/credit remains in the footer. No applicable permission is asserted on the basis of removing that sentence. This HTML-only layout change is not yet deployed. No new decision feature work is needed for the English recording route. An inspected plan does not execute a counterfactual match.
 
 ## Prepared materials
 
