@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 > עדכון 20.10: האינטגרציה עם ההסברים והממשק הדו־לשוני נמצאת בבראנץ׳
 > `feature/integrated-coach-explanations`. אנגלית היא ברירת המחדל, וההסבר קשור
 > לחלופה שנבחרה. פירוט עדכני: [INTEGRATED_ROOM.md](INTEGRATED_ROOM.md).

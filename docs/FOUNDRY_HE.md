@@ -1,5 +1,7 @@
 # חיבור שכבת ההסבר ל־Microsoft Foundry
 
+> מסמך הקמה מוקדם. החיבור כבר פעיל באתר החי; הסטטוס העדכני נמצא ב־[FINAL_STATUS.md](submission/FINAL_STATUS.md). הסברי התוכניות המשולבים כיום ממומשים ב־`src/subintel/plan_narrative.py`; התרגום ב־`src/subintel/translation.py`.
+
 המנוע מחליט, וה־LLM רק מסביר. הקוד נמצא ב־`src/subintel/narrative.py`. בלי חיבור ל־Foundry הוא משתמש בתבנית קבועה, כך שהדמו עובד גם בלי רשת.
 
 ## 1. יצירת פרויקט

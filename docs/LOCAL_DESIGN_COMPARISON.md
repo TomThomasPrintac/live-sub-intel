@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 # Local design and match-flow comparison
 
 Branch: `design/local-options-match-audit`. Local experiments only; no deployment or engine/threshold changes.

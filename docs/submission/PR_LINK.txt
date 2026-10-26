@@ -1,4 +1,5 @@
-Integration PR #21 (draft)
+Historical integration reference: PR #21 is merged; do not integrate it again.
 https://github.com/TomThomasPrintac/live-sub-intel/pull/21
-Branch: OfirMana:design/local-options-match-audit -> TomThomasPrintac:main
-Read CLAUDE_HANDOFF.md before integration.
+Current deployed integration: PR #34, ca18fb4.
+https://github.com/TomThomasPrintac/live-sub-intel/pull/34
+Current release and remaining tasks: docs/submission/FINAL_STATUS.md

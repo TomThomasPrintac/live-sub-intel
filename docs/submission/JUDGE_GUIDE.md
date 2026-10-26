@@ -26,7 +26,7 @@ Use the same Arsenal scenario throughout the video. Move between the first recom
 
 - [Methodology](../METHODOLOGY.md): time boundaries, unknown values, estimated possession/load and scoring.
 - [Independent decision sanity review](DECISION_REVIEW_20261024.md): five outcomes, with professional limits.
-- [Release evidence and remaining gates](RELEASE_REVIEW_20261024.md).
+- [Current release evidence and remaining steps](FINAL_STATUS.md).
 - [Architecture and submission description](SUBMISSION.md).
 
-The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `0f3e19d` (PR #33), with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_0f3e19d_20261025.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_RELEASE_20261025.md).
+The fixed synthetic future does not change when you inspect a plan. Historical priors and third-party publication limitations are documented in [DATA_SOURCES.md](DATA_SOURCES.md). The current integration baseline is `ca18fb4` (PR #34), with unchanged engine inputs and the [accepted 46-case report](../research/live_acceptance_ca18fb4_20261026.json). Later replay or model changes require rechecking the route. [Current release status](FINAL_STATUS.md).

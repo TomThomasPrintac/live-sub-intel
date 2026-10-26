@@ -2,9 +2,9 @@
 
 ## Scope and constraints
 
-The team requested that the existing numerical profiles, recommendations and real names remain unchanged before filming. No independent replacement dataset is being generated, and retained historical inputs are not relabelled as independently generated. This is a documented source review, not a legal opinion or an organizer's acceptance decision.
+This review covers the retained numerical profiles, recommendations and descriptive real names. No independent replacement dataset is included in the audited release; historical-derived inputs remain identified as such. This is a documented source review, not a legal opinion or an organizer's acceptance decision.
 
-The team subsequently authorized publishing the submission updates and keeping the current repository visibility. MIT approval remains deferred; no code-license grant is applied by this review.
+The repository is public. No MIT code-license grant is applied by this review.
 
 ## Findings
 

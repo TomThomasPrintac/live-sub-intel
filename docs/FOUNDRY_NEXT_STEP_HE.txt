@@ -1,3 +1,5 @@
+> **Historical record.** Build IDs, test counts and action requests below describe that document's original checkpoint. For the current release and remaining tasks, use [FINAL_STATUS.md](submission/FINAL_STATUS.md); do not repeat completed integrations.
+
 לתומס / לקלוד — אבחון Foundry אחרי הבדיקות שלנו, 21.10.2026
 
 נבדק main ב־d3952a1. האתר והמנוע עובדים, אבל גם הסבר פשוט מאוד בדקה 5 וגם הסבר לחלופה השנייה בדקה 65 החזירו source=template, LLM_UNAVAILABLE, cached=false, בתוך פחות משנייה. אין בתגובה הנוכחית את הסטטוס של הספק, ולכן אי אפשר לקבוע אם הבעיה במפתח, בפריסה, בהרשאות או בחיבור.

@@ -1,8 +1,8 @@
 # Live Substitution Intelligence — submission copy
 
-25 October 2026 · Thomas, Tal and Ofir
+26 October 2026 · Thomas, Tal and Ofir
 
-English text for the Inside the Game project page. [Current release evidence and remaining tasks](FINAL_RELEASE_20261025.md). Submission closes 27 October 2026 at 23:59 Pacific (28 October, 08:59 Israel). This file is prepared copy, not proof that the form has been submitted.
+English text for the Inside the Game project page. [Current release evidence and remaining tasks](FINAL_STATUS.md). Submission closes 27 October 2026 at 23:59 Pacific (28 October, 08:59 Israel). This file is prepared copy, not proof that the form has been submitted.
 
 ## Elevator pitch
 
@@ -27,7 +27,7 @@ Live Substitution Intelligence turns a stream of football match events into a be
 
 ## Architecture
 
-![The engine decides the plan; Foundry only picks which facts to tell](architecture.png)
+![The decision engine evaluates plans; Foundry selects facts and translates protected templates](architecture.svg)
 
 The engine in App Service makes every decision. Foundry selects optional verified fact IDs and translates protected sentence templates into eight additional languages. Mandatory facts stay server-controlled. Validation and labelled template/English fallback handle unavailable or rejected model outputs. Structural and status checks reduce errors, but do not guarantee complete translation semantics.
 
@@ -40,11 +40,11 @@ The running app uses Microsoft Foundry and Azure App Service, with GitHub Action
 | Microsoft Foundry, Azure OpenAI deployment of gpt-4.1-mini | Selects which verified facts explain the inspected plan (JSON only, 250 tokens, 12 s, no retries), and translates the fixed sentence templates into eight more languages (strict JSON schema, 15 s, validated before use, cached per language). Explanations cached for 10 minutes, two calls at a time. |
 | Azure App Service (Linux, Python 3.12) | Hosts the coach room and its API (`/api/bootstrap`, `/api/evaluate`, `/api/explain`, `/healthz`). The Foundry key lives only in App settings and never reaches the browser. |
 | GitHub Actions with Azure OpenID Connect login | Every merge to `main` runs the full Python test suite, then deploys to App Service. A failing test blocks the deploy. |
-| GitHub | Public repository; all changes arrive through reviewed pull requests. |
+| GitHub | Public repository; the integration and submission updates are documented in pull requests. |
 
 ## Data and originality
 
-Every match action in the demo is synthetic; only the player priors and line-ups draw on historical sources, and the app labels each one.
+Live Substitution Intelligence transforms synthetic football events into explainable substitution recommendations. The demo uses an authored match simulation and player profiles derived from historical attributes, supplemented by generated physical estimates. StatsBomb Open Data supported our research and analytical methodology, while SkillCorner positional references informed the physical estimates. The recommendations are experimental model outputs, not observations or predictions of an actual match. Detailed sources and transformations are documented separately in the repository.
 
 - **Match events:** original synthetic events from our own scripted-possession generator, in the same event format the engine reads live. They are not a real fixture, a prediction or licensed Premier League data.
 - **Player profiles:** derived from historical player-attribute data and match-event statistics, and supplemented by generated physical estimates. Historical attributes are adjusted, by at most 6 points, using match evidence from before the match date. Starting line-ups and shirt numbers use historical metadata. Exact input sources, transformations and publication-permission status are documented in [DATA_SOURCES.md](DATA_SOURCES.md).
@@ -86,7 +86,7 @@ Then open `http://127.0.0.1:8779/?team=1&minute=65&stance=attack&objective=win&i
 
 ## Finalization status
 
-The deployed integration at **0f3e19d** includes PR #33 and the earlier contextual translation/broadcaster fixes. The [preserved live acceptance](../research/live_acceptance_0f3e19d_20261025.json), produced on 25 October after deployment, records **46/46 model-assisted explanations**, eight translated locales, no English fallback and no recorded identity failures. [Actions run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40195568545). Later changes need their own acceptance.
+The verified deployed integration is **ca18fb4** (PR #34). The [preserved live acceptance](../research/live_acceptance_ca18fb4_20261026.json) records **46/46 model-assisted explanations**, translation in all eight additional locales, no English fallback, no recorded identity failures and no digits in broadcaster output. The build SHA is unchanged before and after the run. [Actions run](https://github.com/TomThomasPrintac/live-sub-intel/actions/runs/40299465098). See [current status](FINAL_STATUS.md) for the remaining submission steps and known limits.
 
 The repository includes Python/Node regression coverage, synthetic/historical explanation audits and a [reproducible event-pipeline trace](../EVENT_PIPELINE.md). These establish technical consistency, not calibrated coaching accuracy or native-language fluency. Exact current results belong to the relevant CI run and PR, rather than an outdated hard-coded count here.
 
