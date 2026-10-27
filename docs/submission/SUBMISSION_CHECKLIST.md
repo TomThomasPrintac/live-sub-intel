@@ -11,6 +11,8 @@
 
 ## Finish the video
 
+The final [1:45 video is uploaded to YouTube](https://www.youtube.com/watch?v=pkH76wz9Qq4) and linked from the README. The production checklist below remains for the team's final content/playback confirmation; an uploaded video alone does not establish that every item was reviewed.
+
 - [ ] Assemble the recorded clips in the agreed order, retaining the existing footage structure.
 - [ ] Use the final approved narration, including the Ramsey goal example; align corrected English captions to the actual audio.
 - [ ] Show the Chamberlain substitution, player comparison, Spanish output and audience changes.
