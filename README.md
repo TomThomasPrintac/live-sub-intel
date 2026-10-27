@@ -4,7 +4,7 @@
 
 Live Sub Intel connects what is happening in a match to the next bench decision. It compares substitutions and tactical changes across the current eleven, then explains the selected plan for broadcasters, analysts and coaches in ten languages.
 
-[Try the Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [One-minute judge guide](docs/submission/JUDGE_GUIDE.md) · [Submission description](docs/submission/SUBMISSION.md) · [Hackathon fit and evidence](docs/submission/JUDGING_FIT.md)
+[Watch the 1:45 demo video](https://www.youtube.com/watch?v=pkH76wz9Qq4) · [Try the Azure demo](https://live-sub-intel-fcfudheze9b5ewfz.swedencentral-01.azurewebsites.net/?team=1&minute=65&stance=attack&objective=win&inspect=1) · [One-minute judge guide](docs/submission/JUDGE_GUIDE.md) · [Submission description](docs/submission/SUBMISSION.md) · [Hackathon fit and evidence](docs/submission/JUDGING_FIT.md)
 
 Built by Thomas, Tal and Ofir for the Microsoft × Premier League hackathon.
 
